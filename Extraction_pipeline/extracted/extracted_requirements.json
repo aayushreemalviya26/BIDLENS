@@ -1,0 +1,167 @@
+[
+    {
+        "query": "Udyam / MSME",
+        "status": "found",
+        "requirements": [
+            {
+                "page": 5,
+                "requirement": "Udyam Certificate"
+            },
+            {
+                "page": 5,
+                "requirement": "MSME registration/certificate"
+            },
+            {
+                "page": 5,
+                "requirement": "MSE/MSME status"
+            }
+        ]
+    },
+    {
+        "query": "GST",
+        "status": "found",
+        "requirements": [
+            {
+                "page": 11,
+                "requirement": "GSTIN Number"
+            }
+        ]
+    },
+    {
+        "query": "PAN / Income Tax",
+        "status": "found",
+        "requirements": [
+            {
+                "page": 11,
+                "requirement": "PAN card"
+            }
+        ]
+    },
+    {
+        "query": "Make in India / Local Content",
+        "status": "found",
+        "requirements": [
+            {
+                "page": 4,
+                "requirement": "Preference to Make In India products (For bids < 200 Crore): Preference shall be given to Class 1 local supplier as defined in public procurement (Preference to Make in India), Order 2017 as amended from time to time and its"
+            },
+            {
+                "page": 5,
+                "requirement": "Minimum 50% and 20% Local Content required for qualifying as Class 1 and Class 2 Local Supplier respectively"
+            },
+            {
+                "page": 7,
+                "requirement": "Minimum 50% and 20% Local Content required for qualifying as Class 1 and Class 2 Local Supplier respectively"
+            }
+        ]
+    },
+    {
+        "query": "EPFO / ESIC",
+        "status": "not_found",
+        "requirements": []
+    },
+    {
+        "query": "Startup India",
+        "status": "not_found",
+        "requirements": []
+    },
+    {
+        "query": "NSIC",
+        "status": "not_found",
+        "requirements": []
+    },
+    {
+        "query": "OEM Authorization",
+        "status": "found",
+        "requirements": [
+            {
+                "page": 11,
+                "requirement": "OEM Authorization Certificate"
+            }
+        ]
+    },
+    {
+        "query": "DigiLocker / Document Verification",
+        "status": "not_found",
+        "requirements": []
+    },
+    {
+        "query": "Blacklisting / Debarment",
+        "status": "not_found",
+        "requirements": []
+    },
+    {
+        "query": "BIS / DPIIT",
+        "status": "found",
+        "requirements": [
+            {
+                "page": 9,
+                "requirement": "BIS licence"
+            }
+        ]
+    },
+    {
+        "query": "Technical Specifications",
+        "status": "not_found",
+        "requirements": []
+    },
+    {
+        "query": "Tender-Specific Eligibility",
+        "status": "found",
+        "requirements": [
+            {
+                "page": 10,
+                "requirement": "Bidder must submit documentary evidence of experience in the same or similar scope of work."
+            },
+            {
+                "page": 11,
+                "requirement": "Bidders should have average annual financial turnover of 200% of the estimated cost during the last three consecutive years ending 31st March 2025."
+            },
+            {
+                "page": 11,
+                "requirement": "OEMs should have average annual financial turnover of 400% of the estimated cost during the last three consecutive years ending 31st March 2025."
+            },
+            {
+                "page": 11,
+                "requirement": "Bidders should have executed project for supply/work of same or similar category products during the last 10 financial years (i.e. current year and ten previous financial years) as on last date of submission of bids, as per following criteria:"
+            },
+            {
+                "page": 11,
+                "requirement": "a. Single order of at least 80% of estimated bid value."
+            },
+            {
+                "page": 11,
+                "requirement": "b. Two orders of at least 60% each of estimated bid value."
+            },
+            {
+                "page": 11,
+                "requirement": "c. Three orders of at least 40% each of estimated bid value."
+            },
+            {
+                "page": 11,
+                "requirement": "d. In case of SITC/SETC and specialized scope, the contractor should also have sufficient experience and shall submit the experience certificate of satisfactory completion of at least three similar works, each of value not less than 40% of the estimated cost put to tender or two similar works, each of value not less than 60% of the estimated cost or one similar work of value not less than 80% of the estimated cost, all amounts rounded off to a convenient full figure, in the last 10 years ending previous day of last date of submission of bids."
+            },
+            {
+                "page": 11,
+                "requirement": "Note: Similar works will be defined based on scope of the work. Similar works may be executed with any Central and State Government agency, PSUs, Private organizations."
+            },
+            {
+                "page": 11,
+                "requirement": "7. Bidders should have average annual financial turnover of 200% of the estimated cost during the last three consecutive years ending 31st March 2025."
+            },
+            {
+                "page": 11,
+                "requirement": "8. OEMs should have average annual financial turnover of 400% of the estimated cost during the last three consecutive years ending 31st March 2025."
+            },
+            {
+                "page": 11,
+                "requirement": "9. At the time of submission of bid bidder may upload Certificate from CA mentioning financial Turnover of last 3 years or for the period as specified in the bid document. There is no need to upload entire voluminous balance sheet."
+            }
+        ]
+    },
+    {
+        "query": "Other Statutory Compliance",
+        "status": "not_found",
+        "requirements": []
+    }
+]
