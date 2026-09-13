@@ -1,0 +1,72 @@
+[
+    {
+        "query_id": "Q01",
+        "category": "Udyam / MSME",
+        "query": "Does the tender require Udyam or MSME registration, certification, status, or any proof of Micro, Small and Medium Enterprise registration?"
+    },
+    {
+        "query_id": "Q02",
+        "category": "GST",
+        "query": "Does the tender require GST registration, GST certification, GST return filing, or any other GST-related compliance or documentation?"
+    },
+    {
+        "query_id": "Q03",
+        "category": "PAN / Income Tax",
+        "query": "Does the tender require PAN, Income Tax registration, Income Tax compliance, tax returns, or any other income-tax related document or verification?"
+    },
+    {
+        "query_id": "Q04",
+        "category": "Make in India / Local Content",
+        "query": "Does the tender specify Make in India, local content, local sourcing, domestic value addition, Class I or Class II local supplier requirements, or other local-content conditions?"
+    },
+    {
+        "query_id": "Q05",
+        "category": "EPFO / ESIC",
+        "query": "Does the tender require EPFO or ESIC registration, contribution compliance, certificates, returns, or any other employee social-security compliance?"
+    },
+    {
+        "query_id": "Q06",
+        "category": "Startup India",
+        "query": "Does the tender mention Startup India registration, recognition, startup eligibility, exemptions, benefits, or any startup-specific requirement?"
+    },
+    {
+        "query_id": "Q07",
+        "category": "NSIC",
+        "query": "Does the tender require NSIC registration, NSIC certification, NSIC eligibility, exemptions, or any other NSIC-related requirement?"
+    },
+    {
+        "query_id": "Q08",
+        "category": "OEM Authorization",
+        "query": "Does the tender require OEM authorization, manufacturer authorization, an OEM certificate, authorization letter, or proof that the bidder is authorized by the original equipment manufacturer?"
+    },
+    {
+        "query_id": "Q09",
+        "category": "DigiLocker / Document Verification",
+        "query": "Does the tender require DigiLocker documents, digitally verified documents, online document verification, or submission of documents through an official digital repository?"
+    },
+    {
+        "query_id": "Q10",
+        "category": "Blacklisting / Debarment",
+        "query": "Does the tender contain requirements related to bidder blacklisting, debarment, suspension, banning, non-performance, or declaration that the bidder is not blacklisted or debarred?"
+    },
+    {
+        "query_id": "Q11",
+        "category": "BIS / DPIIT",
+        "query": "Does the tender require BIS certification, BIS standards, DPIIT recognition, DPIIT certification, or compliance with any BIS or DPIIT requirement?"
+    },
+    {
+        "query_id": "Q12",
+        "category": "Technical Specifications",
+        "query": "What technical specifications, product characteristics, performance requirements, standards, features, dimensions, capacities, materials, or other technical requirements does the tender specify for the product?"
+    },
+    {
+        "query_id": "Q13",
+        "category": "Tender-Specific Eligibility",
+        "query": "What bidder eligibility, qualification, experience, financial, technical, commercial, documentary, or other tender-specific requirements are explicitly required for participation?"
+    },
+    {
+        "query_id": "Q14",
+        "category": "Other Statutory Compliance",
+        "query": "Does the tender mention any other statutory, regulatory, legal, government registration, certification, declaration, or compliance requirement that is not covered by the other categories?"
+    }
+]
