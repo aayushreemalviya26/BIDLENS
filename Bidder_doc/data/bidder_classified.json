@@ -1,0 +1,128 @@
+{
+    "bidder_id": "B02",
+    "bidder_name": "Bharat Power Control Systems Pvt. Ltd.",
+    "source_file": "bidder.pdf",
+    "total_pages": 15,
+    "pages": [
+        {
+            "page": 1,
+            "category": "DIGILOCKER",
+            "confidence": 0.99,
+            "document_title": "BIDDER SUBMISSION PACKET",
+            "reason": "High-confidence document heading matched deterministic classification rule.",
+            "classification_method": "deterministic"
+        },
+        {
+            "page": 2,
+            "category": "CIN",
+            "confidence": 0.99,
+            "document_title": "1. Certificate of Incorporation",
+            "reason": "High-confidence document heading matched deterministic classification rule.",
+            "classification_method": "deterministic"
+        },
+        {
+            "page": 3,
+            "category": "UDYAM",
+            "confidence": 0.99,
+            "document_title": "2. Udyam Registration Certificate",
+            "reason": "High-confidence document heading matched deterministic classification rule.",
+            "classification_method": "deterministic"
+        },
+        {
+            "page": 4,
+            "category": "GST",
+            "confidence": 0.99,
+            "document_title": "3. GST Registration Certificate (Form GST REG-06)",
+            "reason": "High-confidence document heading matched deterministic classification rule.",
+            "classification_method": "deterministic"
+        },
+        {
+            "page": 5,
+            "category": "PAN",
+            "confidence": 0.99,
+            "document_title": "4. PAN Card & Income Tax Compliance Statement",
+            "reason": "High-confidence document heading matched deterministic classification rule.",
+            "classification_method": "deterministic"
+        },
+        {
+            "page": 6,
+            "category": "STATUTORY",
+            "document_title": "EPFO & ESIC Registration Confirmation",
+            "confidence": 1.0,
+            "reason": "The page contains details of EPFO and ESIC registration, including codes and statuses, which are statutory requirements.",
+            "classification_method": "llm"
+        },
+        {
+            "page": 7,
+            "category": "TURNOVER",
+            "confidence": 0.99,
+            "document_title": "6. Bidder Audited Turnover Certificate (CA Certified)",
+            "reason": "High-confidence document heading matched deterministic classification rule.",
+            "classification_method": "deterministic"
+        },
+        {
+            "page": 8,
+            "category": "TURNOVER",
+            "confidence": 0.99,
+            "document_title": "7. OEM Turnover Certificate (CA Certified)",
+            "reason": "High-confidence document heading matched deterministic classification rule.",
+            "classification_method": "deterministic"
+        },
+        {
+            "page": 9,
+            "category": "EXPERIENCE",
+            "confidence": 0.99,
+            "document_title": "8. Experience & Past Performance Certificate",
+            "reason": "High-confidence document heading matched deterministic classification rule.",
+            "classification_method": "deterministic"
+        },
+        {
+            "page": 10,
+            "category": "OEM_AUTHORIZATION",
+            "confidence": 0.99,
+            "document_title": "9. OEM Authorisation Certificate",
+            "reason": "High-confidence document heading matched deterministic classification rule.",
+            "classification_method": "deterministic"
+        },
+        {
+            "page": 11,
+            "category": "MII_LOCAL_CONTENT",
+            "confidence": 0.99,
+            "document_title": "10. Make in India — Local Content Declaration",
+            "reason": "High-confidence document heading matched deterministic classification rule.",
+            "classification_method": "deterministic"
+        },
+        {
+            "page": 12,
+            "category": "DECLARATION",
+            "confidence": 0.99,
+            "document_title": "11. Non-Blacklisting / Debarment Declaration",
+            "reason": "High-confidence document heading matched deterministic classification rule.",
+            "classification_method": "deterministic"
+        },
+        {
+            "page": 13,
+            "category": "STARTUP_NSIC",
+            "confidence": 0.99,
+            "document_title": "12. Startup India & NSIC Registration Status",
+            "reason": "High-confidence document heading matched deterministic classification rule.",
+            "classification_method": "deterministic"
+        },
+        {
+            "page": 14,
+            "category": "EMD",
+            "confidence": 0.99,
+            "document_title": "13. EMD Submission Proof",
+            "reason": "High-confidence document heading matched deterministic classification rule.",
+            "classification_method": "deterministic"
+        },
+        {
+            "page": 15,
+            "category": "DIGILOCKER",
+            "confidence": 0.99,
+            "document_title": "14. DigiLocker Document Verification Note",
+            "reason": "High-confidence document heading matched deterministic classification rule.",
+            "classification_method": "deterministic"
+        }
+    ]
+}

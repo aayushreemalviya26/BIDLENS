@@ -1,0 +1,128 @@
+{
+    "bidder_id": "B02",
+    "bidder_name": "Bharat Power Control Systems Pvt. Ltd.",
+    "source_file": "bidder.pdf",
+    "total_pages": 15,
+    "pages": [
+        {
+            "bidder_id": "B02",
+            "bidder_name": "Bharat Power Control Systems Pvt. Ltd.",
+            "page": 1,
+            "text": "BIDDER SUBMISSION PACKET\nBid Number GEM/2026/B/7910945\nBuyer Office of ADG(E) North Zone, All India Radio & Doordarshan, Prasar Bharati (Ministry of Information &\nBroadcasting)\nItem Supply of LT Switchgear Panel with Sub Distribution Board — 4 sites (Farrukhabad, Mandi,\nPithoragarh, Leh)\nEstimated Bid Value Rs. 25,48,600\nBidder Name Bharat Power Control Systems Pvt. Ltd.\nBidder Category Authorised Dealer/Distributor of OEM (not the manufacturer)\nOffered OEM SwitchTech Panels Ltd.\nContains Udyam / GST / PAN & IT / EPFO / ESIC / Bidder Turnover / OEM Turnover / Experience & Past\nPerformance / OEM Authorisation / Make in India Declaration / Non-Blacklisting Declaration / Startup India &\nNSIC status / EMD Proof / DigiLocker cross-check note\nThis packet is intended for evaluation against the thresholds stated in GeM Bid GEM/2026/B/7910945 (Prasar\nBharati). The bid's ATC clauses 7 and 8 override the generic turnover filter values shown in the bid summary\n(Rs. 12 Lakh / Rs. 102 Lakh) with '200% of estimated bid value' and '400% of estimated bid value' respectively\n— i.e. the effective thresholds are Rs. 50,97,200 (bidder) and Rs. 1,01,94,400 (OEM).",
+            "tables": [],
+            "extraction_method": "pdfplumber"
+        },
+        {
+            "bidder_id": "B02",
+            "bidder_name": "Bharat Power Control Systems Pvt. Ltd.",
+            "page": 2,
+            "text": "1. Certificate of Incorporation\nCompany Name Bharat Power Control Systems Private Limited\nCIN U31200DL2015PTC888888\nDate of Incorporation 09-February-2015\nRegistered Office B-42, Okhla Industrial Area Phase II, New Delhi - 110020\nBidder in operation 11 years prior to bid — no minimum-age clause stated for this bid, included for identity\nverification only",
+            "tables": [],
+            "extraction_method": "pdfplumber"
+        },
+        {
+            "bidder_id": "B02",
+            "bidder_name": "Bharat Power Control Systems Pvt. Ltd.",
+            "page": 3,
+            "text": "2. Udyam Registration Certificate\nMinistry of MSME, Government of India\nUdyam Registration Number UDYAM-DL-07-0055412\nEnterprise Name Bharat Power Control Systems Private Limited\nType of Enterprise Small Enterprise\nMajor Activity Trading / Service (Dealer of Electrical Panels)\nMSE Purchase Preference clause excludes traders/resellers — only manufacturers for goods are covered by\nthe policy. Bidder is Udyam-registered but not eligible for MSE purchase preference on this bid since it is a\ndealer, not the OEM.\nMSE purchase preference: Not Applicable",
+            "tables": [],
+            "extraction_method": "pdfplumber"
+        },
+        {
+            "bidder_id": "B02",
+            "bidder_name": "Bharat Power Control Systems Pvt. Ltd.",
+            "page": 4,
+            "text": "3. GST Registration Certificate (Form GST REG-06)\nGSTIN 07AACCB5566K1ZP\nLegal Name Bharat Power Control Systems Private Limited\nConstitution Private Limited Company\nRegistration Status Active\nLatest GSTR-1 / GSTR-3B Filed FY 2025-26, Period: Jul-2026\nATC Clause 14: copy of Registration Certificate/GSTIN mandatory; Clause 23: invoice must carry consignee's\nGSTIN",
+            "tables": [],
+            "extraction_method": "pdfplumber"
+        },
+        {
+            "bidder_id": "B02",
+            "bidder_name": "Bharat Power Control Systems Pvt. Ltd.",
+            "page": 5,
+            "text": "4. PAN Card & Income Tax Compliance Statement\nPAN AACCB5566K\nName on PAN Bharat Power Control Systems Pvt Ltd\nITR Filing Status (AY 2025-26) Filed — acknowledgement\nATC Clause 15: copy of PAN card mandatory",
+            "tables": [],
+            "extraction_method": "pdfplumber"
+        },
+        {
+            "bidder_id": "B02",
+            "bidder_name": "Bharat Power Control Systems Pvt. Ltd.",
+            "page": 6,
+            "text": "5. EPFO & ESIC Registration Confirmation\nEPFO Establishment Code DLDEL0055412000\nEPFO Status Active, contributions current\nESIC Registration Number 07000445120000888\nESIC Status Active\nStatutory labour-compliance requirement per GeM GTC reference to the four Labour Codes (Wages, IR, OSH,\nSocial Security)",
+            "tables": [],
+            "extraction_method": "pdfplumber"
+        },
+        {
+            "bidder_id": "B02",
+            "bidder_name": "Bharat Power Control Systems Pvt. Ltd.",
+            "page": 7,
+            "text": "6. Bidder Audited Turnover Certificate (CA Certified)\nFY 2023-24 Turnover Rs. 48,90,000\nFY 2024-25 Turnover Rs. 55,20,000\nFY 2025-26 Turnover (part year, as permitted) Rs. 58,10,000\n3-Year Average Turnover Rs. 54,06,667\nGeneric GeM Filter Value (bid summary table) Rs. 12,00,000\nEffective ATC Requirement (Clause 7) 200% of estimated bid value (Rs. 25,48,600) = Rs. 50,97,200\nminimum, avg last 3 FY",
+            "tables": [],
+            "extraction_method": "pdfplumber"
+        },
+        {
+            "bidder_id": "B02",
+            "bidder_name": "Bharat Power Control Systems Pvt. Ltd.",
+            "page": 8,
+            "text": "7. OEM Turnover Certificate (CA Certified)\nOn letterhead of SwitchTech Panels Ltd.\nFY 2023-24 Turnover Rs. 72,30,000\nFY 2024-25 Turnover Rs. 81,10,000\nFY 2025-26 Turnover (part year) Rs. 81,80,000\n3-Year Average Turnover Rs. 78,40,000\nGeneric GeM Filter Value (bid summary table) Rs. 1,02,00,000\nEffective ATC Requirement (Clause 8) 400% of estimated bid value (Rs. 25,48,600) = Rs. 1,01,94,400\nminimum, avg last 3 FY",
+            "tables": [],
+            "extraction_method": "pdfplumber"
+        },
+        {
+            "bidder_id": "B02",
+            "bidder_name": "Bharat Power Control Systems Pvt. Ltd.",
+            "page": 9,
+            "text": "8. Experience & Past Performance Certificate\nOrder 1 Supply of LT Switchgear Panels, Delhi Metro Rail Corporation (PSU), Order dated 18-Mar-2023, Value\nRs. 22,50,000, completed FY 2023-24\nATC Clause 6(a) Requirement Single order >= 80% of estimated bid value (80% of Rs. 25,48,600 = Rs.\n20,38,880) within last 10 FY\nPast Performance (Clause 7, main bid conditions) 5 similar LT switchgear panel units supplied to NTPC Ltd\n(Central PSU) in FY 2024-25 (>= 80% of bid quantity of 4 units supplied in a single FY, as required)",
+            "tables": [],
+            "extraction_method": "pdfplumber"
+        },
+        {
+            "bidder_id": "B02",
+            "bidder_name": "Bharat Power Control Systems Pvt. Ltd.",
+            "page": 10,
+            "text": "9. OEM Authorisation Certificate\nIssued on SwitchTech Panels Ltd. letterhead\nOEM Name SwitchTech Panels Ltd.\nAuthorised Dealer Bharat Power Control Systems Pvt. Ltd.\nScope Authorised to quote, supply, install and service LT Switchgear Panels with Sub Distribution Boards for\nBid GEM/2026/B/7910945\nATC Clause 12: OEM Authorisation Certificate mandatory since bidder is a dealer, not the OEM",
+            "tables": [],
+            "extraction_method": "pdfplumber"
+        },
+        {
+            "bidder_id": "B02",
+            "bidder_name": "Bharat Power Control Systems Pvt. Ltd.",
+            "page": 11,
+            "text": "10. Make in India — Local Content Declaration\nOn OEM letterhead, per ATC Clause 11\nPercentage of Local Content Declared 55%\nPlace of Value Addition Manesar, Haryana\nRequirement Minimum 50% Local Content required to qualify as Class-1 Local Supplier (per bid's MII Purchase\nPreference section)",
+            "tables": [],
+            "extraction_method": "pdfplumber"
+        },
+        {
+            "bidder_id": "B02",
+            "bidder_name": "Bharat Power Control Systems Pvt. Ltd.",
+            "page": 12,
+            "text": "11. Non-Blacklisting / Debarment Declaration\nWe, Bharat Power Control Systems Private Limited, declare that we have not been blacklisted, debarred or\nsuspended by any Central/State Government department, PSU or autonomous body as on the date of this bid.",
+            "tables": [],
+            "extraction_method": "pdfplumber"
+        },
+        {
+            "bidder_id": "B02",
+            "bidder_name": "Bharat Power Control Systems Pvt. Ltd.",
+            "page": 13,
+            "text": "12. Startup India & NSIC Registration Status\nStartup India (DPIIT) Recognition Not Applicable — bidder incorporated 2015, exceeds Startup India\neligibility window\nNSIC Registration Not Registered — not claimed for this bid\nNeither relaxation is offered on this bid (MSE/Startup Relaxation for Experience & Turnover: 'No' per bid\nsummary), so this has no bearing on eligibility either way",
+            "tables": [],
+            "extraction_method": "pdfplumber"
+        },
+        {
+            "bidder_id": "B02",
+            "bidder_name": "Bharat Power Control Systems Pvt. Ltd.",
+            "page": 14,
+            "text": "13. EMD Submission Proof\nEMD Amount Required Rs. 50,972\nMode Account Payee Demand Draft (per ATC Clause 25), favouring PRASAR BHARATI ADG E-NZ\nAKASHWANI AND DOORDARSHAN, NEW DELHI\nDD Number DD-9988771 dated 25-Aug-2026\nEMD Exemption Note (ATC Clause 16-17) Exemption is available ONLY to the OEM manufacturer of LT\nswitchgear panels; as a registered dealer/distributor, this bidder is NOT exempt and must submit EMD with\nhard copy delivered to the buyer before bid opening, as required",
+            "tables": [],
+            "extraction_method": "pdfplumber"
+        },
+        {
+            "bidder_id": "B02",
+            "bidder_name": "Bharat Power Control Systems Pvt. Ltd.",
+            "page": 15,
+            "text": "14. DigiLocker Document Verification Note\nThe GSTIN, PAN and Udyam Registration Number declared in Sections 3, 4 and 2 above are marked as\navailable for DigiLocker fetch so the verification engine can test cross-referencing self-uploaded documents\nagainst a portal-fetched copy, without querying any real DigiLocker account.\nGSTIN DigiLocker Match Simulated MATCH\nPAN DigiLocker Match Simulated MATCH\nUdyam DigiLocker Match Simulated MATCH",
+            "tables": [],
+            "extraction_method": "pdfplumber"
+        }
+    ]
+}

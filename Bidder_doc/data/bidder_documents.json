@@ -1,0 +1,235 @@
+{
+    "bidder_id": "B02",
+    "bidder_name": "Bharat Power Control Systems Pvt. Ltd.",
+    "source_file": "bidder.pdf",
+    "total_pages": 15,
+    "total_documents": 14,
+    "documents": [
+        {
+            "document_id": "DOC_001",
+            "category": "DIGILOCKER",
+            "document_title": "BIDDER SUBMISSION PACKET",
+            "page_start": 1,
+            "page_end": 1,
+            "pages": [
+                1
+            ],
+            "page_count": 1,
+            "confidence": 0.99,
+            "classification_reasons": [
+                "High-confidence document heading matched deterministic classification rule."
+            ],
+            "needs_review": false
+        },
+        {
+            "document_id": "DOC_002",
+            "category": "CIN",
+            "document_title": "1. Certificate of Incorporation",
+            "page_start": 2,
+            "page_end": 2,
+            "pages": [
+                2
+            ],
+            "page_count": 1,
+            "confidence": 0.99,
+            "classification_reasons": [
+                "High-confidence document heading matched deterministic classification rule."
+            ],
+            "needs_review": false
+        },
+        {
+            "document_id": "DOC_003",
+            "category": "UDYAM",
+            "document_title": "2. Udyam Registration Certificate",
+            "page_start": 3,
+            "page_end": 3,
+            "pages": [
+                3
+            ],
+            "page_count": 1,
+            "confidence": 0.99,
+            "classification_reasons": [
+                "High-confidence document heading matched deterministic classification rule."
+            ],
+            "needs_review": false
+        },
+        {
+            "document_id": "DOC_004",
+            "category": "GST",
+            "document_title": "3. GST Registration Certificate (Form GST REG-06)",
+            "page_start": 4,
+            "page_end": 4,
+            "pages": [
+                4
+            ],
+            "page_count": 1,
+            "confidence": 0.99,
+            "classification_reasons": [
+                "High-confidence document heading matched deterministic classification rule."
+            ],
+            "needs_review": false
+        },
+        {
+            "document_id": "DOC_005",
+            "category": "PAN",
+            "document_title": "4. PAN Card & Income Tax Compliance Statement",
+            "page_start": 5,
+            "page_end": 5,
+            "pages": [
+                5
+            ],
+            "page_count": 1,
+            "confidence": 0.99,
+            "classification_reasons": [
+                "High-confidence document heading matched deterministic classification rule."
+            ],
+            "needs_review": false
+        },
+        {
+            "document_id": "DOC_006",
+            "category": "STATUTORY",
+            "document_title": "EPFO & ESIC Registration Confirmation",
+            "page_start": 6,
+            "page_end": 6,
+            "pages": [
+                6
+            ],
+            "page_count": 1,
+            "confidence": 1.0,
+            "classification_reasons": [
+                "The page contains details of EPFO and ESIC registration, including codes and statuses, which are statutory requirements."
+            ],
+            "needs_review": false
+        },
+        {
+            "document_id": "DOC_007",
+            "category": "TURNOVER",
+            "document_title": "6. Bidder Audited Turnover Certificate (CA Certified)",
+            "page_start": 7,
+            "page_end": 8,
+            "pages": [
+                7,
+                8
+            ],
+            "page_count": 2,
+            "confidence": 0.99,
+            "classification_reasons": [
+                "High-confidence document heading matched deterministic classification rule.",
+                "High-confidence document heading matched deterministic classification rule."
+            ],
+            "needs_review": false
+        },
+        {
+            "document_id": "DOC_008",
+            "category": "EXPERIENCE",
+            "document_title": "8. Experience & Past Performance Certificate",
+            "page_start": 9,
+            "page_end": 9,
+            "pages": [
+                9
+            ],
+            "page_count": 1,
+            "confidence": 0.99,
+            "classification_reasons": [
+                "High-confidence document heading matched deterministic classification rule."
+            ],
+            "needs_review": false
+        },
+        {
+            "document_id": "DOC_009",
+            "category": "OEM_AUTHORIZATION",
+            "document_title": "9. OEM Authorisation Certificate",
+            "page_start": 10,
+            "page_end": 10,
+            "pages": [
+                10
+            ],
+            "page_count": 1,
+            "confidence": 0.99,
+            "classification_reasons": [
+                "High-confidence document heading matched deterministic classification rule."
+            ],
+            "needs_review": false
+        },
+        {
+            "document_id": "DOC_010",
+            "category": "MII_LOCAL_CONTENT",
+            "document_title": "10. Make in India — Local Content Declaration",
+            "page_start": 11,
+            "page_end": 11,
+            "pages": [
+                11
+            ],
+            "page_count": 1,
+            "confidence": 0.99,
+            "classification_reasons": [
+                "High-confidence document heading matched deterministic classification rule."
+            ],
+            "needs_review": false
+        },
+        {
+            "document_id": "DOC_011",
+            "category": "DECLARATION",
+            "document_title": "11. Non-Blacklisting / Debarment Declaration",
+            "page_start": 12,
+            "page_end": 12,
+            "pages": [
+                12
+            ],
+            "page_count": 1,
+            "confidence": 0.99,
+            "classification_reasons": [
+                "High-confidence document heading matched deterministic classification rule."
+            ],
+            "needs_review": false
+        },
+        {
+            "document_id": "DOC_012",
+            "category": "STARTUP_NSIC",
+            "document_title": "12. Startup India & NSIC Registration Status",
+            "page_start": 13,
+            "page_end": 13,
+            "pages": [
+                13
+            ],
+            "page_count": 1,
+            "confidence": 0.99,
+            "classification_reasons": [
+                "High-confidence document heading matched deterministic classification rule."
+            ],
+            "needs_review": false
+        },
+        {
+            "document_id": "DOC_013",
+            "category": "EMD",
+            "document_title": "13. EMD Submission Proof",
+            "page_start": 14,
+            "page_end": 14,
+            "pages": [
+                14
+            ],
+            "page_count": 1,
+            "confidence": 0.99,
+            "classification_reasons": [
+                "High-confidence document heading matched deterministic classification rule."
+            ],
+            "needs_review": false
+        },
+        {
+            "document_id": "DOC_014",
+            "category": "DIGILOCKER",
+            "document_title": "14. DigiLocker Document Verification Note",
+            "page_start": 15,
+            "page_end": 15,
+            "pages": [
+                15
+            ],
+            "page_count": 1,
+            "confidence": 0.99,
+            "classification_reasons": [
+                "High-confidence document heading matched deterministic classification rule."
+            ],
+            "needs_review": false
+        }
+    ]
+}

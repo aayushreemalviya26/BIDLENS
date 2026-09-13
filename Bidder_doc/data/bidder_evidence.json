@@ -1,0 +1,380 @@
+{
+    "bidder_id": "B02",
+    "bidder_name": "Bharat Power Control Systems Pvt. Ltd.",
+    "results": [
+        {
+            "requirement_id": "Q01",
+            "evidence_found": true,
+            "evidence": [
+                {
+                    "document_id": "DOC_003",
+                    "document_title": "2. Udyam Registration Certificate",
+                    "page": 3,
+                    "field": "Udyam Registration Number",
+                    "value": "UDYAM-DL-07-0055412",
+                    "unit": ""
+                },
+                {
+                    "document_id": "DOC_003",
+                    "document_title": "2. Udyam Registration Certificate",
+                    "page": 3,
+                    "field": "Enterprise Name",
+                    "value": "Bharat Power Control Systems Private Limited",
+                    "unit": ""
+                },
+                {
+                    "document_id": "DOC_003",
+                    "document_title": "2. Udyam Registration Certificate",
+                    "page": 3,
+                    "field": "Enterprise Type",
+                    "value": "Small Enterprise",
+                    "unit": ""
+                },
+                {
+                    "document_id": "DOC_003",
+                    "document_title": "2. Udyam Registration Certificate",
+                    "page": 3,
+                    "field": "Registration Status",
+                    "value": "Active",
+                    "unit": ""
+                }
+            ],
+            "ambiguities": []
+        },
+        {
+            "requirement_id": "Q02",
+            "evidence_found": true,
+            "evidence": [
+                {
+                    "document_id": "DOC_004",
+                    "document_title": "3. GST Registration Certificate (Form GST REG-06)",
+                    "page": 4,
+                    "field": "GSTIN",
+                    "value": "07AACCB5566K1ZP",
+                    "unit": ""
+                },
+                {
+                    "document_id": "DOC_004",
+                    "document_title": "3. GST Registration Certificate (Form GST REG-06)",
+                    "page": 4,
+                    "field": "Legal Name",
+                    "value": "Bharat Power Control Systems Private Limited",
+                    "unit": ""
+                },
+                {
+                    "document_id": "DOC_004",
+                    "document_title": "3. GST Registration Certificate (Form GST REG-06)",
+                    "page": 4,
+                    "field": "Registration Status",
+                    "value": "Active",
+                    "unit": ""
+                }
+            ],
+            "ambiguities": []
+        },
+        {
+            "requirement_id": "Q03",
+            "evidence_found": true,
+            "evidence": [
+                {
+                    "document_id": "DOC_005",
+                    "document_title": "4. PAN Card & Income Tax Compliance Statement",
+                    "page": 1,
+                    "field": "PAN",
+                    "value": "PAN AACCB5566K",
+                    "unit": ""
+                },
+                {
+                    "document_id": "DOC_005",
+                    "document_title": "4. PAN Card & Income Tax Compliance Statement",
+                    "page": 1,
+                    "field": "name on PAN",
+                    "value": "Bharat Power Control Systems Pvt Ltd",
+                    "unit": ""
+                },
+                {
+                    "document_id": "DOC_005",
+                    "document_title": "4. PAN Card & Income Tax Compliance Statement",
+                    "page": 1,
+                    "field": "income-tax filing status",
+                    "value": "ITR Filing Status (AY 2025-26) Filed",
+                    "unit": ""
+                },
+                {
+                    "document_id": "DOC_005",
+                    "document_title": "4. PAN Card & Income Tax Compliance Statement",
+                    "page": 1,
+                    "field": "assessment year",
+                    "value": "AY 2025-26",
+                    "unit": ""
+                },
+                {
+                    "document_id": "DOC_005",
+                    "document_title": "4. PAN Card & Income Tax Compliance Statement",
+                    "page": 1,
+                    "field": "acknowledgement details",
+                    "value": "ATC Clause 15: copy of PAN card mandatory",
+                    "unit": ""
+                }
+            ],
+            "ambiguities": []
+        },
+        {
+            "requirement_id": "Q04",
+            "evidence_found": true,
+            "evidence": [
+                {
+                    "document_id": "DOC_010",
+                    "document_title": "10. Make in India — Local Content Declaration",
+                    "page": 11,
+                    "field": "local content percentage",
+                    "value": "55%",
+                    "unit": "%"
+                },
+                {
+                    "document_id": "DOC_010",
+                    "document_title": "10. Make in India — Local Content Declaration",
+                    "page": 11,
+                    "field": "place of value addition",
+                    "value": "Manesar, Haryana",
+                    "unit": ""
+                },
+                {
+                    "document_id": "DOC_010",
+                    "document_title": "10. Make in India — Local Content Declaration",
+                    "page": 11,
+                    "field": "Make in India declaration",
+                    "value": "Minimum 50% Local Content required to qualify as Class-1 Local Supplier",
+                    "unit": ""
+                }
+            ],
+            "ambiguities": []
+        },
+        {
+            "requirement_id": "Q05",
+            "evidence_found": true,
+            "evidence": [
+                {
+                    "document_id": "DOC_006",
+                    "document_title": "EPFO & ESIC Registration Confirmation",
+                    "page": 6,
+                    "field": "EPFO Status",
+                    "value": "Active",
+                    "unit": ""
+                },
+                {
+                    "document_id": "DOC_006",
+                    "document_title": "EPFO & ESIC Registration Confirmation",
+                    "page": 6,
+                    "field": "ESIC Status",
+                    "value": "Active",
+                    "unit": ""
+                },
+                {
+                    "document_id": "DOC_006",
+                    "document_title": "EPFO & ESIC Registration Confirmation",
+                    "page": 6,
+                    "field": "EPFO Establishment Code",
+                    "value": "DLDEL0055412000",
+                    "unit": ""
+                },
+                {
+                    "document_id": "DOC_006",
+                    "document_title": "EPFO & ESIC Registration Confirmation",
+                    "page": 6,
+                    "field": "ESIC Registration Number",
+                    "value": "07000445120000888",
+                    "unit": ""
+                }
+            ],
+            "ambiguities": []
+        },
+        {
+            "requirement_id": "Q06",
+            "evidence_found": false,
+            "evidence": [],
+            "ambiguities": [
+                "No retrieved bidder document provides sufficient evidence."
+            ]
+        },
+        {
+            "requirement_id": "Q07",
+            "evidence_found": false,
+            "evidence": [],
+            "ambiguities": [
+                "No retrieved bidder document provides sufficient evidence."
+            ]
+        },
+        {
+            "requirement_id": "Q08",
+            "evidence_found": true,
+            "evidence": [
+                {
+                    "document_id": "DOC_009",
+                    "document_title": "9. OEM Authorisation Certificate",
+                    "page": 10,
+                    "field": "OEM Name",
+                    "value": "SwitchTech Panels Ltd.",
+                    "unit": ""
+                },
+                {
+                    "document_id": "DOC_009",
+                    "document_title": "9. OEM Authorisation Certificate",
+                    "page": 10,
+                    "field": "Bidder Name",
+                    "value": "Bharat Power Control Systems Pvt. Ltd.",
+                    "unit": ""
+                },
+                {
+                    "document_id": "DOC_009",
+                    "document_title": "9. OEM Authorisation Certificate",
+                    "page": 10,
+                    "field": "Authorization Relationship",
+                    "value": "Authorised Dealer",
+                    "unit": ""
+                },
+                {
+                    "document_id": "DOC_009",
+                    "document_title": "9. OEM Authorisation Certificate",
+                    "page": 10,
+                    "field": "Authorization Scope",
+                    "value": "Authorised to quote, supply, install and service LT Switchgear Panels with Sub Distribution Boards",
+                    "unit": ""
+                },
+                {
+                    "document_id": "DOC_009",
+                    "document_title": "9. OEM Authorisation Certificate",
+                    "page": 10,
+                    "field": "Product Covered",
+                    "value": "LT Switchgear Panels with Sub Distribution Boards",
+                    "unit": ""
+                },
+                {
+                    "document_id": "DOC_009",
+                    "document_title": "9. OEM Authorisation Certificate",
+                    "page": 10,
+                    "field": "Bid Number",
+                    "value": "GEM/2026/B/7910945",
+                    "unit": ""
+                },
+                {
+                    "document_id": "DOC_009",
+                    "document_title": "9. OEM Authorisation Certificate",
+                    "page": 10,
+                    "field": "Date",
+                    "value": "Issued on",
+                    "unit": ""
+                }
+            ],
+            "ambiguities": []
+        },
+        {
+            "requirement_id": "Q09",
+            "evidence_found": true,
+            "evidence": [
+                {
+                    "document_id": "DOC_014",
+                    "document_title": "14. DigiLocker Document Verification Note",
+                    "page": 1,
+                    "field": "DigiLocker document verification",
+                    "value": "DigiLocker Match Simulated MATCH",
+                    "unit": ""
+                }
+            ],
+            "ambiguities": []
+        },
+        {
+            "requirement_id": "Q10",
+            "evidence_found": true,
+            "evidence": [
+                {
+                    "document_id": "DOC_011",
+                    "document_title": "11. Non-Blacklisting / Debarment Declaration",
+                    "page": 12,
+                    "field": "Non-Blacklisting / Debarment Declaration",
+                    "value": "We, Bharat Power Control Systems Private Limited, declare that we have not been blacklisted, debarred or suspended by any Central/State Government department, PSU or autonomous body as on the date of this bid.",
+                    "unit": ""
+                }
+            ],
+            "ambiguities": []
+        },
+        {
+            "requirement_id": "Q11",
+            "evidence_found": false,
+            "evidence": [],
+            "ambiguities": [
+                "No retrieved bidder document provides sufficient evidence."
+            ]
+        },
+        {
+            "requirement_id": "Q12",
+            "evidence_found": false,
+            "evidence": [],
+            "ambiguities": [
+                "No retrieved bidder document provides sufficient evidence."
+            ]
+        },
+        {
+            "requirement_id": "Q13",
+            "evidence_found": true,
+            "evidence": [
+                {
+                    "document_id": "DOC_001",
+                    "document_title": "BIDDER SUBMISSION PACKET",
+                    "page": 1,
+                    "field": "Bidder Name",
+                    "value": "Bharat Power Control Systems Pvt. Ltd.",
+                    "unit": ""
+                },
+                {
+                    "document_id": "DOC_001",
+                    "document_title": "BIDDER SUBMISSION PACKET",
+                    "page": 1,
+                    "field": "OEM",
+                    "value": "OEM (not the manufacturer)",
+                    "unit": ""
+                },
+                {
+                    "document_id": "DOC_001",
+                    "document_title": "BIDDER SUBMISSION PACKET",
+                    "page": 1,
+                    "field": "Startup India & NSIC status",
+                    "value": "Startup India (DPIIT) Recognition Not Applicable — bidder incorporated 2015, exceeds Startup India eligibility window",
+                    "unit": ""
+                },
+                {
+                    "document_id": "DOC_001",
+                    "document_title": "BIDDER SUBMISSION PACKET",
+                    "page": 1,
+                    "field": "OEM Authorisation Certificate",
+                    "value": "OEM Authorised to quote, supply, install and service LT Switchgear Panels with Sub Distribution Boards for Bid GEM/2026/B/7910945",
+                    "unit": ""
+                },
+                {
+                    "document_id": "DOC_008",
+                    "document_title": "8. Experience & Past Performance Certificate",
+                    "page": 9,
+                    "field": "Past Performance (Clause 7, main bid conditions)",
+                    "value": "5 similar LT switchgear panel units supplied to NTPC Ltd (Central PSU) in FY 2024-25 (>= 80% of bid quantity of 4 units supplied in a single FY, as required)",
+                    "unit": ""
+                }
+            ],
+            "ambiguities": []
+        },
+        {
+            "requirement_id": "Q14",
+            "evidence_found": true,
+            "evidence": [
+                {
+                    "document_id": "DOC_006",
+                    "document_title": "EPFO & ESIC Registration Confirmation",
+                    "page": 6,
+                    "field": "EPFO & ESIC Registration Confirmation",
+                    "value": "EPFO Establishment Code DLDEL0055412000 EPFO Status Active, contributions current ESIC Registration Number 07000445120000888 ESIC Status Active",
+                    "unit": "EPFO & ESIC Registration Confirmation"
+                }
+            ],
+            "ambiguities": []
+        }
+    ]
+}
