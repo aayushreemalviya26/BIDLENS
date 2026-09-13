@@ -9,6 +9,7 @@ import DashboardScreen from '@/components/DashboardScreen';
 import TendersListScreen from '@/components/TendersListScreen';
 import TenderOverviewScreen from '@/components/TenderOverviewScreen';
 import NewTenderScanModal from '@/components/NewTenderScanModal';
+import BidReadinessScreen from '@/components/BidReadinessScreen';
 import AuditTrailScreen from '@/components/AuditTrailScreen';
 import Compliance from '@/pages/Compliance';
 
@@ -212,6 +213,10 @@ export default function App() {
               onDeleteRequirement={handleDeleteRequirement}
               onApproveChecklist={handleApproveChecklist}
             />
+          )}
+
+          {currentView === 'bid_readiness' && (
+            <BidReadinessScreen tender={activeTender} />
           )}
 
           {/* Compliance */}
