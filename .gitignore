@@ -1,0 +1,102 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.venv311/
+venv311/
+
+# Python packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# =========================
+# Environment / Secrets
+# =========================
+.env
+.env.*
+!.env.example
+
+# API keys / credentials
+*.pem
+*.key
+credentials.json
+secrets.json
+
+# =========================
+# Generated AI pipeline data
+# =========================
+ai/extracted/
+ai/data/*.json
+ai/data/*.npy
+
+# Keep sample/input files if you want them version-controlled
+!ai/data/sample_tender.pdf
+
+# =========================
+# Embeddings / ML models
+# =========================
+*.npy
+*.pt
+*.pth
+*.bin
+*.safetensors
+models/
+checkpoints/
+
+# =========================
+# OCR / temporary files
+# =========================
+*.png
+*.jpg
+*.jpeg
+*.tiff
+*.tmp
+*.temp
+
+# =========================
+# Logs
+# =========================
+*.log
+logs/
+
+# =========================
+# Jupyter
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# IDEs / Editors
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Local Ollama / AI cache
+# =========================
+.ollama/
+
+# =========================
+# Generated bidder artifacts
+# =========================
+bidder/data/*.json
+bidder/data/*.npy
+bidder/data/*.pdf
