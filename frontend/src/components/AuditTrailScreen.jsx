@@ -1,5 +1,6 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { AUDIT_ACTIONS } from '@/utils/auditLog';
+import { api } from '@/lib/api';
 
 const ACTION_LABELS = {
   [AUDIT_ACTIONS.VIEW_TENDER]: 'Viewed Tender',
@@ -12,6 +13,9 @@ const ACTION_LABELS = {
   [AUDIT_ACTIONS.ACCEPT_EVIDENCE]: 'Accepted Evidence',
   [AUDIT_ACTIONS.REJECT_EVIDENCE]: 'Rejected Evidence',
   [AUDIT_ACTIONS.REVIEW_EVIDENCE]: 'Flagged Evidence for Review',
+  CLARIFICATION_REQUESTED: 'Clarification Requested',
+  FINDING_ACCEPTED: 'Finding Accepted',
+  OVERRIDE_PERFORMED: 'Status Overridden',
 };
 
 const ACTION_COLORS = {
@@ -25,6 +29,9 @@ const ACTION_COLORS = {
   [AUDIT_ACTIONS.ACCEPT_EVIDENCE]: 'bg-[#E7F0EA] text-[#2F6B45]',
   [AUDIT_ACTIONS.REJECT_EVIDENCE]: 'bg-[#FAEAE8] text-[#A13D33]',
   [AUDIT_ACTIONS.REVIEW_EVIDENCE]: 'bg-[#FBF1DE] text-[#8A6116]',
+  CLARIFICATION_REQUESTED: 'bg-[#FBF1DE] text-[#8A6116]',
+  FINDING_ACCEPTED: 'bg-[#E7F0EA] text-[#2F6B45]',
+  OVERRIDE_PERFORMED: 'bg-[#FAEAE8] text-[#A13D33]',
 };
 
 function formatTimestamp(iso) {
@@ -35,12 +42,53 @@ function formatTimestamp(iso) {
   });
 }
 
-export default function AuditTrailScreen({ logs = [] }) {
+function formatDetails(details = {}) {
+  const pages = details.page_start
+    ? (details.page_end && details.page_end !== details.page_start
+      ? `Pages ${details.page_start}–${details.page_end}`
+      : `Page ${details.page_start}`)
+    : null;
+  return [
+    details.requirement && `Requirement: ${details.requirement}`,
+    details.bidder && `Bidder: ${details.bidder}`,
+    details.document && `Evidence: ${details.document}`,
+    details.original_file && `Source: ${details.original_file}`,
+    pages,
+    details.machine_status && `Machine: ${details.machine_status}`,
+    details.officer_status && `Officer: ${details.officer_status}`,
+    details.reason && `Reason: ${details.reason}`,
+  ].filter(Boolean).join(' · ') || JSON.stringify(details);
+}
+
+export default function AuditTrailScreen({ tenderId = null }) {
   const [actionFilter, setActionFilter] = useState('all');
   const [searchText, setSearchText] = useState('');
+  const [backendLogs, setBackendLogs] = useState([]);
+  const [error, setError] = useState('');
+
+  useEffect(() => {
+    api.listTenders()
+      .then(async (tenders) => {
+        const tender = tenders.find((item) => item.id === tenderId) || tenders[0];
+        if (!tender) return [];
+        const events = await api.audit(tender.id);
+        return events.map((entry) => ({
+          id: `backend_${entry.id}`,
+          timestamp: entry.timestamp,
+          officer: entry.actor,
+          action: entry.action,
+          description: formatDetails(entry.details),
+          tenderId: tender.external_bid_id || String(tender.id),
+        }));
+      })
+      .then(setBackendLogs)
+      .catch((err) => setError(err.message));
+  }, [tenderId]);
+
+  const displayedLogs = backendLogs;
 
   const filteredLogs = useMemo(() => {
-    return logs.filter((entry) => {
+    return displayedLogs.filter((entry) => {
       const matchesAction =
         actionFilter === 'all' || entry.action === actionFilter;
       const matchesSearch =
@@ -50,16 +98,18 @@ export default function AuditTrailScreen({ logs = [] }) {
         (entry.tenderId || '').toLowerCase().includes(searchText.toLowerCase());
       return matchesAction && matchesSearch;
     });
-  }, [logs, actionFilter, searchText]);
+  }, [displayedLogs, actionFilter, searchText]);
 
   return (
     <div className="p-8 max-w-7xl mx-auto space-y-4">
       <div className="flex items-center justify-between flex-wrap gap-3">
         <h1 className="text-xl font-bold text-[#2B2523]">Audit Trail Log</h1>
         <span className="text-xs text-[#786F66]">
-          {logs.length} activit{logs.length === 1 ? 'y' : 'ies'} recorded
+          {displayedLogs.length} activit{displayedLogs.length === 1 ? 'y' : 'ies'} recorded
         </span>
       </div>
+
+      {error && <div className="rounded-lg bg-red-50 p-3 text-sm text-red-700">Backend unavailable: {error}</div>}
 
       {/* Filters */}
       <div className="flex flex-wrap gap-3">

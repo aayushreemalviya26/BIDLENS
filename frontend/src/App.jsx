@@ -1,219 +1,30 @@
-import React, { useState } from 'react';
-
-import { INITIAL_TENDERS } from '@/data/mockData';
-import { createAuditEntry, AUDIT_ACTIONS } from '@/utils/auditLog';
-
-import Sidebar from '@/components/Sidebar';
-import TopBar from '@/components/TopBar';
-import DashboardScreen from '@/components/DashboardScreen';
-import TendersListScreen from '@/components/TendersListScreen';
-import TenderOverviewScreen from '@/components/TenderOverviewScreen';
-import NewTenderScanModal from '@/components/NewTenderScanModal';
-import BidReadinessScreen from '@/components/BidReadinessScreen';
-import AuditTrailScreen from '@/components/AuditTrailScreen';
-import Compliance from '@/pages/Compliance';
+import { useEffect, useMemo, useState } from "react";
+import Sidebar from "@/components/Sidebar";
+import TopBar from "@/components/TopBar";
+import NewTenderScanModal from "@/components/NewTenderScanModal";
+import TenderWorkspace from "@/components/TenderWorkspace";
+import BidderWorkspace from "@/components/BidderWorkspace";
+import AuditTrailScreen from "@/components/AuditTrailScreen";
+import Compliance from "@/pages/Compliance";
+import { api } from "@/lib/api";
 
 export default function App() {
-  const [tenders, setTenders] = useState(INITIAL_TENDERS);
-  const [activeTenderId, setActiveTenderId] = useState('GEM/2024/001');
-  const [currentView, setCurrentView] = useState('dashboard');
-  const [searchQuery, setSearchQuery] = useState('');
-  const [scanModalOpen, setScanModalOpen] = useState(false);
-  const [auditLog, setAuditLog] = useState([]);
-
-  const activeTender =
-    tenders.find((tender) => tender.tender_id === activeTenderId) ||
-    tenders[0];
-
-  const logActivity = (action, description, meta = {}) => {
-    setAuditLog((previousLogs) => [
-      createAuditEntry(action, description, meta),
-      ...previousLogs,
-    ]);
-  };
-
-  const handleSelectTender = (tenderId) => {
-    setActiveTenderId(tenderId);
-    setCurrentView('tender_overview');
-
-    logActivity(
-      AUDIT_ACTIONS.VIEW_TENDER,
-      `Opened tender ${tenderId}`,
-      { tenderId }
-    );
-  };
-
-  const handleBackToDashboard = () => {
-    setCurrentView('dashboard');
-  };
-
-  const handleAddRequirement = (tenderId, newRequirement) => {
-    setTenders((previousTenders) =>
-      previousTenders.map((tender) =>
-        tender.tender_id === tenderId
-          ? {
-              ...tender,
-              requirements: [...tender.requirements, newRequirement],
-              last_updated: 'Just Now',
-            }
-          : tender
-      )
-    );
-
-    logActivity(
-      AUDIT_ACTIONS.ADD_REQUIREMENT,
-      `Added requirement ${newRequirement.requirement_id}`,
-      { tenderId, requirementId: newRequirement.requirement_id }
-    );
-  };
-
-  const handleEditRequirement = (tenderId, requirementId, updatedRequirement) => {
-    setTenders((previousTenders) =>
-      previousTenders.map((tender) =>
-        tender.tender_id === tenderId
-          ? {
-              ...tender,
-              requirements: tender.requirements.map((requirement) =>
-                requirement.requirement_id === requirementId
-                  ? updatedRequirement
-                  : requirement
-              ),
-              last_updated: 'Just Now',
-            }
-          : tender
-      )
-    );
-
-    logActivity(
-      AUDIT_ACTIONS.EDIT_REQUIREMENT,
-      `Edited requirement ${requirementId}`,
-      { tenderId, requirementId }
-    );
-  };
-
-  const handleDeleteRequirement = (tenderId, requirementId) => {
-    setTenders((previousTenders) =>
-      previousTenders.map((tender) =>
-        tender.tender_id === tenderId
-          ? {
-              ...tender,
-              requirements: tender.requirements.filter(
-                (requirement) => requirement.requirement_id !== requirementId
-              ),
-              last_updated: 'Just Now',
-            }
-          : tender
-      )
-    );
-
-    logActivity(
-      AUDIT_ACTIONS.DELETE_REQUIREMENT,
-      `Deleted requirement ${requirementId}`,
-      { tenderId, requirementId }
-    );
-  };
-
-  const handleApproveChecklist = (tenderId, approvedState = true) => {
-    setTenders((previousTenders) =>
-      previousTenders.map((tender) =>
-        tender.tender_id === tenderId
-          ? {
-              ...tender,
-              checklist_approved: approvedState,
-              status: approvedState
-                ? 'Checklist Approved'
-                : 'Under Evaluation',
-              last_updated: 'Just Now',
-            }
-          : tender
-      )
-    );
-
-    logActivity(
-      approvedState
-        ? AUDIT_ACTIONS.APPROVE_CHECKLIST
-        : AUDIT_ACTIONS.REVERT_CHECKLIST,
-      approvedState
-        ? `Approved checklist for tender ${tenderId}`
-        : `Reverted checklist approval for tender ${tenderId}`,
-      { tenderId }
-    );
-  };
-
-  const handleAddNewTender = (newTender) => {
-    setTenders((previousTenders) => [newTender, ...previousTenders]);
-    setActiveTenderId(newTender.tender_id);
-    setCurrentView('tender_overview');
-
-    logActivity(
-      AUDIT_ACTIONS.CREATE_TENDER,
-      `Created tender ${newTender.tender_id}`,
-      { tenderId: newTender.tender_id }
-    );
-  };
-
-  return (
-    <div className="min-h-screen bg-[#FAF8F5] flex flex-row">
-      <Sidebar
-        currentView={currentView}
-        setCurrentView={setCurrentView}
-        activeTender={activeTender}
-        onStartNewScan={() => setScanModalOpen(true)}
-      />
-
-      <div className="flex-1 flex flex-col min-w-0">
-        <TopBar
-          onStartNewScan={() => setScanModalOpen(true)}
-          searchQuery={searchQuery}
-          setSearchQuery={setSearchQuery}
-        />
-
-        <main className="flex-1 overflow-y-auto">
-          {currentView === 'dashboard' && (
-            <DashboardScreen
-              tenders={tenders}
-              onSelectTender={handleSelectTender}
-              searchQuery={searchQuery}
-            />
-          )}
-
-          {currentView === 'tenders' && (
-            <TendersListScreen
-              tenders={tenders}
-              onSelectTender={handleSelectTender}
-              searchQuery={searchQuery}
-              setSearchQuery={setSearchQuery}
-            />
-          )}
-
-          {currentView === 'tender_overview' && (
-            <TenderOverviewScreen
-              tender={activeTender}
-              onBackToDashboard={handleBackToDashboard}
-              onAddRequirement={handleAddRequirement}
-              onEditRequirement={handleEditRequirement}
-              onDeleteRequirement={handleDeleteRequirement}
-              onApproveChecklist={handleApproveChecklist}
-            />
-          )}
-
-          {currentView === 'bid_readiness' && (
-            <BidReadinessScreen tender={activeTender} />
-          )}
-
-          {currentView === 'compliance' && <Compliance />}
-
-          {currentView === 'audit_trail' && (
-            <AuditTrailScreen logs={auditLog} />
-          )}
-        </main>
-      </div>
-
-      <NewTenderScanModal
-        open={scanModalOpen}
-        onOpenChange={setScanModalOpen}
-        onAddNewTender={handleAddNewTender}
-      />
-    </div>
-  );
+  const [tenders,setTenders]=useState([]); const [activeTenderId,setActiveTenderId]=useState(null); const [currentView,setCurrentView]=useState("dashboard"); const [searchQuery,setSearchQuery]=useState(""); const [scanModalOpen,setScanModalOpen]=useState(false); const [error,setError]=useState("");
+  const refresh=async()=>{const items=await api.listTenders();setTenders(items);setActiveTenderId(id=>items.some(x=>x.id===id)?id:(items[0]?.id||null));};
+  useEffect(()=>{refresh().catch(e=>setError(e.message));},[]);
+  const active=tenders.find(x=>x.id===activeTenderId)||null;
+  const filtered=useMemo(()=>tenders.filter(t=>`${t.external_bid_id} ${t.title} ${t.department}`.toLowerCase().includes(searchQuery.toLowerCase())),[tenders,searchQuery]);
+  const openTender=(id)=>{setActiveTenderId(id);setCurrentView("tender_overview");};
+  const reset=async()=>{if(!window.confirm("Reset the demo database and remove uploaded working copies? Generated demo_files will be preserved."))return;await api.resetDemo();setTenders([]);setActiveTenderId(null);setCurrentView("dashboard");};
+  return <div className="flex min-h-screen bg-[#FAF8F5]"><Sidebar currentView={currentView} setCurrentView={setCurrentView} onStartNewScan={()=>setScanModalOpen(true)}/><div className="flex min-w-0 flex-1 flex-col"><TopBar onStartNewScan={()=>setScanModalOpen(true)} searchQuery={searchQuery} setSearchQuery={setSearchQuery}/><main className="flex-1 overflow-y-auto">
+    {error&&<div className="m-5 rounded-lg bg-red-50 p-3 text-red-700">Backend unavailable: {error}</div>}
+    {(currentView==="dashboard"||currentView==="tenders")&&<Dashboard tenders={filtered} onOpen={openTender} onCreate={()=>setScanModalOpen(true)} onReset={reset}/>}
+    {currentView==="tender_overview"&&(active?<TenderWorkspace tender={active} onRefresh={refresh} onOpenBidders={()=>setCurrentView("bidders")}/>:<Empty onCreate={()=>setScanModalOpen(true)}/>)}
+    {currentView==="bidders"&&(active?<BidderWorkspace tender={active} onOpenCompliance={()=>setCurrentView("compliance")}/>:<Empty onCreate={()=>setScanModalOpen(true)}/>)}
+    {currentView==="compliance"&&<Compliance selectedTenderId={activeTenderId}/>}
+    {currentView==="audit_trail"&&<AuditTrailScreen tenderId={activeTenderId}/>}
+  </main></div><NewTenderScanModal open={scanModalOpen} onOpenChange={setScanModalOpen} onCreated={async(t)=>{await refresh();setActiveTenderId(t.id);setCurrentView("tender_overview");}}/></div>;
 }
+
+function Dashboard({tenders,onOpen,onCreate,onReset}) { return <div className="mx-auto max-w-7xl space-y-5 p-8"><div className="flex items-start justify-between"><div><h1 className="text-2xl font-extrabold">Procurement Dashboard</h1><p className="text-sm text-[#786F66]">Live backend records only. No sample bidders are loaded by default.</p></div><button onClick={onReset} className="rounded-lg border border-red-200 bg-white px-4 py-2 text-sm font-bold text-red-700">Reset Demo</button></div>{tenders.length===0?<Empty onCreate={onCreate}/>:<div className="grid gap-4 md:grid-cols-2">{tenders.map(t=><button key={t.id} onClick={()=>onOpen(t.id)} className="rounded-2xl border bg-white p-5 text-left shadow-sm hover:border-[#B3432E]"><p className="text-sm font-bold text-[#B3432E]">{t.external_bid_id||`Tender ${t.id}`}</p><h2 className="mt-2 text-lg font-extrabold">{t.title}</h2><p className="mt-1 text-sm text-[#786F66]">{t.department||"No department"}</p><span className="mt-4 inline-block rounded-full bg-[#F5F1EB] px-3 py-1 text-xs font-bold">{t.status}</span></button>)}</div>}</div>; }
+function Empty({onCreate}) { return <div className="m-8 rounded-2xl border-2 border-dashed bg-white p-16 text-center"><h2 className="text-xl font-extrabold">No tender selected</h2><p className="mt-2 text-[#786F66]">Create a tender and upload its real GeM PDF to begin.</p><button onClick={onCreate} className="mt-5 rounded-lg bg-[#B3432E] px-5 py-2.5 font-bold text-white">New Tender Scan</button></div>; }

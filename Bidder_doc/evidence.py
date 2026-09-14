@@ -16,6 +16,53 @@ OUTPUT = Path(
 MODEL = "qwen2.5:3b"
 
 
+IDENTIFIER_PATTERNS = {
+    "UDYAM": (r"\bUDYAM-[A-Z]{2}-\d{2}-\d{7}\b", "Udyam Registration Number"),
+    "GST": (r"\b\d{2}[A-Z]{5}\d{4}[A-Z]\dZ[A-Z0-9]\b", "GSTIN"),
+    "PAN": (r"\b[A-Z]{5}\d{4}[A-Z]\b", "PAN"),
+    "BIS": (r"\bBIS-[A-Z0-9-]+\b", "BIS Licence Number"),
+}
+
+
+def deterministic_fallback(result):
+    """Recover explicit facts from the retrieved PDF text without inventing values."""
+    required_type = result.get("required_document_type")
+    candidates = result.get("retrieved_chunks", [])
+    preferred = [item for item in candidates if item.get("category") == required_type] or candidates
+
+    if required_type in IDENTIFIER_PATTERNS:
+        pattern, field = IDENTIFIER_PATTERNS[required_type]
+        for item in preferred:
+            match = re.search(pattern, item.get("text", ""), re.IGNORECASE)
+            if match:
+                return [{"document_id": item.get("document_id"), "document_title": item.get("document_title"), "page": item.get("page"), "field": field, "value": match.group(0).upper(), "unit": "", "evidence_text": match.group(0)}]
+
+    if required_type == "TURNOVER":
+        for item in preferred:
+            text = item.get("text", "")
+            match = re.search(r"average\s+annual(?:\s+(?:bidder|oem))?\s+turnover[^\n\r]{0,80}?INR\s*([\d,]+(?:\.\d+)?)", text, re.IGNORECASE)
+            if match:
+                value = f"INR {match.group(1)}"
+                return [{"document_id": item.get("document_id"), "document_title": item.get("document_title"), "page": item.get("page"), "field": "Average Annual Turnover", "value": value, "unit": "INR", "evidence_text": match.group(0)}]
+
+    if required_type == "EXPERIENCE":
+        for item in preferred:
+            text = item.get("text", "")
+            match = re.search(r"documentary\s+evidence[^\n\r.]*similar\s+supply/work\s+experience", text, re.IGNORECASE)
+            if match:
+                return [{"document_id": item.get("document_id"), "document_title": item.get("document_title"), "page": item.get("page"), "field": "Similar Experience", "value": match.group(0), "unit": "", "evidence_text": match.group(0)}]
+
+    if required_type == "OEM_AUTHORIZATION":
+        for item in preferred:
+            text = item.get("text", "")
+            match = re.search(r"Authorized\s+Bidder\s+(.+?)(?:\s+Authorization\s+Scope|\r?\nAuthorization\s+Scope)", text, re.IGNORECASE | re.DOTALL)
+            if match:
+                value = " ".join(match.group(1).split())
+                return [{"document_id": item.get("document_id"), "document_title": item.get("document_title"), "page": item.get("page"), "field": "Authorized Bidder", "value": value, "unit": "", "evidence_text": match.group(0)}]
+
+    return []
+
+
 CATEGORY_INSTRUCTIONS = {
 
     "Udyam / MSME": """
@@ -374,6 +421,7 @@ def main():
 
             response = chat(
                 model=MODEL,
+                format="json",
                 messages=[
                     {
                         "role":
@@ -414,7 +462,14 @@ def main():
                     "Invalid evidence JSON."
                 )
 
+            if not extracted.get("evidence_found"):
+                fallback = deterministic_fallback(result)
+                if fallback:
+                    extracted = {"requirement_id": result["requirement_id"], "evidence_found": True, "evidence": fallback, "ambiguities": []}
+
         except Exception as e:
+
+            fallback = deterministic_fallback(result)
 
             extracted = {
                 "requirement_id":
@@ -423,13 +478,13 @@ def main():
                     ],
 
                 "evidence_found":
-                    False,
+                    bool(fallback),
 
-                "evidence": [],
+                "evidence": fallback,
 
                 "ambiguities": [
                     f"Evidence extraction failed: {e}"
-                ]
+                ] if not fallback else []
             }
 
         final_results.append(

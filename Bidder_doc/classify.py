@@ -28,6 +28,7 @@ CATEGORIES = [
     "EPBG",
     "OEM_AUTHORIZATION",
     "MII_LOCAL_CONTENT",
+    "BIS",
     "STARTUP_NSIC",
     "DIGILOCKER",
     "TECHNICAL",
@@ -120,6 +121,49 @@ HEADING_RULES = [
         [
             r"\bturnover\s+certificate\b",
             r"\baudited\s+turnover\b"
+        ]
+    ),
+
+    (
+        "NET_WORTH",
+        [
+            r"\bfinancial standing certificate\b",
+            r"\bpositive net worth\b",
+            r"\bnet worth certificate\b"
+        ]
+    ),
+
+    (
+        "BIS",
+        [
+            r"\bbis\s+licen[cs]e\b",
+            r"\bbis\s+(?:registration|certificate|certification)\b",
+            r"\bbureau\s+of\s+indian\s+standards\b"
+        ]
+    ),
+
+    (
+        "TECHNICAL",
+        [
+            r"\btechnical compliance certificate\b",
+            r"\btechnical specification sheet\b",
+            r"\bbill of quantities\b"
+        ]
+    ),
+
+    (
+        "STATUTORY",
+        [
+            r"\biso 9001\b",
+            r"\bquality management system certificate\b"
+        ]
+    ),
+
+    (
+        "SUPPORTING_DOCUMENT",
+        [
+            r"\bservice centre details\b",
+            r"\bservice center details\b"
         ]
     ),
 
@@ -246,6 +290,11 @@ def deterministic_category(text):
         "PAN",
         "CIN",
         "TURNOVER",
+        "NET_WORTH",
+        "BIS",
+        "TECHNICAL",
+        "STATUTORY",
+        "SUPPORTING_DOCUMENT",
         "EXPERIENCE",
         "EMD",
         "DECLARATION"
@@ -294,6 +343,9 @@ Examples:
 5. OEM turnover certificate
    => TURNOVER
    because the document is a turnover certificate.
+
+6. BIS licence and technical compliance certificate
+   => BIS
 
 Do not use previous or next pages to decide the document type.
 Previous/next context may only be used to understand whether the current

@@ -11,13 +11,8 @@ import {
 export default function Sidebar({
   currentView,
   setCurrentView,
-  activeTender,
   onStartNewScan,
 }) {
-  const pendingReviewCount = activeTender
-    ? activeTender.requirements.length
-    : 0;
-
   const navItems = [
     {
       id: 'dashboard',
@@ -35,8 +30,13 @@ export default function Sidebar({
       id: 'bidder_evaluation',
       label: 'Bidder Evaluation',
       icon: CheckSquare,
-      badge: pendingReviewCount,
-      view: 'bid_readiness',
+      view: 'bidders',
+    },
+    {
+      id: 'compliance',
+      label: 'Compliance Matrix',
+      icon: CheckSquare,
+      view: 'compliance',
     },
     {
       id: 'audit_trail',

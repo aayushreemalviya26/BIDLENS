@@ -1,0 +1,10 @@
+fastapi==0.116.1
+uvicorn[standard]==0.35.0
+sqlalchemy==2.0.43
+pydantic==2.13.5
+python-multipart==0.0.20
+psycopg[binary]==3.2.10
+httpx==0.28.1
+pytest==8.4.2
+pypdf==6.10.0
+-r ../requirements.txt

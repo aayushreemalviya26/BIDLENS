@@ -1,10 +1,14 @@
 import { useState } from "react";
+import { api } from "@/lib/api";
+import PdfViewer from "@/components/PdfViewer";
 
 
 const STATUS_META = {
     COMPLIANT: { label: "Compliant", pill: "bg-emerald-50", text: "text-emerald-700" },
     NON_COMPLIANT: { label: "Non-Compliant", pill: "bg-red-50", text: "text-red-700" },
     NEEDS_REVIEW: { label: "Review Required", pill: "bg-amber-50", text: "text-amber-700" },
+    NOT_APPLICABLE: { label: "Not Applicable", pill: "bg-gray-100", text: "text-gray-600" },
+    NOT_EVALUATED: { label: "Not Evaluated", pill: "bg-sky-50", text: "text-sky-700" },
 };
 
 // Maps a button action to the status the evidence should move to
@@ -16,8 +20,8 @@ const DECISION_STATUS = {
 
 const DECISION_LABEL = {
     ACCEPT_EVIDENCE: "Accepted",
-    REJECT_EVIDENCE: "Rejected",
-    REVIEW_EVIDENCE: "Marked for review",
+    REJECT_EVIDENCE: "Overridden",
+    REVIEW_EVIDENCE: "Clarification requested",
 };
 
 function InfoBlock({ label, corner, children }) {
@@ -34,38 +38,8 @@ function InfoBlock({ label, corner, children }) {
 
 function DocumentViewer({ doc }) {
     if (!doc) return null;
-    return (
-        <div className="overflow-hidden rounded-xl border border-gray-200">
-            {/* TOOLBAR */}
-            <div className="flex items-center gap-3 border-b border-gray-100 bg-gray-50 px-3 py-2 text-xs text-gray-500">
-                <span>☰</span>
-                <span>
-                    {doc.page} / {doc.totalPages}
-                </span>
-                <span className="mx-1 text-gray-300">|</span>
-                <span>←</span>
-                <span>100%</span>
-                <span>→</span>
-                <span className="ml-auto flex items-center gap-3">
-                    <span>⤢</span>
-                    <span>⟳</span>
-                    <span>⋮</span>
-                </span>
-            </div>
-
-            {/* PAGE */}
-            <div className="bg-gray-900 p-8">
-                <div className="mx-auto max-w-sm rounded-md bg-white p-6 text-sm leading-6 text-gray-800 shadow-lg">
-                    <p className="mb-3 font-bold">{doc.heading}</p>
-                    <p>
-                        {doc.body}
-                        <span className="bg-amber-300 px-0.5 font-semibold">{doc.highlight}</span>
-                        {doc.bodyEnd}
-                    </p>
-                </div>
-            </div>
-        </div>
-    );
+    const url = doc.url ? api.absoluteUrl(doc.url) : null;
+    return <PdfViewer url={url} initialPage={doc.page || 1} title={doc.heading} />;
 }
 
 /**
@@ -77,9 +51,11 @@ function DocumentViewer({ doc }) {
 function OfficerDecisionPanel({ detail, currentStatus, onDecide }) {
     const [remarks, setRemarks] = useState("");
     const [lastAction, setLastAction] = useState(null);
+    const [overrideStatus, setOverrideStatus] = useState("NON_COMPLIANT");
+    const excluded = currentStatus === "NOT_APPLICABLE";
 
-    const handleClick = (action) => {
-        onDecide(action, remarks.trim());
+    const handleClick = async (action) => {
+        await onDecide(action, remarks.trim(), overrideStatus);
         setLastAction(action);
     };
 
@@ -90,7 +66,7 @@ function OfficerDecisionPanel({ detail, currentStatus, onDecide }) {
             <textarea
                 value={remarks}
                 onChange={(e) => setRemarks(e.target.value)}
-                placeholder="Add a remark (optional) — included in the audit trail"
+                placeholder="Add a reason or clarification message — included in the audit trail"
                 rows={2}
                 className="mb-3 w-full rounded-lg border border-gray-200 bg-white p-2 text-sm text-gray-700 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-300"
             />
@@ -99,7 +75,7 @@ function OfficerDecisionPanel({ detail, currentStatus, onDecide }) {
                 <button
                     type="button"
                     onClick={() => handleClick("ACCEPT_EVIDENCE")}
-                    disabled={currentStatus === "COMPLIANT"}
+                    disabled={excluded}
                     className="rounded-lg bg-emerald-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-emerald-700 disabled:cursor-not-allowed disabled:opacity-50"
                 >
                     Accept
@@ -107,18 +83,19 @@ function OfficerDecisionPanel({ detail, currentStatus, onDecide }) {
                 <button
                     type="button"
                     onClick={() => handleClick("REJECT_EVIDENCE")}
-                    disabled={currentStatus === "NON_COMPLIANT"}
+                    disabled={excluded || !remarks.trim()}
                     className="rounded-lg bg-red-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-red-700 disabled:cursor-not-allowed disabled:opacity-50"
                 >
-                    Reject
+                    Override Status
                 </button>
+                <select aria-label="Override status" value={overrideStatus} onChange={(e)=>setOverrideStatus(e.target.value)} className="rounded-lg border bg-white px-2 text-sm">{["COMPLIANT","NON_COMPLIANT","NEEDS_REVIEW"].map(status=><option key={status}>{status}</option>)}</select>
                 <button
                     type="button"
                     onClick={() => handleClick("REVIEW_EVIDENCE")}
-                    disabled={currentStatus === "NEEDS_REVIEW"}
+                    disabled={excluded || currentStatus === "NEEDS_REVIEW"}
                     className="rounded-lg bg-amber-500 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-amber-600 disabled:cursor-not-allowed disabled:opacity-50"
                 >
-                    Mark for Review
+                    Request Clarification
                 </button>
             </div>
 
@@ -136,14 +113,13 @@ function EvidenceDetail({ detail, onBack, onDecision = () => {} }) {
     const [currentStatus, setCurrentStatus] = useState(detail.status);
     const meta = STATUS_META[currentStatus] ?? STATUS_META.NEEDS_REVIEW;
 
-    const handleDecide = (action, remarks) => {
-        const nextStatus = DECISION_STATUS[action];
-        setCurrentStatus(nextStatus);
+    const handleDecide = async (action, remarks, overrideStatus) => {
+        const nextStatus = action === "REJECT_EVIDENCE" ? overrideStatus : action === "ACCEPT_EVIDENCE" ? detail.machineStatus : DECISION_STATUS[action];
 
         const remarkSuffix = remarks ? ` — remark: "${remarks}"` : "";
         const description = `${DECISION_LABEL[action]} evidence for "${detail.requirementName}" (${detail.bidderName}) on tender ${detail.tenderId}${remarkSuffix}`;
 
-        onDecision(action, {
+        await onDecision(action, {
             description,
             tenderId: detail.tenderId,
             requirementName: detail.requirementName,
@@ -155,6 +131,7 @@ function EvidenceDetail({ detail, onBack, onDecision = () => {} }) {
             nextStatus,
             remarks,
         });
+        setCurrentStatus(nextStatus);
     };
 
     return (
@@ -199,18 +176,40 @@ function EvidenceDetail({ detail, onBack, onDecision = () => {} }) {
                         corner={`Clause ${detail.clauseRef}, Page ${detail.clausePage}`}
                     >
                         <p className="text-sm text-gray-700">{detail.requirementText}</p>
+                        {detail.tenderClause.url&&<a href={api.absoluteUrl(`${detail.tenderClause.url}#page=${detail.tenderClause.page}`)} target="_blank" rel="noreferrer" className="mt-2 inline-block text-xs font-bold text-[#B3432E]">Open Tender Source</a>}
                     </InfoBlock>
 
                     <InfoBlock
-                        label="Bidder's Extracted Value"
-                        corner={`${detail.extractedSourceLabel}, Page ${detail.extractedSourcePage}`}
+                        label={detail.documentTitle || "Submitted Evidence"}
+                        corner={detail.pageLabel}
                     >
+                        <p className="mb-1 text-xs text-gray-500">Original File: {detail.extractedSourceLabel}</p>
                         <p className="text-lg font-bold text-gray-900">{detail.extractedValue}</p>
+                        {detail.bidderDocument.url&&<a href={api.absoluteUrl(`${detail.bidderDocument.url}#page=${detail.bidderDocument.page}`)} target="_blank" rel="noreferrer" className="mt-2 inline-block text-xs font-bold text-[#B3432E]">Open Original Document</a>}
                     </InfoBlock>
 
                     <InfoBlock label="Applied Rule">
                         <p className="text-sm font-semibold text-gray-800">{detail.appliedRule}</p>
                     </InfoBlock>
+
+                    <InfoBlock label="Verdict State">
+                        <p className="text-sm text-gray-700">Machine: <span className="font-semibold">{detail.machineStatus}</span></p>
+                        <p className="mt-1 text-sm text-gray-700">Effective: <span className="font-semibold">{currentStatus}</span></p>
+                        <p className="mt-1 text-xs text-gray-500">Bidder Identity Masking: {detail.identityMasking === "APPLIED" ? "Applied" : "Not Applied"}</p>
+                    </InfoBlock>
+
+                    {detail.officerDecision&&<InfoBlock label="Latest Officer Verification"><p className="text-sm text-gray-700">{detail.officerDecision.action} by {detail.officerDecision.verified_by}</p><p className="mt-1 text-xs text-gray-500">{detail.officerDecision.reason || "No comment"} · {new Date(detail.officerDecision.verified_at).toLocaleString()}</p></InfoBlock>}
+
+                    {detail.registry && (
+                        <InfoBlock label={`Registry Verification · ${detail.registry.source}`}>
+                            <dl className="space-y-2 text-sm text-gray-700">
+                                <div><dt className="font-semibold">Submitted identifier/value</dt><dd>{detail.registry.submittedValue || "—"}</dd></div>
+                                <div><dt className="font-semibold">Registry value/status</dt><dd className="break-words">{JSON.stringify(detail.registry.registryValue)} · {detail.registry.status}</dd></div>
+                                <div><dt className="font-semibold">Match</dt><dd>{detail.registry.matched ? "MATCH" : "MISMATCH"}</dd></div>
+                                <div><dt className="font-semibold">Discrepancies</dt><dd>{detail.registry.discrepancies.length ? detail.registry.discrepancies.join("; ") : "None"}</dd></div>
+                            </dl>
+                        </InfoBlock>
+                    )}
 
                     <InfoBlock label="System Finding">
                         <p className="text-sm text-gray-700">{detail.systemFinding}</p>
@@ -254,50 +253,6 @@ function EvidenceDetail({ detail, onBack, onDecision = () => {} }) {
                 </div>
             </div>
         </div>
-    );
-}
-
-// --- Demo/fake data matching the reference screenshot ---
-export const demoEvidenceDetail = {
-    tenderId: "GEM/2024/001",
-    requirementName: "GST Registration",
-    status: "NON_COMPLIANT",
-    bidderName: "Bharat Supplies Ltd",
-    category: "GST",
-    documentId: "DOC_001",
-    clauseRef: "8.2",
-    clausePage: 14,
-    requirementText: "Bidders must submit a valid GST registration certificate.",
-    extractedValue: "Not found",
-    extractedSourceLabel: "bidder.pdf",
-    extractedSourcePage: 1,
-    appliedRule: 'Required category "GST" not found → Not Satisfied',
-    systemFinding: "No document was classified as GST registration for this bidder.",
-    tenderClause: {
-        page: 14,
-        totalPages: 32,
-        heading: "8.2  Statutory Registrations",
-        body: "Bidders must submit a valid ",
-        highlight: "GST registration certificate",
-        bodyEnd: " as part of the eligibility documents.",
-    },
-    bidderDocument: {
-        page: 1,
-        totalPages: 12,
-        heading: "bidder.pdf",
-        body: "No document was classified into this category for this bidder.",
-        highlight: "",
-        bodyEnd: "",
-    },
-};
-
-export default function EvidenceDetailDemo() {
-    return (
-        <EvidenceDetail
-            detail={demoEvidenceDetail}
-            onBack={() => alert("Back to matrix")}
-            onDecision={(action, meta) => console.log("Officer decision:", action, meta)}
-        />
     );
 }
 

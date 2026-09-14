@@ -1,51 +1,33 @@
-# =========================
 # Python
-# =========================
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
-
-# Virtual environments
 .venv/
 venv/
 env/
 ENV/
 .venv311/
 venv311/
-
-# Python packaging
 build/
 dist/
 *.egg-info/
 .eggs/
 
-# =========================
-# Environment / Secrets
-# =========================
+# Environment and secrets
 .env
 .env.*
 !.env.example
-
-# API keys / credentials
 *.pem
 *.key
 credentials.json
 secrets.json
 
-# =========================
-# Generated AI pipeline data
-# =========================
+# Generated AI pipeline data and model caches
 ai/extracted/
 ai/data/*.json
 ai/data/*.npy
-
-# Keep sample/input files if you want them version-controlled
 !ai/data/sample_tender.pdf
-
-# =========================
-# Embeddings / ML models
-# =========================
 *.npy
 *.pt
 *.pth
@@ -53,50 +35,41 @@ ai/data/*.npy
 *.safetensors
 models/
 checkpoints/
+.ollama/
 
-# =========================
-# OCR / temporary files
-# =========================
+# OCR, rendered verification, and temporary output
 *.png
 *.jpg
 *.jpeg
 *.tiff
 *.tmp
 *.temp
+output/
+tmp/
 
-# =========================
-# Logs
-# =========================
+# Logs and notebooks
 *.log
 logs/
-
-# =========================
-# Jupyter
-# =========================
 .ipynb_checkpoints/
 
-# =========================
-# IDEs / Editors
-# =========================
+# Editors and operating systems
 .vscode/
 .idea/
 *.swp
 *.swo
-
-# =========================
-# OS files
-# =========================
 .DS_Store
 Thumbs.db
 
-# =========================
-# Local Ollama / AI cache
-# =========================
-.ollama/
-
-# =========================
-# Generated bidder artifacts
-# =========================
+# Existing bidder pipeline generated data
 bidder/data/*.json
 bidder/data/*.npy
 bidder/data/*.pdf
+
+# BidLens local runtime state
+backend/.venv/
+backend/*.db
+*.db
+backend/uploads/*
+!backend/uploads/.gitkeep
+frontend/node_modules/
+frontend/dist/

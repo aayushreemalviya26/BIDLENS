@@ -316,8 +316,7 @@ from PIL import Image
 INPUT = Path("data/bidder.pdf")
 OUTPUT = Path("data/bidder_pages.json")
 
-BIDDER_ID = "B02"
-BIDDER_NAME = "Bharat Power Control Systems Pvt. Ltd."
+METADATA = Path("data/bidder_metadata.json")
 
 OCR_DPI = 200
 
@@ -326,6 +325,12 @@ def clean_cell(value):
     if value is None:
         return ""
     return str(value).strip()
+
+
+def bidder_metadata():
+    if not METADATA.exists():
+        return {"bidder_id": "UNSPECIFIED", "bidder_name": "Unspecified bidder"}
+    return json.loads(METADATA.read_text(encoding="utf-8"))
 
 
 def table_to_text(table):
@@ -439,8 +444,8 @@ def main():
                 extraction_method = "ocr"
 
             pages.append({
-                "bidder_id": BIDDER_ID,
-                "bidder_name": BIDDER_NAME,
+                "bidder_id": bidder_metadata()["bidder_id"],
+                "bidder_name": bidder_metadata()["bidder_name"],
                 "page": page_number,
                 "text": combined_text,
                 "tables": tables,
@@ -448,8 +453,8 @@ def main():
             })
 
     output = {
-        "bidder_id": BIDDER_ID,
-        "bidder_name": BIDDER_NAME,
+        "bidder_id": bidder_metadata()["bidder_id"],
+        "bidder_name": bidder_metadata()["bidder_name"],
         "source_file": INPUT.name,
         "total_pages": len(pages),
         "pages": pages

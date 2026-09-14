@@ -217,6 +217,7 @@ CATEGORY_MAP = {
 
     "BIS / DPIIT": {
         "expected": {
+            "BIS",
             "TECHNICAL",
             "STARTUP_NSIC"
         },
@@ -257,6 +258,7 @@ CATEGORY_MAP = {
             "TURNOVER",
             "OEM_AUTHORIZATION",
             "MII_LOCAL_CONTENT",
+            "BIS",
             "STARTUP_NSIC",
             "DIGILOCKER",
             "EMD",
@@ -865,6 +867,8 @@ def normalize_requirement(
     original_requirement = (
         item.get("requirement")
         or item.get("query")
+        or item.get("description")
+        or item.get("name")
         or ""
     )
 
@@ -923,6 +927,9 @@ def normalize_requirement(
         "unit":
             item.get("unit"),
 
+        "required_document_type":
+            item.get("required_document_type"),
+
         "clause":
             item.get("clause")
     }
@@ -951,6 +958,10 @@ def score_candidate(
             "category",
             "OTHER"
         )
+    )
+
+    required_document_type = requirement.get(
+        "required_document_type"
     )
 
     text = metadata.get(
@@ -994,7 +1005,15 @@ def score_candidate(
     # Category signal
     # --------------------------------------------------------
 
-    if chunk_category in config[
+    if required_document_type and chunk_category == required_document_type:
+
+        category_score = 1.0
+
+    elif required_document_type:
+
+        category_score = -0.5
+
+    elif chunk_category in config[
         "expected"
     ]:
 
@@ -1532,6 +1551,11 @@ def main():
             "unit":
                 requirement[
                     "unit"
+                ],
+
+            "required_document_type":
+                requirement[
+                    "required_document_type"
                 ],
 
             "clause":
