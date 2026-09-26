@@ -1,4 +1,5 @@
 import json
+import os
 import numpy as np
 from sentence_transformers import SentenceTransformer
 
@@ -28,7 +29,7 @@ print(f"Loaded {len(chunks)} chunks")
 
 print("Loading embedding model...")
 
-model = SentenceTransformer("all-MiniLM-L6-v2")
+model = SentenceTransformer(os.getenv("EMBEDDING_MODEL", "all-MiniLM-L6-v2"))
 
 print("Embedding model loaded")
 

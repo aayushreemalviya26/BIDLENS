@@ -34,8 +34,6 @@ class BidderAIAdapter:
                 **os.environ,
                 "OLLAMA_HOST": os.getenv("OLLAMA_BASE_URL", os.getenv("OLLAMA_HOST", "http://localhost:11434")),
                 "PYTHONIOENCODING": "utf-8",
-                "HF_HUB_OFFLINE": "1",
-                "TRANSFORMERS_OFFLINE": "1",
             }
             for stage in self.STAGES:
                 subprocess.run([sys.executable, stage], cwd=work, env=env, check=True)

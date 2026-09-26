@@ -1,4 +1,5 @@
 import json
+import os
 from pathlib import Path
 
 import numpy as np
@@ -21,7 +22,7 @@ METADATA_FILE = Path(
     "data/bidder_chunk_metadata.json"
 )
 
-MODEL_NAME = "all-MiniLM-L6-v2"
+MODEL_NAME = os.getenv("EMBEDDING_MODEL", "all-MiniLM-L6-v2")
 
 
 # ============================================================

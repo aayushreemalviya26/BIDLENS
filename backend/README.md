@@ -12,9 +12,9 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
 
-Copy `.env.example` values into your environment as needed. SQLite is the development default. Set `DATABASE_URL` to a PostgreSQL URL for Render or Railway. Uploaded PDFs use `StorageService` and local disk by default; production should replace it with durable object storage.
+Copy `.env.example` values into your environment as needed. SQLite is the development default. Set `DATABASE_URL` to a PostgreSQL URL for Render or Railway. Uploaded PDFs use `StorageService`; the supplied Render Blueprint mounts a persistent disk for uploads and the Hugging Face model cache.
 
-The AI stages currently require the Python packages in the repository root, the `all-MiniLM-L6-v2` model, and an Ollama service running `qwen2.5:3b`. Production therefore needs either a reachable hosted Ollama instance (`OLLAMA_BASE_URL`) or a provider replacement behind the adapters. The web/API and deterministic evaluation layers can run without Ollama, but extraction and bidder processing cannot.
+The AI stages require the Python packages in the repository root, the `all-MiniLM-L6-v2` embedding model, and an Ollama-compatible chat model. Local development defaults to `qwen2.5:3b` at `http://localhost:11434`. Production can set `OLLAMA_BASE_URL=https://ollama.com`, provide `OLLAMA_API_KEY` as a secret, and select a hosted model with `OLLAMA_MODEL`. The supplied `render.yaml` uses `qwen3-coder:480b-cloud` because `qwen2.5:3b` is not an Ollama Cloud model.
 
 Frontend configuration:
 
@@ -22,4 +22,4 @@ Frontend configuration:
 VITE_API_URL=http://localhost:8000
 ```
 
-Deploy `frontend/` to Vercel and `backend/` to Render/Railway. Set `CORS_ORIGINS` to the deployed frontend origin.
+Deploy `frontend/` to Vercel and the repository-root `render.yaml` Blueprint to Render. In Vercel, set `VITE_API_URL` to the public Render backend URL. In Render, enter `OLLAMA_API_KEY` when the Blueprint prompts for it. Keep secrets in the hosting dashboards; never commit them.

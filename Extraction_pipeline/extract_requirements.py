@@ -1,4 +1,5 @@
 import json
+import os
 import ollama
 
 
@@ -9,7 +10,7 @@ import ollama
 INPUT_PATH = "extracted/retrieved_chunks.json"
 OUTPUT_PATH = "extracted/extracted_requirements.json"
 
-MODEL_NAME = "qwen2.5:3b"
+MODEL_NAME = os.getenv("OLLAMA_MODEL", "qwen2.5:3b")
 
 
 # ============================================================

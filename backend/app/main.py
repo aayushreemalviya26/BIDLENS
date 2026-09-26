@@ -21,7 +21,15 @@ origins = [
     for item in os.getenv("CORS_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173").split(",")
     if item.strip()
 ]
-app.add_middleware(CORSMiddleware, allow_origins=origins, allow_credentials=True, allow_methods=["*"], allow_headers=["*"])
+origin_regex = os.getenv("CORS_ORIGIN_REGEX") or None
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_origin_regex=origin_regex,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 app.include_router(tenders.router, prefix="/api")
 app.include_router(bidders.router, prefix="/api")
 app.include_router(evaluation.router, prefix="/api")

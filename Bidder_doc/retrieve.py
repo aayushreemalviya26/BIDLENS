@@ -1,4 +1,5 @@
 import json
+import os
 import re
 from pathlib import Path
 
@@ -34,7 +35,7 @@ OUTPUT_FILE = Path(
     "data/bidder_retrieval.json"
 )
 
-MODEL_NAME = "all-MiniLM-L6-v2"
+MODEL_NAME = os.getenv("EMBEDDING_MODEL", "all-MiniLM-L6-v2")
 
 
 # ============================================================

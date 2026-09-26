@@ -1,4 +1,5 @@
 import json
+import os
 import re
 from pathlib import Path
 
@@ -13,7 +14,7 @@ OUTPUT = Path(
     "data/bidder_evidence.json"
 )
 
-MODEL = "qwen2.5:3b"
+MODEL = os.getenv("OLLAMA_MODEL", "qwen2.5:3b")
 
 
 IDENTIFIER_PATTERNS = {

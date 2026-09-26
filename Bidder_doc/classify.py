@@ -1,5 +1,5 @@
-
 import json
+import os
 import re
 from pathlib import Path
 
@@ -9,7 +9,7 @@ from ollama import chat
 INPUT = Path("data/bidder_pages.json")
 OUTPUT = Path("data/bidder_classified.json")
 
-MODEL = "qwen2.5:3b"
+MODEL = os.getenv("OLLAMA_MODEL", "qwen2.5:3b")
 
 
 CATEGORIES = [
