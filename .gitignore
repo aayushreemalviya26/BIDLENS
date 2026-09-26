@@ -45,6 +45,7 @@ checkpoints/
 *.temp
 output/
 tmp/
+.tools/
 
 # Logs and notebooks
 *.log

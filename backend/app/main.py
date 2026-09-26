@@ -4,6 +4,7 @@ from pathlib import Path
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
 from app.api import audit, bidders, demo, evaluation, tenders
 from app.database.init_db import init_db
@@ -39,3 +40,8 @@ app.include_router(demo.router, prefix="/api")
 @app.get("/health")
 def health():
     return {"status": "ok"}
+
+
+frontend_dir = Path(os.getenv("FRONTEND_DIST_DIR", Path(__file__).resolve().parents[2] / "frontend" / "dist"))
+if frontend_dir.is_dir():
+    app.mount("/", StaticFiles(directory=frontend_dir, html=True), name="frontend")
