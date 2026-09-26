@@ -33,7 +33,6 @@ ai/data/*.npy
 *.pth
 *.bin
 *.safetensors
-models/
 checkpoints/
 .ollama/
 
