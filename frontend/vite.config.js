@@ -5,6 +5,12 @@ import { fileURLToPath, URL } from 'node:url'
 
 // https://vite.dev/config/
 export default defineConfig({
+  server: {
+    host: '127.0.0.1',
+    port: 5173,
+    strictPort: true,
+    proxy: { '/api': { target: process.env.BIDLENS_DEV_API || 'http://127.0.0.1:8001', changeOrigin: true } },
+  },
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {

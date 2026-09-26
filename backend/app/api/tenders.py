@@ -12,6 +12,7 @@ from app.services.audit_service import AuditService
 from app.services.storage_service import StorageService
 from app.services.tender_ai_adapter import TenderAIAdapter
 from .common import get_tender, requirement_payload
+from .auth import require_processing
 
 
 router = APIRouter(tags=["tenders"])
@@ -70,14 +71,15 @@ def tender_document_file(tender_id: int, db: Session = Depends(get_db)):
 
 
 @router.post("/tenders/{tender_id}/extract")
-def extract_tender(tender_id: int, db: Session = Depends(get_db)):
+def extract_tender(tender_id: int, db: Session = Depends(get_db), ai=Depends(require_processing)):
     tender = get_tender(db, tender_id)
     if not tender.document_path:
         raise HTTPException(409, "Upload a tender PDF before extraction")
-    audit.record(db, tender.id, "TENDER_EXTRACTION_STARTED", "Tender", tender.id)
+    audit.record(db, tender.id, "TENDER_EXTRACTION_STARTED", "Tender", tender.id, ai)
     db.commit()
     try:
         adapter = TenderAIAdapter()
+        adapter.mode = ai["mode"]
         output = adapter.run(tender.document_path)
     except Exception as error:
         message = str(error)
@@ -96,7 +98,7 @@ def extract_tender(tender_id: int, db: Session = Depends(get_db)):
         db.add(row)
         audit.record(db, tender.id, "REQUIREMENT_EXTRACTED", "Requirement", item["requirement_id"], {"applicable": item.get("applicable", True)})
     tender.status = "REVIEW_REQUIRED"
-    audit.record(db, tender.id, "TENDER_EXTRACTION_COMPLETED", "Tender", tender.id, adapter.normalizer.stats)
+    audit.record(db, tender.id, "TENDER_EXTRACTION_COMPLETED", "Tender", tender.id, {**adapter.normalizer.stats, **ai})
     db.commit()
     return {"count": len(output), "requirements": output}
 

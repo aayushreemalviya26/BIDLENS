@@ -1,6 +1,14 @@
 import json
 import os
-import ollama
+try:
+    import bidlens_llm as ollama
+except ModuleNotFoundError:
+    # Compatibility for the already-running legacy public process/standalone CLI.
+    # New adapters always copy bidlens_llm into their isolated working directory.
+    import ollama
+    class LegacyProviderError(RuntimeError):
+        pass
+    ollama.ProviderError = LegacyProviderError
 
 
 # ============================================================
@@ -648,6 +656,8 @@ def main():
                     f"{req['requirement']}"
                 )
 
+        except ollama.ProviderError:
+            raise
         except Exception as e:
 
             print("ERROR:", e)

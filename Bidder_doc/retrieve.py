@@ -4,7 +4,10 @@ import re
 from pathlib import Path
 
 import numpy as np
-from sentence_transformers import SentenceTransformer
+try:
+    from bidlens_embeddings import SentenceTransformer
+except ImportError:
+    from sentence_transformers import SentenceTransformer
 
 
 # ============================================================

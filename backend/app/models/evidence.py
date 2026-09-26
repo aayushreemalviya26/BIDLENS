@@ -18,3 +18,4 @@ class Evidence(Base):
     evidence_text: Mapped[str | None] = mapped_column(Text, nullable=True)
     evidence_found: Mapped[bool] = mapped_column(Boolean, default=False)
     ambiguities_json: Mapped[list] = mapped_column(JSON, default=list)
+    provenance: Mapped[dict | None] = mapped_column(JSON, nullable=True)

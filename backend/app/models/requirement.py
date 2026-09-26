@@ -25,3 +25,4 @@ class Requirement(Base):
     applicable: Mapped[bool] = mapped_column(Boolean, default=True)
     approved: Mapped[bool] = mapped_column(Boolean, default=False)
     rule_metadata: Mapped[dict] = mapped_column(JSON, default=dict)
+    provenance: Mapped[dict | None] = mapped_column(JSON, nullable=True)

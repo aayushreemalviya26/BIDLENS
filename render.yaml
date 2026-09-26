@@ -3,8 +3,8 @@ services:
     runtime: python
     name: bidlens-api
     region: singapore
-    plan: 1c-2g
-    buildCommand: pip install -r backend/requirements.txt
+    plan: free
+    buildCommand: pip install -r backend/requirements-cloud.txt
     startCommand: uvicorn app.main:app --app-dir backend --host 0.0.0.0 --port $PORT
     healthCheckPath: /health
     envVars:
@@ -13,30 +13,32 @@ services:
           name: bidlens-postgres
           property: connectionString
       - key: UPLOAD_DIR
-        value: /opt/render/project/src/.data/uploads
+        value: /tmp/bidlens-uploads
       - key: CORS_ORIGINS
-        value: https://bidlens-frontend.vercel.app
-      - key: CORS_ORIGIN_REGEX
-        value: https://.*\.vercel\.app
-      - key: OLLAMA_BASE_URL
-        value: https://ollama.com
-      - key: OLLAMA_API_KEY
         sync: false
-      - key: OLLAMA_MODEL
-        value: qwen3-coder:480b-cloud
-      - key: EMBEDDING_MODEL
-        value: all-MiniLM-L6-v2
-      - key: HF_HOME
-        value: /opt/render/project/src/.data/huggingface
-    disk:
-      name: bidlens-runtime-data
-      mountPath: /opt/render/project/src/.data
-      sizeGB: 1
+      - key: APP_ENV
+        value: production
+      - key: COOKIE_SECURE
+        value: "true"
+      - key: PROTOTYPE_ADMIN_USERNAME
+        value: admin
+      - key: PROTOTYPE_ADMIN_PASSWORD
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GROQ_MODEL
+        value: openai/gpt-oss-120b
+      - key: BIDLENS_RETRIEVAL
+        value: lexical
+      - key: SEED_JUDGE_DEMO
+        value: "true"
+      - key: PYTHON_VERSION
+        value: 3.11.11
 
 databases:
   - name: bidlens-postgres
     region: singapore
-    plan: 0.1c-256mb
+    plan: free
     databaseName: bidlens
     user: bidlens
     postgresMajorVersion: "18"

@@ -12,6 +12,7 @@ from app.services.audit_service import AuditService
 from app.services.bidder_ai_adapter import BidderAIAdapter
 from app.services.storage_service import StorageService
 from .common import get_bidder, get_tender, requirement_payload
+from .auth import require_processing
 
 
 router = APIRouter(tags=["bidders"])
@@ -113,17 +114,18 @@ def upload_bidder(bidder_db_id: int, files: list[UploadFile] = File(...), db: Se
 
 
 @router.post("/bidders/{bidder_db_id}/process")
-def process_bidder(bidder_db_id: int, db: Session = Depends(get_db)):
+def process_bidder(bidder_db_id: int, db: Session = Depends(get_db), ai=Depends(require_processing)):
     bidder = get_bidder(db, bidder_db_id)
     if not bidder.source_file:
         raise HTTPException(409, "Upload a bidder PDF before processing")
     requirements = db.query(Requirement).filter_by(tender_id=bidder.tender_id, approved=True).order_by(Requirement.id).all()
     if not requirements:
         raise HTTPException(409, "Approve tender requirements before processing bidders")
-    audit.record(db, bidder.tender_id, "BIDDER_PROCESSING_STARTED", "Bidder", bidder.id)
+    audit.record(db, bidder.tender_id, "BIDDER_PROCESSING_STARTED", "Bidder", bidder.id, ai)
     db.commit()
     try:
         adapter = BidderAIAdapter()
+        adapter.mode = ai["mode"]
         adapter.bidder_id, adapter.bidder_name = bidder.bidder_id, bidder.bidder_name
         output = adapter.run(bidder.source_file, [requirement_payload(item) for item in requirements])
     except Exception as error:
@@ -148,6 +150,6 @@ def process_bidder(bidder_db_id: int, db: Session = Depends(get_db)):
     for item in output["evidence"]:
         db.add(Evidence(bidder_id=bidder.id, requirement_id=item["requirement_id"], document_id=item.get("document_id"), page=item.get("page"), field=item.get("field"), value=item.get("value"), unit=item.get("unit"), evidence_text=item.get("evidence_text"), evidence_found=item.get("evidence_found", False), ambiguities_json=item.get("ambiguities") or []))
         audit.record(db, bidder.tender_id, "EVIDENCE_EXTRACTED", "Evidence", item["requirement_id"], {"evidence_found": item.get("evidence_found", False)})
-    audit.record(db, bidder.tender_id, "BIDDER_PROCESSING_COMPLETED", "Bidder", bidder.id, {"documents": len(output["documents"]), "evidence": len(output["evidence"])})
+    audit.record(db, bidder.tender_id, "BIDDER_PROCESSING_COMPLETED", "Bidder", bidder.id, {"documents": len(output["documents"]), "evidence": len(output["evidence"]), **ai})
     db.commit()
     return {"documents": len(output["documents"]), "evidence": len(output["evidence"]), "bidder": _bidder_payload(db, bidder)}

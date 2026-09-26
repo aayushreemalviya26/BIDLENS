@@ -3,7 +3,12 @@ import os
 import re
 from pathlib import Path
 
-from ollama import chat
+try:
+    from bidlens_llm import chat, ProviderError
+except ModuleNotFoundError:
+    from ollama import chat
+    class ProviderError(RuntimeError):
+        pass
 
 
 INPUT = Path("data/bidder_pages.json")
@@ -583,6 +588,8 @@ def main():
                         "classification_method"
                     ] = "llm"
 
+                except ProviderError:
+                    raise
                 except Exception as e:
 
                     print(

@@ -122,7 +122,7 @@ class RequirementNormalizer:
                 if udyam_added:
                     continue
                 item.update(name="Valid Udyam registration", description="The bidder must submit a valid Udyam registration certificate.", operator="EXACT_IDENTIFIER_MATCH", required_document_type="UDYAM")
-                item["source"]["text"] = item["description"]
+                # Preserve the extracted source; never substitute a normalized rule.
                 udyam_added = True
             if item["category"] == "Make in India / Local Content" and has_structured_local and item["operator"] == "MANUAL_REVIEW":
                 continue

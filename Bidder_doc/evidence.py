@@ -3,7 +3,12 @@ import os
 import re
 from pathlib import Path
 
-from ollama import chat
+try:
+    from bidlens_llm import chat, ProviderError
+except ModuleNotFoundError:
+    from ollama import chat
+    class ProviderError(RuntimeError):
+        pass
 
 
 INPUT = Path(
@@ -30,6 +35,15 @@ def deterministic_fallback(result):
     required_type = result.get("required_document_type")
     candidates = result.get("retrieved_chunks", [])
     preferred = [item for item in candidates if item.get("category") == required_type] or candidates
+
+    if required_type == "MII_LOCAL_CONTENT":
+        facts = []
+        for item in preferred:
+            text = item.get("text", "")
+            match = re.search(r"(?:Percentage\s+of\s+Local\s+Content|Local\s+Content\s*(?:Percentage)?)\s*:?\s*(\d+(?:\.\d+)?)\s*%", text, re.IGNORECASE)
+            if match:
+                facts.append({"document_id": item.get("document_id"), "page": item.get("page"), "field": "Local Content Percentage", "value": match.group(1), "unit": "PERCENT", "evidence_text": match.group(0)})
+        return facts
 
     if required_type in IDENTIFIER_PATTERNS:
         pattern, field = IDENTIFIER_PATTERNS[required_type]
@@ -62,6 +76,28 @@ def deterministic_fallback(result):
                 return [{"document_id": item.get("document_id"), "document_title": item.get("document_title"), "page": item.get("page"), "field": "Authorized Bidder", "value": value, "unit": "", "evidence_text": match.group(0)}]
 
     return []
+
+
+def ground_evidence(extracted, result):
+    """Validate source identity/page against retrieved text before persistence."""
+    def compact(text):
+        return re.sub(r"\s+", " ", str(text or "")).strip().casefold()
+
+    candidates = result.get("retrieved_chunks", [])
+    grounded, ambiguities = [], list(extracted.get("ambiguities") or [])
+    for evidence in extracted.get("evidence") or []:
+        text, value = compact(evidence.get("evidence_text")), compact(evidence.get("value"))
+        matches = [candidate for candidate in candidates if (text and text in compact(candidate.get("text"))) or (value and value in compact(candidate.get("text")))]
+        same_document = [candidate for candidate in matches if candidate.get("document_id") == evidence.get("document_id")]
+        matches = same_document or matches
+        identities = {(candidate.get("document_id"), candidate.get("page")) for candidate in matches}
+        if len(identities) != 1:
+            ambiguities.append("An extracted fact could not be localized unambiguously in the retrieved PDF text.")
+            continue
+        source = matches[0]
+        grounded.append({**evidence, "document_id": source["document_id"], "page": source["page"], "evidence_text": evidence.get("evidence_text") if text and text in compact(source["text"]) else str(evidence.get("value", ""))})
+    extracted.update(evidence=grounded, evidence_found=bool(grounded), ambiguities=list(dict.fromkeys(ambiguities)))
+    return extracted
 
 
 CATEGORY_INSTRUCTIONS = {
@@ -468,6 +504,8 @@ def main():
                 if fallback:
                     extracted = {"requirement_id": result["requirement_id"], "evidence_found": True, "evidence": fallback, "ambiguities": []}
 
+        except ProviderError:
+            raise
         except Exception as e:
 
             fallback = deterministic_fallback(result)
@@ -488,9 +526,7 @@ def main():
                 ] if not fallback else []
             }
 
-        final_results.append(
-            extracted
-        )
+        final_results.append(ground_evidence(extracted, result))
 
     output = {
         "bidder_id":

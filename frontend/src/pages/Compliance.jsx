@@ -47,8 +47,8 @@ function toDetail(payload) {
     } : null,
     identityMasking: payload.bidder.identity_masking,
     officerDecision: payload.officer_decision,
-    tenderClause: { page: req.source?.page || 1, heading: req.name, url: payload.tender_document_url },
-    bidderDocument: { page: first.page_start || first.source_page || first.page || 1, heading: first.source_filename || first.document_id || "Bidder evidence", url: first.source_url },
+    tenderClause: { page: req.source?.page, heading: req.name, url: req.source?.page ? payload.tender_document_url : null, sourceLocator: `/api/requirements/${req.id}/source`, evidenceText: req.source?.text },
+    bidderDocument: { page: first.source_page || first.page_start || first.page || 1, heading: first.source_filename || first.document_id || "Bidder evidence", url: first.source_url, sourceLocator: first.source_locator_url, evidenceText: first.evidence_text },
   };
 }
 
@@ -108,7 +108,7 @@ export default function Compliance({ selectedTenderId: initialTenderId = null })
       else await api.override(detail.complianceId, meta.nextStatus, meta.remarks);
       setDetail(toDetail(await api.complianceEvidence(detail.complianceId)));
       await refreshMatrix();
-    } catch (err) { setError(err.message); }
+    } catch (err) { setError(err.message); throw err; }
   };
 
   if (detail) return <EvidenceDetail key={`${detail.complianceId}-${detail.status}-${detail.officerDecision?.verified_at || "machine"}`} detail={detail} onBack={() => setDetail(null)} onDecision={handleDecision} />;

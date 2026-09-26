@@ -1,0 +1,2512 @@
+{
+  "version": 1,
+  "label": "Preprocessed Demo",
+  "origin": "Bharat: saved local Ollama live acceptance. Orange/SecureByte: curated literal PDF fields, not AI-generated. All findings are recomputed by the unchanged compliance engine at seed time.",
+  "documents": {
+    "demo_files/tender/GEM_2026_B_7910945.pdf": "e38d01dd6a6df18a7f02bfb8e288fc3848fd3a403bf32dfc59e84d3d2a54229a",
+    "demo_files/bidders/bharat_compute/BIS_Technical_Compliance.pdf": "8df1106fdeaddf755860e7d995be5fa4f06071ed067c512e1d5ee63c706ad4d2",
+    "demo_files/bidders/bharat_compute/Bidder_Turnover_Certificate.pdf": "95b68195d42999a9c9244fff9f86c8da34c19a18b56c8b123b16d7d4eb3f7951",
+    "demo_files/bidders/bharat_compute/Blacklisting_Declaration.pdf": "389826d571b24a5ccdbfdea80c7b2cc5f10ee98d2c0028dffbc3f5a775a6bc92",
+    "demo_files/bidders/bharat_compute/BoQ_Compliance.pdf": "5c7cc9cf7d22ebaa1bc29309d20df18077242934f46625e07a9b37c52d1eb341",
+    "demo_files/bidders/bharat_compute/Company_Profile.pdf": "bec7478f278e828bf48e3afb88395de03aa2a21358c53baa4c635d57fdab2897",
+    "demo_files/bidders/bharat_compute/Experience_Credentials.pdf": "40337f061fc49ed6ed47ba449084bde041736cf4c95745819ab28f418f470558",
+    "demo_files/bidders/bharat_compute/Financial_Standing.pdf": "c2de47525167f093eb8218d1209cc6ed43cbc7d122ad6793a51e267d207b15bb",
+    "demo_files/bidders/bharat_compute/GST_Registration.pdf": "eb841a86728d80ed4e4b42697297c8facdec5c61eb0e509fa16e8a6ac5cc0697",
+    "demo_files/bidders/bharat_compute/ISO_9001_Certificate.pdf": "a5cbec7267680195e3704ac61626c43021ab14f9e177282e5bf8d8e1e13bf4ff",
+    "demo_files/bidders/bharat_compute/Local_Content_Declaration.pdf": "c299e99c6b11067bc1c281df6dcbd0545c2633804f1a09903d64a931afd1f6b8",
+    "demo_files/bidders/bharat_compute/Malicious_Code_Declaration.pdf": "7d83ad746cc17c628e20f86585785a339963ddbe5486d05858f1b45761f9cfc8",
+    "demo_files/bidders/bharat_compute/OEM_Authorization.pdf": "e9aacf38d2d1e3da16770627e2bc8bc700bca28f829aa688747ea0b8340f8061",
+    "demo_files/bidders/bharat_compute/OEM_Turnover_Certificate.pdf": "deda079e3d3c2d347f04e64dfb16007481a21bc307c6f0845f1c77784c31ab76",
+    "demo_files/bidders/bharat_compute/PAN_Card.pdf": "e50454d9e852e290bfd3ff2560edee990df345f235737362daed297cc2271586",
+    "demo_files/bidders/bharat_compute/Past_Performance.pdf": "033143411a76942eac8d55443fbf0f4de1122070b6c2281c061477ee820b6edb",
+    "demo_files/bidders/bharat_compute/Service_Centre_Details.pdf": "d3b7ad659e516e0aaacae0901fd58b69b6c9d52e43c5a69502cdb720a1f4dfd9",
+    "demo_files/bidders/bharat_compute/Udyam_Certificate.pdf": "197307ab6953b2cf29e31bd9a660b07b23bdfe712abdd15dc5e78fa465a057d3",
+    "demo_files/bidders/orange_tech/Bidder_Turnover_Certificate.pdf": "4ddaa8341285215855452db42d69125e73c777b23d610a4b4fe01fbeef76633b",
+    "demo_files/bidders/orange_tech/BIS_Technical_Compliance.pdf": "53a2f29d534e845be16df2b4287d0b194843825a184ab1c73e6ba12c31fe07e5",
+    "demo_files/bidders/orange_tech/Blacklisting_Declaration.pdf": "80ea7adb3c47274462c1d3a95593603176ced788468d442e33372bc1ab6fb5a5",
+    "demo_files/bidders/orange_tech/BoQ_Compliance.pdf": "d9008726b45613f03d1860aca6591fc6408c8c963386ff4a9f600b0056373265",
+    "demo_files/bidders/orange_tech/Company_Profile.pdf": "a49875e1bc6fc166a1605cd87167c6a1820d3c45b3508d83587143f9233e4902",
+    "demo_files/bidders/orange_tech/Experience_Credentials.pdf": "390a364fed71b6297c5f93813d52ba19be30cc6bc49a74b9e3218d66f8c7047f",
+    "demo_files/bidders/orange_tech/Financial_Standing.pdf": "730e28413f3ae0355bafcfd6ef30d64acd32ecc3c1b495b1b10b59e7a6f70cec",
+    "demo_files/bidders/orange_tech/GST_Registration.pdf": "36bcb7e6469d9087fc255e842a4252748c23413261f119f127ec61ea60c8b571",
+    "demo_files/bidders/orange_tech/ISO_9001_Certificate.pdf": "4fc9a9bfc00bda998539914a0ee258d301dd73370e0350a679c07f91f9199192",
+    "demo_files/bidders/orange_tech/Local_Content_Declaration.pdf": "bcde4b5b2e76b450c0b5f0421d86c431b3e6fbf39e3fe32fe0e5151c612adbe8",
+    "demo_files/bidders/orange_tech/Malicious_Code_Declaration.pdf": "50e702338ecfa74fc9a8354cf2a6ea8db764e30409a2a9472ab26ed122f48c6a",
+    "demo_files/bidders/orange_tech/OEM_Authorization.pdf": "63e01ca74920ff6820656955e38e0ec45dc67ecf9fa7a7fb3022591f734d24d8",
+    "demo_files/bidders/orange_tech/OEM_Turnover_Certificate.pdf": "b1082d5910f5bc4ab39878086dcea47382874ea8404ff7d718228786b17503ec",
+    "demo_files/bidders/orange_tech/PAN_Card.pdf": "546dd6ecda50d08abf2d61e727bab8fa64397c4e3ea699147a35dff9f0a6bfed",
+    "demo_files/bidders/orange_tech/Past_Performance.pdf": "48c4f199193fbf0350278fe7fce46aefedfa8053845d78aa1d33c0c088d47006",
+    "demo_files/bidders/orange_tech/Service_Centre_Details.pdf": "2d6e4e517c5777007f8bed82632aaf68820bab3fd2bf8aa97c51d374db22c26a",
+    "demo_files/bidders/orange_tech/Udyam_Certificate.pdf": "0e4ecf3fd4dc759b134096eef680242df488bac9d3ac207e9e323516f8ec3158",
+    "demo_files/bidders/securebyte/Bidder_Turnover_Certificate.pdf": "324fd3aedb4fb87fcdfff7d9a888676c9fec7fe3232a0ac874eb3d21f0b50aea",
+    "demo_files/bidders/securebyte/BIS_Technical_Compliance.pdf": "bf2db06409a547e30792f0c3a6d31a926ed57f78a5e9d45bca3a7a6bc0474317",
+    "demo_files/bidders/securebyte/Blacklisting_Declaration.pdf": "719c97932018716d238f47c0b9325b960fe1a011254f16ba0caf59ce2fd139ed",
+    "demo_files/bidders/securebyte/BoQ_Compliance.pdf": "1c325e2d1e2565d5306cc0cc4238d3b78755837af149952868f2757f3e24fff9",
+    "demo_files/bidders/securebyte/Company_Profile.pdf": "9b4c5afe41aa75989a9947492858398eb54386fe3bd30011e3a3073b067fab8d",
+    "demo_files/bidders/securebyte/Experience_Credentials.pdf": "ed038ac7f700d843fd60f76ea93423e8449605894d60491f809f981bdf682e98",
+    "demo_files/bidders/securebyte/Financial_Standing.pdf": "0b8ad22d5f0489eeb609464631b4880b41790782ac9fc80ff6415466a07fdcfc",
+    "demo_files/bidders/securebyte/GST_Registration.pdf": "152d81b1c8825eb815c49b0e9cba6d6b3645cc8a88c9713e03003387d64dfb2b",
+    "demo_files/bidders/securebyte/ISO_9001_Certificate.pdf": "936191745a3a530848bba68d3af4a696bd5a6d2ad7bd3155e45a6d16581dd03f",
+    "demo_files/bidders/securebyte/Local_Content_Declaration.pdf": "919338b6222ba651dd4c68b5632bad809f3110b10308acdad7f9f4e5d211f72a",
+    "demo_files/bidders/securebyte/Malicious_Code_Declaration.pdf": "ac22e6e67170a6dd2ab9d54adbb8837c3247a1d5236ea32da401b91edab15642",
+    "demo_files/bidders/securebyte/OEM_Authorization.pdf": "cca8b627c10c660e4f5d3efe89ca95183cabf5e7fd5b3eb6c12e831e338bcc79",
+    "demo_files/bidders/securebyte/OEM_Turnover_Certificate.pdf": "79f9dae87afe5716e5e0fdd03e04ae3cfd3cf4e9b0ea472e7339cf3f25193cee",
+    "demo_files/bidders/securebyte/PAN_Card.pdf": "11312f205b240f02108d47c5d2a7c7245ed9b70c24435e49f63ef12b9c67e585",
+    "demo_files/bidders/securebyte/Past_Performance.pdf": "454b91105866a4e97216346782548626b01c1ee3da3294eff3df303f2f97e792",
+    "demo_files/bidders/securebyte/Udyam_Certificate.pdf": "5049cd372bd9823b8300d3ccfcb741585a76dd276a6571e062cde171f998c10a"
+  },
+  "tables": {
+    "tenders": [
+      {
+        "id": 1,
+        "external_bid_id": "GEM/2026/B/7910945",
+        "title": "Preprocessed Demo — GeM desktop procurement",
+        "department": "SIH judge demonstration / simulated registries",
+        "status": "EVALUATED",
+        "document_path": "demo_files/tender/GEM_2026_B_7910945.pdf",
+        "created_at": "2026-09-26 12:24:14.141626"
+      }
+    ],
+    "requirements": [
+      {
+        "id": 1,
+        "tender_id": 1,
+        "requirement_id": "REQ001",
+        "name": "Valid Udyam registration",
+        "category": "Udyam / MSME",
+        "description": "The bidder must submit a valid Udyam registration certificate.",
+        "operator": "EXACT_IDENTIFIER_MATCH",
+        "required_value": null,
+        "unit": null,
+        "mandatory": 1,
+        "required_document_type": "UDYAM",
+        "source_page": 5,
+        "source_clause": null,
+        "source_text": "Section: evaluation of documents submitted.\n5. Purchase preference to Micro and Small Enterprises (MSEs): Purchase preference will be given to MSEs\nhaving valid Udyam Certificate and whose credentials are validated online through Udyam Registration portal as\ndefined in Public Procurement Policy for Micro and Small Enterprises (MSEs) Order, 2012 dated 23.03.2012 issued\nby Ministry of Micro, Small and Medium Enterprises and its subsequent Orders/Notifications issued by concerned\nMinistry. If the bidder wants to avail themselves of the Purchase preference, the bidder must be the\nmanufacturer / OEM of the offered product on GeM. In respect of bid for Services, the bidder must be the Service\nprovider of the offered Service. Traders are excluded from the purview of Public Procurement Policy for Micro and\nSmall Enterprises and hence resellers offering products manufactured by some other OEM are not eligible for any\npurchase preference. Relevant documentary evidence in this regard shall be uploaded along with the bid in\nrespect of the offered product or service, and Buyer will decide eligibility for purchase preference based on\ndocumentary evidence submitted in case of product bids, whereas in case of services the eligibility is\nautomatically validated. If L-1 is not an MSE and MSE Seller (s) has / have quoted price within L-1+ 15% (Selected\nby Buyer) of margin of purchase preference /price band defined in relevant policy, such MSE Seller shall be given\nopportunity to match L-1 price and contract will be awarded for 25% (selected by Buyer) percentage of total\nquantity. The buyers are advised to refer the OM_No.1_4_2021_PPD_dated_18.05.2023 for compliance of\nConcurrent application of Public Procurement Policy for Micro and Small Enterprises Order, 2012 and Public\nProcurement (Preference to Make in India) Order, 2017. Benefits of MSE will be allowed only if seller is validated\non-line in GeM profile as well as validated and approved by Buyer after evaluation of documents submitted.\n6. Estimated Bid Value indicated above is being declared solely for the purpose of guidance on EMD amount and\nfor determining the Eligibility Criteria related to Turn Over, Past Performance and Project / Past Experience etc.\nThis has no relevance or bearing on the price to be quoted by the bidders and is also not going to have any\nimpact on bid participation. Also this is not going to be used as a criteria in determining reasonableness of\nquoted prices which would be determined by the buyer based on its own assessment of reasonableness and\nbased on competitive prices received in Bid / RA process.",
+        "applicable": 1,
+        "approved": 1,
+        "rule_metadata": {
+          "source_kind": "retrieved_chunk",
+          "source_chunk_id": "CH_0015"
+        },
+        "provenance": null
+      },
+      {
+        "id": 2,
+        "tender_id": 1,
+        "requirement_id": "REQ002",
+        "name": "GST Registration",
+        "category": "GST",
+        "description": "GSTIN Number of the bidder",
+        "operator": "EXACT_IDENTIFIER_MATCH",
+        "required_value": null,
+        "unit": null,
+        "mandatory": 1,
+        "required_document_type": "GST",
+        "source_page": 11,
+        "source_clause": null,
+        "source_text": "14. Bidder has to submit a copy of Registration Certificate/GSTIN Number.",
+        "applicable": 1,
+        "approved": 1,
+        "rule_metadata": {
+          "source_kind": "retrieved_chunk",
+          "source_chunk_id": "CH_0062"
+        },
+        "provenance": {
+          "page_number": 11,
+          "evidence_text": "14. Bidder has to submit a copy of Registration Certificate/GSTIN Number.",
+          "bounding_boxes": [
+            {
+              "x0": 0.17142857142857143,
+              "y0": 0.49938776374146376,
+              "x1": 0.6002056217995011,
+              "y1": 0.5087196186998961
+            }
+          ],
+          "method": "exact_text",
+          "message": "Exact evidence highlighted",
+          "sha256": "e38d01dd6a6df18a7f02bfb8e288fc3848fd3a403bf32dfc59e84d3d2a54229a"
+        }
+      },
+      {
+        "id": 3,
+        "tender_id": 1,
+        "requirement_id": "REQ003",
+        "name": "PAN / Income Tax",
+        "category": "PAN / Income Tax",
+        "description": "PAN card",
+        "operator": "EXACT_IDENTIFIER_MATCH",
+        "required_value": null,
+        "unit": null,
+        "mandatory": 1,
+        "required_document_type": "PAN",
+        "source_page": 11,
+        "source_clause": null,
+        "source_text": "15. Bidder has to submit a copy of PAN card.",
+        "applicable": 1,
+        "approved": 1,
+        "rule_metadata": {
+          "source_kind": "retrieved_chunk",
+          "source_chunk_id": "CH_0063"
+        },
+        "provenance": null
+      },
+      {
+        "id": 4,
+        "tender_id": 1,
+        "requirement_id": "REQ004",
+        "name": "Make in India / Local Content",
+        "category": "Make in India / Local Content",
+        "description": "Minimum 50% and 20% Local Content required for qualifying as Class 1 and Class 2 Local Supplier respectively",
+        "operator": "LOCAL_CONTENT_CLASSIFICATION",
+        "required_value": null,
+        "unit": "PERCENT",
+        "mandatory": 1,
+        "required_document_type": "MII_LOCAL_CONTENT",
+        "source_page": 5,
+        "source_clause": null,
+        "source_text": "Minimum 50% and 20% Local Content required for qualifying as Class 1 and Class 2 Local Supplier respectively",
+        "applicable": 1,
+        "approved": 1,
+        "rule_metadata": {
+          "class_1_threshold": 50.0,
+          "class_2_threshold": 20.0
+        },
+        "provenance": null
+      },
+      {
+        "id": 5,
+        "tender_id": 1,
+        "requirement_id": "REQ005",
+        "name": "Make in India / Local Content",
+        "category": "Make in India / Local Content",
+        "description": "Bidder has to submit Make in India declaration of the product on OEM letterhead.",
+        "operator": "EXISTS",
+        "required_value": null,
+        "unit": null,
+        "mandatory": 1,
+        "required_document_type": "MII_LOCAL_CONTENT",
+        "source_page": 11,
+        "source_clause": null,
+        "source_text": "11. Bidder has to submit Make in India declaration of the product on OEM letterhead.",
+        "applicable": 1,
+        "approved": 1,
+        "rule_metadata": {
+          "source_kind": "retrieved_chunk",
+          "source_chunk_id": "CH_0059"
+        },
+        "provenance": null
+      },
+      {
+        "id": 6,
+        "tender_id": 1,
+        "requirement_id": "REQ006",
+        "name": "EPFO ESIC",
+        "category": "EPFO / ESIC",
+        "description": "EPFO / ESIC",
+        "operator": "MANUAL_REVIEW",
+        "required_value": null,
+        "unit": null,
+        "mandatory": 0,
+        "required_document_type": null,
+        "source_page": null,
+        "source_clause": null,
+        "source_text": null,
+        "applicable": 0,
+        "approved": 0,
+        "rule_metadata": {},
+        "provenance": null
+      },
+      {
+        "id": 7,
+        "tender_id": 1,
+        "requirement_id": "REQ007",
+        "name": "Startup India Registration",
+        "category": "Startup India",
+        "description": "Startup India",
+        "operator": "MANUAL_REVIEW",
+        "required_value": null,
+        "unit": null,
+        "mandatory": 0,
+        "required_document_type": "STARTUP_NSIC",
+        "source_page": null,
+        "source_clause": null,
+        "source_text": null,
+        "applicable": 0,
+        "approved": 0,
+        "rule_metadata": {},
+        "provenance": null
+      },
+      {
+        "id": 8,
+        "tender_id": 1,
+        "requirement_id": "REQ008",
+        "name": "NSIC",
+        "category": "NSIC",
+        "description": "NSIC",
+        "operator": "MANUAL_REVIEW",
+        "required_value": null,
+        "unit": null,
+        "mandatory": 0,
+        "required_document_type": null,
+        "source_page": null,
+        "source_clause": null,
+        "source_text": null,
+        "applicable": 0,
+        "approved": 0,
+        "rule_metadata": {},
+        "provenance": null
+      },
+      {
+        "id": 9,
+        "tender_id": 1,
+        "requirement_id": "REQ009",
+        "name": "OEM Authorization",
+        "category": "OEM Authorization",
+        "description": "OEM Authorization Certificate",
+        "operator": "BIDDER_NAME_MATCH",
+        "required_value": null,
+        "unit": null,
+        "mandatory": 1,
+        "required_document_type": "OEM_AUTHORIZATION",
+        "source_page": 11,
+        "source_clause": null,
+        "source_text": "12. Bidder has to submit a copy of OEM Authorization Certificate of the quoted product.",
+        "applicable": 1,
+        "approved": 1,
+        "rule_metadata": {
+          "source_kind": "retrieved_chunk",
+          "source_chunk_id": "CH_0060"
+        },
+        "provenance": null
+      },
+      {
+        "id": 10,
+        "tender_id": 1,
+        "requirement_id": "REQ010",
+        "name": "DigiLocker Document Verification",
+        "category": "DigiLocker / Document Verification",
+        "description": "DigiLocker / Document Verification",
+        "operator": "MANUAL_REVIEW",
+        "required_value": null,
+        "unit": null,
+        "mandatory": 0,
+        "required_document_type": null,
+        "source_page": null,
+        "source_clause": null,
+        "source_text": null,
+        "applicable": 0,
+        "approved": 0,
+        "rule_metadata": {},
+        "provenance": null
+      },
+      {
+        "id": 11,
+        "tender_id": 1,
+        "requirement_id": "REQ011",
+        "name": "Blacklisting / Debarment",
+        "category": "Blacklisting / Debarment",
+        "description": "Blacklisting / Debarment",
+        "operator": "MANUAL_REVIEW",
+        "required_value": null,
+        "unit": null,
+        "mandatory": 0,
+        "required_document_type": "DECLARATION",
+        "source_page": null,
+        "source_clause": null,
+        "source_text": null,
+        "applicable": 0,
+        "approved": 0,
+        "rule_metadata": {},
+        "provenance": null
+      },
+      {
+        "id": 12,
+        "tender_id": 1,
+        "requirement_id": "REQ012",
+        "name": "BIS Certification",
+        "category": "BIS / DPIIT",
+        "description": "BIS licence",
+        "operator": "EXACT_IDENTIFIER_MATCH",
+        "required_value": null,
+        "unit": null,
+        "mandatory": 1,
+        "required_document_type": "BIS",
+        "source_page": 9,
+        "source_clause": null,
+        "source_text": "Section: consignee location. OEM Warranty certificates must be submitted by Successful Bidder at the time of\n13. Certificates\nThe bidder is required to upload, along with the bid, all relevant certificates such as BIS licence, type test\ncertificate, approval certificates and other certificates as prescribed in the Product Specification given in\nthe bid document.",
+        "applicable": 1,
+        "approved": 1,
+        "rule_metadata": {
+          "source_kind": "retrieved_chunk",
+          "source_chunk_id": "CH_0040"
+        },
+        "provenance": null
+      },
+      {
+        "id": 13,
+        "tender_id": 1,
+        "requirement_id": "REQ013",
+        "name": "Technical Specifications",
+        "category": "Technical Specifications",
+        "description": "Technical Specifications",
+        "operator": "MANUAL_REVIEW",
+        "required_value": null,
+        "unit": null,
+        "mandatory": 0,
+        "required_document_type": null,
+        "source_page": null,
+        "source_clause": null,
+        "source_text": null,
+        "applicable": 0,
+        "approved": 0,
+        "rule_metadata": {},
+        "provenance": null
+      },
+      {
+        "id": 14,
+        "tender_id": 1,
+        "requirement_id": "REQ014",
+        "name": "Minimum Bidder Turnover",
+        "category": "Tender-Specific Eligibility",
+        "description": "Bidders should have average annual financial turnover of 200% of the estimated cost during the last three consecutive years ending 31st March 2025.",
+        "operator": "GREATER_THAN_OR_EQUAL",
+        "required_value": 5097200.0,
+        "unit": "INR",
+        "mandatory": 1,
+        "required_document_type": "TURNOVER",
+        "source_page": 11,
+        "source_clause": null,
+        "source_text": "6. The bidder should have executed project for supply/work of same or similar category products during proceeding 10 financial y\nears (i.e. current year and ten previous financial years) as on last date of submission of bids, as per following criteria:\na. Single order of at least 80% of estimated bid value.\nb. Two orders of at least 60% each of estimated bid value.\nc. Three orders of at least 40% each of estimated bid value.\nd. In case of SITC/SETC and specialized scope, the contractor should also have sufficient experience and shall submit the exper\nience certificate of satisfactory completion of at least three similar works, each of value not less than 40% of the estimated co\nst put to tender or two similar works, each of value not less than 60% of the estimated cost or one similar work of value not le\nss than 80% of the estimated cost, all amounts rounded off to a convenient full figure, in the last 10 years ending previous day\nof last date of submission of bids”.\nNote: Similar works will be defined based on scope of the work. Similar works may be executed with any Central a\nnd State Government agency, PSUs, Private organizations.\n7. Bidders should have average annual financial turnover of 200% of the estimated cost during the last three consecutive years\nending 31st March 2025.\n8. OEMs should have average annual financial turnover of 400% of the estimated cost during the last three consecutive years en\nding 31st March 2025.\n9. At the time of submission of bid bidder may upload Certificate from CA mentioning financial Turnover of last 3 years or for the\nperiod as specified in the bid document. There is no need to upload entire voluminous balance sheet.",
+        "applicable": 1,
+        "approved": 1,
+        "rule_metadata": {
+          "percentage_of_estimated_bid_value": 200.0,
+          "estimated_bid_value": 2548600.0,
+          "source_kind": "retrieved_chunk",
+          "source_chunk_id": "CH_0057"
+        },
+        "provenance": null
+      },
+      {
+        "id": 15,
+        "tender_id": 1,
+        "requirement_id": "REQ015",
+        "name": "Minimum OEM Turnover",
+        "category": "Tender-Specific Eligibility",
+        "description": "OEMs should have average annual financial turnover of 400% of the estimated cost during the last three consecutive years ending 31st March 2025.",
+        "operator": "GREATER_THAN_OR_EQUAL",
+        "required_value": 10194400.0,
+        "unit": "INR",
+        "mandatory": 1,
+        "required_document_type": "TURNOVER",
+        "source_page": 11,
+        "source_clause": null,
+        "source_text": "6. The bidder should have executed project for supply/work of same or similar category products during proceeding 10 financial y\nears (i.e. current year and ten previous financial years) as on last date of submission of bids, as per following criteria:\na. Single order of at least 80% of estimated bid value.\nb. Two orders of at least 60% each of estimated bid value.\nc. Three orders of at least 40% each of estimated bid value.\nd. In case of SITC/SETC and specialized scope, the contractor should also have sufficient experience and shall submit the exper\nience certificate of satisfactory completion of at least three similar works, each of value not less than 40% of the estimated co\nst put to tender or two similar works, each of value not less than 60% of the estimated cost or one similar work of value not le\nss than 80% of the estimated cost, all amounts rounded off to a convenient full figure, in the last 10 years ending previous day\nof last date of submission of bids”.\nNote: Similar works will be defined based on scope of the work. Similar works may be executed with any Central a\nnd State Government agency, PSUs, Private organizations.\n7. Bidders should have average annual financial turnover of 200% of the estimated cost during the last three consecutive years\nending 31st March 2025.\n8. OEMs should have average annual financial turnover of 400% of the estimated cost during the last three consecutive years en\nding 31st March 2025.\n9. At the time of submission of bid bidder may upload Certificate from CA mentioning financial Turnover of last 3 years or for the\nperiod as specified in the bid document. There is no need to upload entire voluminous balance sheet.",
+        "applicable": 1,
+        "approved": 1,
+        "rule_metadata": {
+          "percentage_of_estimated_bid_value": 400.0,
+          "estimated_bid_value": 2548600.0,
+          "source_kind": "retrieved_chunk",
+          "source_chunk_id": "CH_0057"
+        },
+        "provenance": null
+      },
+      {
+        "id": 16,
+        "tender_id": 1,
+        "requirement_id": "REQ016",
+        "name": "Other Statutory Compliance",
+        "category": "Other Statutory Compliance",
+        "description": "Other Statutory Compliance",
+        "operator": "MANUAL_REVIEW",
+        "required_value": null,
+        "unit": null,
+        "mandatory": 0,
+        "required_document_type": null,
+        "source_page": null,
+        "source_clause": null,
+        "source_text": null,
+        "applicable": 0,
+        "approved": 0,
+        "rule_metadata": {},
+        "provenance": null
+      }
+    ],
+    "bidders": [
+      {
+        "id": 1,
+        "tender_id": 1,
+        "bidder_id": "QA-BHARAT",
+        "bidder_name": "Bharat Compute Solutions Pvt Ltd",
+        "source_file": null,
+        "overall_status": "NON_COMPLIANT",
+        "compliance_score": 66.67,
+        "risk_level": "HIGH"
+      },
+      {
+        "id": 2,
+        "tender_id": 1,
+        "bidder_id": "OTS-001",
+        "bidder_name": "Orange Tech Systems Private Limited",
+        "source_file": null,
+        "overall_status": "NOT_EVALUATED",
+        "compliance_score": null,
+        "risk_level": null
+      },
+      {
+        "id": 3,
+        "tender_id": 1,
+        "bidder_id": "SBS-003",
+        "bidder_name": "SecureByte Systems Private Limited",
+        "source_file": null,
+        "overall_status": "NOT_EVALUATED",
+        "compliance_score": null,
+        "risk_level": null
+      }
+    ],
+    "bidder_uploaded_files": [
+      {
+        "id": 1,
+        "bidder_id": 1,
+        "filename": "BIS_Technical_Compliance.pdf",
+        "stored_path": "demo_files/bidders/bharat_compute/BIS_Technical_Compliance.pdf",
+        "page_start": 1,
+        "page_end": 1
+      },
+      {
+        "id": 2,
+        "bidder_id": 1,
+        "filename": "Bidder_Turnover_Certificate.pdf",
+        "stored_path": "demo_files/bidders/bharat_compute/Bidder_Turnover_Certificate.pdf",
+        "page_start": 2,
+        "page_end": 2
+      },
+      {
+        "id": 3,
+        "bidder_id": 1,
+        "filename": "Blacklisting_Declaration.pdf",
+        "stored_path": "demo_files/bidders/bharat_compute/Blacklisting_Declaration.pdf",
+        "page_start": 3,
+        "page_end": 3
+      },
+      {
+        "id": 4,
+        "bidder_id": 1,
+        "filename": "BoQ_Compliance.pdf",
+        "stored_path": "demo_files/bidders/bharat_compute/BoQ_Compliance.pdf",
+        "page_start": 4,
+        "page_end": 4
+      },
+      {
+        "id": 5,
+        "bidder_id": 1,
+        "filename": "Company_Profile.pdf",
+        "stored_path": "demo_files/bidders/bharat_compute/Company_Profile.pdf",
+        "page_start": 5,
+        "page_end": 5
+      },
+      {
+        "id": 6,
+        "bidder_id": 1,
+        "filename": "Experience_Credentials.pdf",
+        "stored_path": "demo_files/bidders/bharat_compute/Experience_Credentials.pdf",
+        "page_start": 6,
+        "page_end": 6
+      },
+      {
+        "id": 7,
+        "bidder_id": 1,
+        "filename": "Financial_Standing.pdf",
+        "stored_path": "demo_files/bidders/bharat_compute/Financial_Standing.pdf",
+        "page_start": 7,
+        "page_end": 7
+      },
+      {
+        "id": 8,
+        "bidder_id": 1,
+        "filename": "GST_Registration.pdf",
+        "stored_path": "demo_files/bidders/bharat_compute/GST_Registration.pdf",
+        "page_start": 8,
+        "page_end": 8
+      },
+      {
+        "id": 9,
+        "bidder_id": 1,
+        "filename": "ISO_9001_Certificate.pdf",
+        "stored_path": "demo_files/bidders/bharat_compute/ISO_9001_Certificate.pdf",
+        "page_start": 9,
+        "page_end": 9
+      },
+      {
+        "id": 10,
+        "bidder_id": 1,
+        "filename": "Local_Content_Declaration.pdf",
+        "stored_path": "demo_files/bidders/bharat_compute/Local_Content_Declaration.pdf",
+        "page_start": 10,
+        "page_end": 10
+      },
+      {
+        "id": 11,
+        "bidder_id": 1,
+        "filename": "Malicious_Code_Declaration.pdf",
+        "stored_path": "demo_files/bidders/bharat_compute/Malicious_Code_Declaration.pdf",
+        "page_start": 11,
+        "page_end": 11
+      },
+      {
+        "id": 12,
+        "bidder_id": 1,
+        "filename": "OEM_Authorization.pdf",
+        "stored_path": "demo_files/bidders/bharat_compute/OEM_Authorization.pdf",
+        "page_start": 12,
+        "page_end": 12
+      },
+      {
+        "id": 13,
+        "bidder_id": 1,
+        "filename": "OEM_Turnover_Certificate.pdf",
+        "stored_path": "demo_files/bidders/bharat_compute/OEM_Turnover_Certificate.pdf",
+        "page_start": 13,
+        "page_end": 13
+      },
+      {
+        "id": 14,
+        "bidder_id": 1,
+        "filename": "PAN_Card.pdf",
+        "stored_path": "demo_files/bidders/bharat_compute/PAN_Card.pdf",
+        "page_start": 14,
+        "page_end": 14
+      },
+      {
+        "id": 15,
+        "bidder_id": 1,
+        "filename": "Past_Performance.pdf",
+        "stored_path": "demo_files/bidders/bharat_compute/Past_Performance.pdf",
+        "page_start": 15,
+        "page_end": 15
+      },
+      {
+        "id": 16,
+        "bidder_id": 1,
+        "filename": "Service_Centre_Details.pdf",
+        "stored_path": "demo_files/bidders/bharat_compute/Service_Centre_Details.pdf",
+        "page_start": 16,
+        "page_end": 16
+      },
+      {
+        "id": 17,
+        "bidder_id": 1,
+        "filename": "Udyam_Certificate.pdf",
+        "stored_path": "demo_files/bidders/bharat_compute/Udyam_Certificate.pdf",
+        "page_start": 17,
+        "page_end": 17
+      },
+      {
+        "id": 18,
+        "bidder_id": 2,
+        "filename": "Bidder_Turnover_Certificate.pdf",
+        "stored_path": "demo_files/bidders/orange_tech/Bidder_Turnover_Certificate.pdf",
+        "page_start": 1,
+        "page_end": 1
+      },
+      {
+        "id": 19,
+        "bidder_id": 2,
+        "filename": "BIS_Technical_Compliance.pdf",
+        "stored_path": "demo_files/bidders/orange_tech/BIS_Technical_Compliance.pdf",
+        "page_start": 2,
+        "page_end": 2
+      },
+      {
+        "id": 20,
+        "bidder_id": 2,
+        "filename": "Blacklisting_Declaration.pdf",
+        "stored_path": "demo_files/bidders/orange_tech/Blacklisting_Declaration.pdf",
+        "page_start": 3,
+        "page_end": 3
+      },
+      {
+        "id": 21,
+        "bidder_id": 2,
+        "filename": "BoQ_Compliance.pdf",
+        "stored_path": "demo_files/bidders/orange_tech/BoQ_Compliance.pdf",
+        "page_start": 4,
+        "page_end": 4
+      },
+      {
+        "id": 22,
+        "bidder_id": 2,
+        "filename": "Company_Profile.pdf",
+        "stored_path": "demo_files/bidders/orange_tech/Company_Profile.pdf",
+        "page_start": 5,
+        "page_end": 5
+      },
+      {
+        "id": 23,
+        "bidder_id": 2,
+        "filename": "Experience_Credentials.pdf",
+        "stored_path": "demo_files/bidders/orange_tech/Experience_Credentials.pdf",
+        "page_start": 6,
+        "page_end": 6
+      },
+      {
+        "id": 24,
+        "bidder_id": 2,
+        "filename": "Financial_Standing.pdf",
+        "stored_path": "demo_files/bidders/orange_tech/Financial_Standing.pdf",
+        "page_start": 7,
+        "page_end": 7
+      },
+      {
+        "id": 25,
+        "bidder_id": 2,
+        "filename": "GST_Registration.pdf",
+        "stored_path": "demo_files/bidders/orange_tech/GST_Registration.pdf",
+        "page_start": 8,
+        "page_end": 8
+      },
+      {
+        "id": 26,
+        "bidder_id": 2,
+        "filename": "ISO_9001_Certificate.pdf",
+        "stored_path": "demo_files/bidders/orange_tech/ISO_9001_Certificate.pdf",
+        "page_start": 9,
+        "page_end": 9
+      },
+      {
+        "id": 27,
+        "bidder_id": 2,
+        "filename": "Local_Content_Declaration.pdf",
+        "stored_path": "demo_files/bidders/orange_tech/Local_Content_Declaration.pdf",
+        "page_start": 10,
+        "page_end": 10
+      },
+      {
+        "id": 28,
+        "bidder_id": 2,
+        "filename": "Malicious_Code_Declaration.pdf",
+        "stored_path": "demo_files/bidders/orange_tech/Malicious_Code_Declaration.pdf",
+        "page_start": 11,
+        "page_end": 11
+      },
+      {
+        "id": 29,
+        "bidder_id": 2,
+        "filename": "OEM_Authorization.pdf",
+        "stored_path": "demo_files/bidders/orange_tech/OEM_Authorization.pdf",
+        "page_start": 12,
+        "page_end": 12
+      },
+      {
+        "id": 30,
+        "bidder_id": 2,
+        "filename": "OEM_Turnover_Certificate.pdf",
+        "stored_path": "demo_files/bidders/orange_tech/OEM_Turnover_Certificate.pdf",
+        "page_start": 13,
+        "page_end": 13
+      },
+      {
+        "id": 31,
+        "bidder_id": 2,
+        "filename": "PAN_Card.pdf",
+        "stored_path": "demo_files/bidders/orange_tech/PAN_Card.pdf",
+        "page_start": 14,
+        "page_end": 14
+      },
+      {
+        "id": 32,
+        "bidder_id": 2,
+        "filename": "Past_Performance.pdf",
+        "stored_path": "demo_files/bidders/orange_tech/Past_Performance.pdf",
+        "page_start": 15,
+        "page_end": 15
+      },
+      {
+        "id": 33,
+        "bidder_id": 2,
+        "filename": "Service_Centre_Details.pdf",
+        "stored_path": "demo_files/bidders/orange_tech/Service_Centre_Details.pdf",
+        "page_start": 16,
+        "page_end": 16
+      },
+      {
+        "id": 34,
+        "bidder_id": 2,
+        "filename": "Udyam_Certificate.pdf",
+        "stored_path": "demo_files/bidders/orange_tech/Udyam_Certificate.pdf",
+        "page_start": 17,
+        "page_end": 17
+      },
+      {
+        "id": 35,
+        "bidder_id": 3,
+        "filename": "Bidder_Turnover_Certificate.pdf",
+        "stored_path": "demo_files/bidders/securebyte/Bidder_Turnover_Certificate.pdf",
+        "page_start": 1,
+        "page_end": 1
+      },
+      {
+        "id": 36,
+        "bidder_id": 3,
+        "filename": "BIS_Technical_Compliance.pdf",
+        "stored_path": "demo_files/bidders/securebyte/BIS_Technical_Compliance.pdf",
+        "page_start": 2,
+        "page_end": 2
+      },
+      {
+        "id": 37,
+        "bidder_id": 3,
+        "filename": "Blacklisting_Declaration.pdf",
+        "stored_path": "demo_files/bidders/securebyte/Blacklisting_Declaration.pdf",
+        "page_start": 3,
+        "page_end": 3
+      },
+      {
+        "id": 38,
+        "bidder_id": 3,
+        "filename": "BoQ_Compliance.pdf",
+        "stored_path": "demo_files/bidders/securebyte/BoQ_Compliance.pdf",
+        "page_start": 4,
+        "page_end": 4
+      },
+      {
+        "id": 39,
+        "bidder_id": 3,
+        "filename": "Company_Profile.pdf",
+        "stored_path": "demo_files/bidders/securebyte/Company_Profile.pdf",
+        "page_start": 5,
+        "page_end": 5
+      },
+      {
+        "id": 40,
+        "bidder_id": 3,
+        "filename": "Experience_Credentials.pdf",
+        "stored_path": "demo_files/bidders/securebyte/Experience_Credentials.pdf",
+        "page_start": 6,
+        "page_end": 6
+      },
+      {
+        "id": 41,
+        "bidder_id": 3,
+        "filename": "Financial_Standing.pdf",
+        "stored_path": "demo_files/bidders/securebyte/Financial_Standing.pdf",
+        "page_start": 7,
+        "page_end": 7
+      },
+      {
+        "id": 42,
+        "bidder_id": 3,
+        "filename": "GST_Registration.pdf",
+        "stored_path": "demo_files/bidders/securebyte/GST_Registration.pdf",
+        "page_start": 8,
+        "page_end": 8
+      },
+      {
+        "id": 43,
+        "bidder_id": 3,
+        "filename": "ISO_9001_Certificate.pdf",
+        "stored_path": "demo_files/bidders/securebyte/ISO_9001_Certificate.pdf",
+        "page_start": 9,
+        "page_end": 9
+      },
+      {
+        "id": 44,
+        "bidder_id": 3,
+        "filename": "Local_Content_Declaration.pdf",
+        "stored_path": "demo_files/bidders/securebyte/Local_Content_Declaration.pdf",
+        "page_start": 10,
+        "page_end": 10
+      },
+      {
+        "id": 45,
+        "bidder_id": 3,
+        "filename": "Malicious_Code_Declaration.pdf",
+        "stored_path": "demo_files/bidders/securebyte/Malicious_Code_Declaration.pdf",
+        "page_start": 11,
+        "page_end": 11
+      },
+      {
+        "id": 46,
+        "bidder_id": 3,
+        "filename": "OEM_Authorization.pdf",
+        "stored_path": "demo_files/bidders/securebyte/OEM_Authorization.pdf",
+        "page_start": 12,
+        "page_end": 12
+      },
+      {
+        "id": 47,
+        "bidder_id": 3,
+        "filename": "OEM_Turnover_Certificate.pdf",
+        "stored_path": "demo_files/bidders/securebyte/OEM_Turnover_Certificate.pdf",
+        "page_start": 13,
+        "page_end": 13
+      },
+      {
+        "id": 48,
+        "bidder_id": 3,
+        "filename": "PAN_Card.pdf",
+        "stored_path": "demo_files/bidders/securebyte/PAN_Card.pdf",
+        "page_start": 14,
+        "page_end": 14
+      },
+      {
+        "id": 49,
+        "bidder_id": 3,
+        "filename": "Past_Performance.pdf",
+        "stored_path": "demo_files/bidders/securebyte/Past_Performance.pdf",
+        "page_start": 15,
+        "page_end": 15
+      },
+      {
+        "id": 50,
+        "bidder_id": 3,
+        "filename": "Udyam_Certificate.pdf",
+        "stored_path": "demo_files/bidders/securebyte/Udyam_Certificate.pdf",
+        "page_start": 16,
+        "page_end": 16
+      }
+    ],
+    "bidder_documents": [
+      {
+        "id": 1,
+        "bidder_id": 1,
+        "uploaded_file_id": 1,
+        "document_id": "DOC_001",
+        "category": "BIS",
+        "filename": "BIS_Technical_Compliance.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 1,
+        "page_end": 1,
+        "pages_json": [
+          1
+        ],
+        "confidence": 0.99,
+        "processing_status": "CLASSIFIED"
+      },
+      {
+        "id": 2,
+        "bidder_id": 1,
+        "uploaded_file_id": 2,
+        "document_id": "DOC_002",
+        "category": "TURNOVER",
+        "filename": "Bidder_Turnover_Certificate.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 2,
+        "page_end": 2,
+        "pages_json": [
+          2
+        ],
+        "confidence": 0.99,
+        "processing_status": "CLASSIFIED"
+      },
+      {
+        "id": 3,
+        "bidder_id": 1,
+        "uploaded_file_id": 3,
+        "document_id": "DOC_003",
+        "category": "DECLARATION",
+        "filename": "Blacklisting_Declaration.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 3,
+        "page_end": 3,
+        "pages_json": [
+          3
+        ],
+        "confidence": 0.99,
+        "processing_status": "CLASSIFIED"
+      },
+      {
+        "id": 4,
+        "bidder_id": 1,
+        "uploaded_file_id": 4,
+        "document_id": "DOC_004",
+        "category": "TECHNICAL",
+        "filename": "BoQ_Compliance.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 4,
+        "page_end": 4,
+        "pages_json": [
+          4
+        ],
+        "confidence": 0.99,
+        "processing_status": "CLASSIFIED"
+      },
+      {
+        "id": 5,
+        "bidder_id": 1,
+        "uploaded_file_id": 5,
+        "document_id": "DOC_005",
+        "category": "CIN",
+        "filename": "Company_Profile.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 5,
+        "page_end": 5,
+        "pages_json": [
+          5
+        ],
+        "confidence": 0.99,
+        "processing_status": "CLASSIFIED"
+      },
+      {
+        "id": 6,
+        "bidder_id": 1,
+        "uploaded_file_id": 6,
+        "document_id": "DOC_006",
+        "category": "EXPERIENCE",
+        "filename": "Experience_Credentials.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 6,
+        "page_end": 6,
+        "pages_json": [
+          6
+        ],
+        "confidence": 0.99,
+        "processing_status": "CLASSIFIED"
+      },
+      {
+        "id": 7,
+        "bidder_id": 1,
+        "uploaded_file_id": 7,
+        "document_id": "DOC_007",
+        "category": "NET_WORTH",
+        "filename": "Financial_Standing.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 7,
+        "page_end": 7,
+        "pages_json": [
+          7
+        ],
+        "confidence": 0.99,
+        "processing_status": "CLASSIFIED"
+      },
+      {
+        "id": 8,
+        "bidder_id": 1,
+        "uploaded_file_id": 8,
+        "document_id": "DOC_008",
+        "category": "GST",
+        "filename": "GST_Registration.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 8,
+        "page_end": 8,
+        "pages_json": [
+          8
+        ],
+        "confidence": 0.99,
+        "processing_status": "CLASSIFIED"
+      },
+      {
+        "id": 9,
+        "bidder_id": 1,
+        "uploaded_file_id": 9,
+        "document_id": "DOC_009",
+        "category": "STATUTORY",
+        "filename": "ISO_9001_Certificate.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 9,
+        "page_end": 9,
+        "pages_json": [
+          9
+        ],
+        "confidence": 0.99,
+        "processing_status": "CLASSIFIED"
+      },
+      {
+        "id": 10,
+        "bidder_id": 1,
+        "uploaded_file_id": 10,
+        "document_id": "DOC_010",
+        "category": "MII_LOCAL_CONTENT",
+        "filename": "Local_Content_Declaration.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 10,
+        "page_end": 10,
+        "pages_json": [
+          10
+        ],
+        "confidence": 0.99,
+        "processing_status": "CLASSIFIED"
+      },
+      {
+        "id": 11,
+        "bidder_id": 1,
+        "uploaded_file_id": 11,
+        "document_id": "DOC_011",
+        "category": "DECLARATION",
+        "filename": "Malicious_Code_Declaration.pdf",
+        "document_title": "Malicious Code and Software Integrity Declaration",
+        "page_start": 11,
+        "page_end": 11,
+        "pages_json": [
+          11
+        ],
+        "confidence": 1.0,
+        "processing_status": "CLASSIFIED"
+      },
+      {
+        "id": 12,
+        "bidder_id": 1,
+        "uploaded_file_id": 12,
+        "document_id": "DOC_012",
+        "category": "OEM_AUTHORIZATION",
+        "filename": "OEM_Authorization.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 12,
+        "page_end": 12,
+        "pages_json": [
+          12
+        ],
+        "confidence": 0.99,
+        "processing_status": "CLASSIFIED"
+      },
+      {
+        "id": 13,
+        "bidder_id": 1,
+        "uploaded_file_id": 13,
+        "document_id": "DOC_013",
+        "category": "TURNOVER",
+        "filename": "OEM_Turnover_Certificate.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 13,
+        "page_end": 13,
+        "pages_json": [
+          13
+        ],
+        "confidence": 0.99,
+        "processing_status": "CLASSIFIED"
+      },
+      {
+        "id": 14,
+        "bidder_id": 1,
+        "uploaded_file_id": 14,
+        "document_id": "DOC_014",
+        "category": "PAN",
+        "filename": "PAN_Card.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 14,
+        "page_end": 14,
+        "pages_json": [
+          14
+        ],
+        "confidence": 0.99,
+        "processing_status": "CLASSIFIED"
+      },
+      {
+        "id": 15,
+        "bidder_id": 1,
+        "uploaded_file_id": 15,
+        "document_id": "DOC_015",
+        "category": "EXPERIENCE",
+        "filename": "Past_Performance.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 15,
+        "page_end": 15,
+        "pages_json": [
+          15
+        ],
+        "confidence": 0.99,
+        "processing_status": "CLASSIFIED"
+      },
+      {
+        "id": 16,
+        "bidder_id": 1,
+        "uploaded_file_id": 16,
+        "document_id": "DOC_016",
+        "category": "SUPPORTING_DOCUMENT",
+        "filename": "Service_Centre_Details.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 16,
+        "page_end": 16,
+        "pages_json": [
+          16
+        ],
+        "confidence": 0.99,
+        "processing_status": "CLASSIFIED"
+      },
+      {
+        "id": 17,
+        "bidder_id": 1,
+        "uploaded_file_id": 17,
+        "document_id": "DOC_017",
+        "category": "UDYAM",
+        "filename": "Udyam_Certificate.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 17,
+        "page_end": 17,
+        "pages_json": [
+          17
+        ],
+        "confidence": 0.99,
+        "processing_status": "CLASSIFIED"
+      },
+      {
+        "id": 18,
+        "bidder_id": 2,
+        "uploaded_file_id": 18,
+        "document_id": "CURATED-2-18",
+        "category": "TURNOVER",
+        "filename": "Bidder_Turnover_Certificate.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 1,
+        "page_end": 1,
+        "pages_json": [
+          1
+        ],
+        "confidence": null,
+        "processing_status": "PREPROCESSED_CURATED"
+      },
+      {
+        "id": 19,
+        "bidder_id": 2,
+        "uploaded_file_id": 19,
+        "document_id": "CURATED-2-19",
+        "category": "BIS",
+        "filename": "BIS_Technical_Compliance.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 2,
+        "page_end": 2,
+        "pages_json": [
+          2
+        ],
+        "confidence": null,
+        "processing_status": "PREPROCESSED_CURATED"
+      },
+      {
+        "id": 20,
+        "bidder_id": 2,
+        "uploaded_file_id": 20,
+        "document_id": "CURATED-2-20",
+        "category": "DECLARATION",
+        "filename": "Blacklisting_Declaration.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 3,
+        "page_end": 3,
+        "pages_json": [
+          3
+        ],
+        "confidence": null,
+        "processing_status": "PREPROCESSED_CURATED"
+      },
+      {
+        "id": 21,
+        "bidder_id": 2,
+        "uploaded_file_id": 21,
+        "document_id": "CURATED-2-21",
+        "category": "TECHNICAL",
+        "filename": "BoQ_Compliance.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 4,
+        "page_end": 4,
+        "pages_json": [
+          4
+        ],
+        "confidence": null,
+        "processing_status": "PREPROCESSED_CURATED"
+      },
+      {
+        "id": 22,
+        "bidder_id": 2,
+        "uploaded_file_id": 22,
+        "document_id": "CURATED-2-22",
+        "category": "CIN",
+        "filename": "Company_Profile.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 5,
+        "page_end": 5,
+        "pages_json": [
+          5
+        ],
+        "confidence": null,
+        "processing_status": "PREPROCESSED_CURATED"
+      },
+      {
+        "id": 23,
+        "bidder_id": 2,
+        "uploaded_file_id": 23,
+        "document_id": "CURATED-2-23",
+        "category": "EXPERIENCE",
+        "filename": "Experience_Credentials.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 6,
+        "page_end": 6,
+        "pages_json": [
+          6
+        ],
+        "confidence": null,
+        "processing_status": "PREPROCESSED_CURATED"
+      },
+      {
+        "id": 24,
+        "bidder_id": 2,
+        "uploaded_file_id": 24,
+        "document_id": "CURATED-2-24",
+        "category": "NET_WORTH",
+        "filename": "Financial_Standing.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 7,
+        "page_end": 7,
+        "pages_json": [
+          7
+        ],
+        "confidence": null,
+        "processing_status": "PREPROCESSED_CURATED"
+      },
+      {
+        "id": 25,
+        "bidder_id": 2,
+        "uploaded_file_id": 25,
+        "document_id": "CURATED-2-25",
+        "category": "GST",
+        "filename": "GST_Registration.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 8,
+        "page_end": 8,
+        "pages_json": [
+          8
+        ],
+        "confidence": null,
+        "processing_status": "PREPROCESSED_CURATED"
+      },
+      {
+        "id": 26,
+        "bidder_id": 2,
+        "uploaded_file_id": 26,
+        "document_id": "CURATED-2-26",
+        "category": "STATUTORY",
+        "filename": "ISO_9001_Certificate.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 9,
+        "page_end": 9,
+        "pages_json": [
+          9
+        ],
+        "confidence": null,
+        "processing_status": "PREPROCESSED_CURATED"
+      },
+      {
+        "id": 27,
+        "bidder_id": 2,
+        "uploaded_file_id": 27,
+        "document_id": "CURATED-2-27",
+        "category": "MII_LOCAL_CONTENT",
+        "filename": "Local_Content_Declaration.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 10,
+        "page_end": 10,
+        "pages_json": [
+          10
+        ],
+        "confidence": null,
+        "processing_status": "PREPROCESSED_CURATED"
+      },
+      {
+        "id": 28,
+        "bidder_id": 2,
+        "uploaded_file_id": 28,
+        "document_id": "CURATED-2-28",
+        "category": "DECLARATION",
+        "filename": "Malicious_Code_Declaration.pdf",
+        "document_title": "Malicious Code and Software Integrity Declaration",
+        "page_start": 11,
+        "page_end": 11,
+        "pages_json": [
+          11
+        ],
+        "confidence": null,
+        "processing_status": "PREPROCESSED_CURATED"
+      },
+      {
+        "id": 29,
+        "bidder_id": 2,
+        "uploaded_file_id": 29,
+        "document_id": "CURATED-2-29",
+        "category": "OEM_AUTHORIZATION",
+        "filename": "OEM_Authorization.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 12,
+        "page_end": 12,
+        "pages_json": [
+          12
+        ],
+        "confidence": null,
+        "processing_status": "PREPROCESSED_CURATED"
+      },
+      {
+        "id": 30,
+        "bidder_id": 2,
+        "uploaded_file_id": 30,
+        "document_id": "CURATED-2-30",
+        "category": "TURNOVER",
+        "filename": "OEM_Turnover_Certificate.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 13,
+        "page_end": 13,
+        "pages_json": [
+          13
+        ],
+        "confidence": null,
+        "processing_status": "PREPROCESSED_CURATED"
+      },
+      {
+        "id": 31,
+        "bidder_id": 2,
+        "uploaded_file_id": 31,
+        "document_id": "CURATED-2-31",
+        "category": "PAN",
+        "filename": "PAN_Card.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 14,
+        "page_end": 14,
+        "pages_json": [
+          14
+        ],
+        "confidence": null,
+        "processing_status": "PREPROCESSED_CURATED"
+      },
+      {
+        "id": 32,
+        "bidder_id": 2,
+        "uploaded_file_id": 32,
+        "document_id": "CURATED-2-32",
+        "category": "EXPERIENCE",
+        "filename": "Past_Performance.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 15,
+        "page_end": 15,
+        "pages_json": [
+          15
+        ],
+        "confidence": null,
+        "processing_status": "PREPROCESSED_CURATED"
+      },
+      {
+        "id": 33,
+        "bidder_id": 2,
+        "uploaded_file_id": 33,
+        "document_id": "CURATED-2-33",
+        "category": "SUPPORTING_DOCUMENT",
+        "filename": "Service_Centre_Details.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 16,
+        "page_end": 16,
+        "pages_json": [
+          16
+        ],
+        "confidence": null,
+        "processing_status": "PREPROCESSED_CURATED"
+      },
+      {
+        "id": 34,
+        "bidder_id": 2,
+        "uploaded_file_id": 34,
+        "document_id": "CURATED-2-34",
+        "category": "UDYAM",
+        "filename": "Udyam_Certificate.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 17,
+        "page_end": 17,
+        "pages_json": [
+          17
+        ],
+        "confidence": null,
+        "processing_status": "PREPROCESSED_CURATED"
+      },
+      {
+        "id": 35,
+        "bidder_id": 3,
+        "uploaded_file_id": 35,
+        "document_id": "CURATED-3-35",
+        "category": "TURNOVER",
+        "filename": "Bidder_Turnover_Certificate.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 1,
+        "page_end": 1,
+        "pages_json": [
+          1
+        ],
+        "confidence": null,
+        "processing_status": "PREPROCESSED_CURATED"
+      },
+      {
+        "id": 36,
+        "bidder_id": 3,
+        "uploaded_file_id": 36,
+        "document_id": "CURATED-3-36",
+        "category": "BIS",
+        "filename": "BIS_Technical_Compliance.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 2,
+        "page_end": 2,
+        "pages_json": [
+          2
+        ],
+        "confidence": null,
+        "processing_status": "PREPROCESSED_CURATED"
+      },
+      {
+        "id": 37,
+        "bidder_id": 3,
+        "uploaded_file_id": 37,
+        "document_id": "CURATED-3-37",
+        "category": "DECLARATION",
+        "filename": "Blacklisting_Declaration.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 3,
+        "page_end": 3,
+        "pages_json": [
+          3
+        ],
+        "confidence": null,
+        "processing_status": "PREPROCESSED_CURATED"
+      },
+      {
+        "id": 38,
+        "bidder_id": 3,
+        "uploaded_file_id": 38,
+        "document_id": "CURATED-3-38",
+        "category": "TECHNICAL",
+        "filename": "BoQ_Compliance.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 4,
+        "page_end": 4,
+        "pages_json": [
+          4
+        ],
+        "confidence": null,
+        "processing_status": "PREPROCESSED_CURATED"
+      },
+      {
+        "id": 39,
+        "bidder_id": 3,
+        "uploaded_file_id": 39,
+        "document_id": "CURATED-3-39",
+        "category": "CIN",
+        "filename": "Company_Profile.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 5,
+        "page_end": 5,
+        "pages_json": [
+          5
+        ],
+        "confidence": null,
+        "processing_status": "PREPROCESSED_CURATED"
+      },
+      {
+        "id": 40,
+        "bidder_id": 3,
+        "uploaded_file_id": 40,
+        "document_id": "CURATED-3-40",
+        "category": "EXPERIENCE",
+        "filename": "Experience_Credentials.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 6,
+        "page_end": 6,
+        "pages_json": [
+          6
+        ],
+        "confidence": null,
+        "processing_status": "PREPROCESSED_CURATED"
+      },
+      {
+        "id": 41,
+        "bidder_id": 3,
+        "uploaded_file_id": 41,
+        "document_id": "CURATED-3-41",
+        "category": "NET_WORTH",
+        "filename": "Financial_Standing.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 7,
+        "page_end": 7,
+        "pages_json": [
+          7
+        ],
+        "confidence": null,
+        "processing_status": "PREPROCESSED_CURATED"
+      },
+      {
+        "id": 42,
+        "bidder_id": 3,
+        "uploaded_file_id": 42,
+        "document_id": "CURATED-3-42",
+        "category": "GST",
+        "filename": "GST_Registration.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 8,
+        "page_end": 8,
+        "pages_json": [
+          8
+        ],
+        "confidence": null,
+        "processing_status": "PREPROCESSED_CURATED"
+      },
+      {
+        "id": 43,
+        "bidder_id": 3,
+        "uploaded_file_id": 43,
+        "document_id": "CURATED-3-43",
+        "category": "STATUTORY",
+        "filename": "ISO_9001_Certificate.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 9,
+        "page_end": 9,
+        "pages_json": [
+          9
+        ],
+        "confidence": null,
+        "processing_status": "PREPROCESSED_CURATED"
+      },
+      {
+        "id": 44,
+        "bidder_id": 3,
+        "uploaded_file_id": 44,
+        "document_id": "CURATED-3-44",
+        "category": "MII_LOCAL_CONTENT",
+        "filename": "Local_Content_Declaration.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 10,
+        "page_end": 10,
+        "pages_json": [
+          10
+        ],
+        "confidence": null,
+        "processing_status": "PREPROCESSED_CURATED"
+      },
+      {
+        "id": 45,
+        "bidder_id": 3,
+        "uploaded_file_id": 45,
+        "document_id": "CURATED-3-45",
+        "category": "DECLARATION",
+        "filename": "Malicious_Code_Declaration.pdf",
+        "document_title": "Malicious Code and Software Integrity Declaration",
+        "page_start": 11,
+        "page_end": 11,
+        "pages_json": [
+          11
+        ],
+        "confidence": null,
+        "processing_status": "PREPROCESSED_CURATED"
+      },
+      {
+        "id": 46,
+        "bidder_id": 3,
+        "uploaded_file_id": 46,
+        "document_id": "CURATED-3-46",
+        "category": "OEM_AUTHORIZATION",
+        "filename": "OEM_Authorization.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 12,
+        "page_end": 12,
+        "pages_json": [
+          12
+        ],
+        "confidence": null,
+        "processing_status": "PREPROCESSED_CURATED"
+      },
+      {
+        "id": 47,
+        "bidder_id": 3,
+        "uploaded_file_id": 47,
+        "document_id": "CURATED-3-47",
+        "category": "TURNOVER",
+        "filename": "OEM_Turnover_Certificate.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 13,
+        "page_end": 13,
+        "pages_json": [
+          13
+        ],
+        "confidence": null,
+        "processing_status": "PREPROCESSED_CURATED"
+      },
+      {
+        "id": 48,
+        "bidder_id": 3,
+        "uploaded_file_id": 48,
+        "document_id": "CURATED-3-48",
+        "category": "PAN",
+        "filename": "PAN_Card.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 14,
+        "page_end": 14,
+        "pages_json": [
+          14
+        ],
+        "confidence": null,
+        "processing_status": "PREPROCESSED_CURATED"
+      },
+      {
+        "id": 49,
+        "bidder_id": 3,
+        "uploaded_file_id": 49,
+        "document_id": "CURATED-3-49",
+        "category": "EXPERIENCE",
+        "filename": "Past_Performance.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 15,
+        "page_end": 15,
+        "pages_json": [
+          15
+        ],
+        "confidence": null,
+        "processing_status": "PREPROCESSED_CURATED"
+      },
+      {
+        "id": 50,
+        "bidder_id": 3,
+        "uploaded_file_id": 50,
+        "document_id": "CURATED-3-50",
+        "category": "UDYAM",
+        "filename": "Udyam_Certificate.pdf",
+        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "page_start": 16,
+        "page_end": 16,
+        "pages_json": [
+          16
+        ],
+        "confidence": null,
+        "processing_status": "PREPROCESSED_CURATED"
+      }
+    ],
+    "evidence": [
+      {
+        "id": 1,
+        "bidder_id": 1,
+        "requirement_id": "REQ001",
+        "document_id": "DOC_017",
+        "page": 17,
+        "field": "Udyam Registration Number",
+        "value": "UDYAM-DL-07-0067890",
+        "unit": null,
+        "evidence_text": "UDYAM-DL-07-0067890",
+        "evidence_found": 1,
+        "ambiguities_json": [],
+        "provenance": null
+      },
+      {
+        "id": 2,
+        "bidder_id": 1,
+        "requirement_id": "REQ001",
+        "document_id": "DOC_017",
+        "page": 17,
+        "field": "Enterprise Name",
+        "value": "Bharat Compute Solutions Private Limited",
+        "unit": null,
+        "evidence_text": "Bharat Compute Solutions Private Limited",
+        "evidence_found": 1,
+        "ambiguities_json": [],
+        "provenance": null
+      },
+      {
+        "id": 3,
+        "bidder_id": 1,
+        "requirement_id": "REQ001",
+        "document_id": "DOC_017",
+        "page": 17,
+        "field": "Registration Status",
+        "value": "ACTIVE",
+        "unit": null,
+        "evidence_text": "ACTIVE",
+        "evidence_found": 1,
+        "ambiguities_json": [],
+        "provenance": null
+      },
+      {
+        "id": 4,
+        "bidder_id": 1,
+        "requirement_id": "REQ002",
+        "document_id": "DOC_008",
+        "page": 8,
+        "field": "GSTIN",
+        "value": "07AAECB2345M1Z6",
+        "unit": null,
+        "evidence_text": "07AAECB2345M1Z6",
+        "evidence_found": 1,
+        "ambiguities_json": [],
+        "provenance": null
+      },
+      {
+        "id": 5,
+        "bidder_id": 1,
+        "requirement_id": "REQ002",
+        "document_id": "DOC_008",
+        "page": 8,
+        "field": "Legal Name",
+        "value": "Bharat Compute Solutions Private Limited",
+        "unit": null,
+        "evidence_text": "Bharat Compute Solutions Private Limited",
+        "evidence_found": 1,
+        "ambiguities_json": [],
+        "provenance": null
+      },
+      {
+        "id": 6,
+        "bidder_id": 1,
+        "requirement_id": "REQ002",
+        "document_id": "DOC_008",
+        "page": 8,
+        "field": "Registration Status",
+        "value": "ACTIVE",
+        "unit": null,
+        "evidence_text": "ACTIVE",
+        "evidence_found": 1,
+        "ambiguities_json": [],
+        "provenance": null
+      },
+      {
+        "id": 7,
+        "bidder_id": 1,
+        "requirement_id": "REQ003",
+        "document_id": "DOC_014",
+        "page": 14,
+        "field": "PAN",
+        "value": "AAECB2345M",
+        "unit": null,
+        "evidence_text": "AAECB2345M",
+        "evidence_found": 1,
+        "ambiguities_json": [],
+        "provenance": null
+      },
+      {
+        "id": 8,
+        "bidder_id": 1,
+        "requirement_id": "REQ004",
+        "document_id": "DOC_010",
+        "page": 10,
+        "field": "Local Content Percentage",
+        "value": "15",
+        "unit": "PERCENT",
+        "evidence_text": "Percentage of Local Content 15%",
+        "evidence_found": 1,
+        "ambiguities_json": [],
+        "provenance": null
+      },
+      {
+        "id": 9,
+        "bidder_id": 1,
+        "requirement_id": "REQ005",
+        "document_id": "DOC_010",
+        "page": 10,
+        "field": "Percentage of Local Content",
+        "value": "15%",
+        "unit": "%",
+        "evidence_text": "Make in India Local Content Declaration Registered Bidder Bharat Compute Solutions Private Limited Bidder ID BCS-002 Tender GEM/2026/B/7910945 Percentage of Local Content 15% Supplier Classification Non-local supplier Place of Value Addition India Declaration Status FILED",
+        "evidence_found": 1,
+        "ambiguities_json": [],
+        "provenance": null
+      },
+      {
+        "id": 10,
+        "bidder_id": 1,
+        "requirement_id": "REQ009",
+        "document_id": "DOC_012",
+        "page": 12,
+        "field": "OEM Name",
+        "value": "Bharat Compute Manufacturing Private Limited",
+        "unit": null,
+        "evidence_text": "Bharat Compute Manufacturing Private Limited",
+        "evidence_found": 1,
+        "ambiguities_json": [],
+        "provenance": null
+      },
+      {
+        "id": 11,
+        "bidder_id": 1,
+        "requirement_id": "REQ009",
+        "document_id": "DOC_012",
+        "page": 12,
+        "field": "Authorized Bidder",
+        "value": "Bharat Compute Solutions Private Limited",
+        "unit": null,
+        "evidence_text": "Bharat Compute Solutions Private Limited",
+        "evidence_found": 1,
+        "ambiguities_json": [],
+        "provenance": null
+      },
+      {
+        "id": 12,
+        "bidder_id": 1,
+        "requirement_id": "REQ009",
+        "document_id": "DOC_012",
+        "page": 12,
+        "field": "Authorization Scope",
+        "value": "Supply, installation and warranty support for offered desktop computers",
+        "unit": null,
+        "evidence_text": "Supply, installation and warranty support for offered desktop computers",
+        "evidence_found": 1,
+        "ambiguities_json": [],
+        "provenance": null
+      },
+      {
+        "id": 13,
+        "bidder_id": 1,
+        "requirement_id": "REQ012",
+        "document_id": "DOC_001",
+        "page": 1,
+        "field": "BIS Licence Number",
+        "value": "BIS-SYN-2026-002",
+        "unit": null,
+        "evidence_text": "BIS-SYN-2026-002",
+        "evidence_found": 1,
+        "ambiguities_json": [],
+        "provenance": null
+      },
+      {
+        "id": 14,
+        "bidder_id": 1,
+        "requirement_id": "REQ014",
+        "document_id": "DOC_002",
+        "page": 2,
+        "field": "Average Annual Turnover",
+        "value": "INR 8,500,000",
+        "unit": null,
+        "evidence_text": "INR 8,500,000",
+        "evidence_found": 1,
+        "ambiguities_json": [
+          "No retrieved bidder document provides sufficient evidence to meet the requirement of having an average annual financial turnover of 200% of the estimated cost during the last three consecutive years ending 31st March 2025."
+        ],
+        "provenance": null
+      },
+      {
+        "id": 15,
+        "bidder_id": 1,
+        "requirement_id": "REQ014",
+        "document_id": "DOC_013",
+        "page": 13,
+        "field": "Average Annual Turnover",
+        "value": "INR 18,000,000",
+        "unit": null,
+        "evidence_text": "INR 18,000,000",
+        "evidence_found": 1,
+        "ambiguities_json": [
+          "No retrieved bidder document provides sufficient evidence to meet the requirement of having an average annual financial turnover of 200% of the estimated cost during the last three consecutive years ending 31st March 2025."
+        ],
+        "provenance": null
+      },
+      {
+        "id": 16,
+        "bidder_id": 1,
+        "requirement_id": "REQ015",
+        "document_id": "DOC_013",
+        "page": 13,
+        "field": "Average Annual Turnover",
+        "value": "INR 18,000,000",
+        "unit": null,
+        "evidence_text": "INR 18,000,000",
+        "evidence_found": 1,
+        "ambiguities_json": [
+          "No retrieved bidder document provides sufficient evidence to satisfy the requirement of having an average annual financial turnover of 400% of the estimated cost during the last three consecutive years ending 31st March 2025."
+        ],
+        "provenance": null
+      },
+      {
+        "id": 17,
+        "bidder_id": 1,
+        "requirement_id": "REQ015",
+        "document_id": "DOC_002",
+        "page": 2,
+        "field": "Average Annual Turnover",
+        "value": "INR 8,500,000",
+        "unit": null,
+        "evidence_text": "INR 8,500,000",
+        "evidence_found": 1,
+        "ambiguities_json": [
+          "No retrieved bidder document provides sufficient evidence to satisfy the requirement of having an average annual financial turnover of 400% of the estimated cost during the last three consecutive years ending 31st March 2025."
+        ],
+        "provenance": null
+      },
+      {
+        "id": 18,
+        "bidder_id": 2,
+        "requirement_id": "REQ014",
+        "document_id": "CURATED-2-18",
+        "page": 1,
+        "field": "Average Annual Turnover",
+        "value": "INR 8,500,000",
+        "unit": "INR",
+        "evidence_text": "Average Annual Turnover\nINR 8,500,000",
+        "evidence_found": true,
+        "ambiguities_json": [],
+        "provenance": null
+      },
+      {
+        "id": 19,
+        "bidder_id": 2,
+        "requirement_id": "REQ012",
+        "document_id": "CURATED-2-19",
+        "page": 2,
+        "field": "BIS Licence Number",
+        "value": "BIS-SYN-2026-001",
+        "unit": null,
+        "evidence_text": "BIS Licence Number\nBIS-SYN-2026-001",
+        "evidence_found": true,
+        "ambiguities_json": [],
+        "provenance": null
+      },
+      {
+        "id": 20,
+        "bidder_id": 2,
+        "requirement_id": "REQ002",
+        "document_id": "CURATED-2-25",
+        "page": 8,
+        "field": "GSTIN",
+        "value": "29AAECO1234K1Z8",
+        "unit": null,
+        "evidence_text": "GSTIN\n29AAECO1234K1Z8",
+        "evidence_found": true,
+        "ambiguities_json": [],
+        "provenance": null
+      },
+      {
+        "id": 21,
+        "bidder_id": 2,
+        "requirement_id": "REQ004",
+        "document_id": "CURATED-2-27",
+        "page": 10,
+        "field": "LocalContentPercentage",
+        "value": "55%",
+        "unit": "PERCENT",
+        "evidence_text": "Percentage of Local Content\n55%",
+        "evidence_found": true,
+        "ambiguities_json": [],
+        "provenance": null
+      },
+      {
+        "id": 22,
+        "bidder_id": 2,
+        "requirement_id": "REQ005",
+        "document_id": "CURATED-2-27",
+        "page": 10,
+        "field": "LocalContentPercentage",
+        "value": "55%",
+        "unit": "PERCENT",
+        "evidence_text": "Percentage of Local Content\n55%",
+        "evidence_found": true,
+        "ambiguities_json": [],
+        "provenance": null
+      },
+      {
+        "id": 23,
+        "bidder_id": 2,
+        "requirement_id": "REQ009",
+        "document_id": "CURATED-2-29",
+        "page": 12,
+        "field": "Authorized Bidder",
+        "value": "Orange Tech Systems Private Limited",
+        "unit": null,
+        "evidence_text": "Authorized Bidder\nOrange Tech Systems Private Limited",
+        "evidence_found": true,
+        "ambiguities_json": [],
+        "provenance": null
+      },
+      {
+        "id": 24,
+        "bidder_id": 2,
+        "requirement_id": "REQ015",
+        "document_id": "CURATED-2-30",
+        "page": 13,
+        "field": "OEM Average Annual Turnover",
+        "value": "INR 18,000,000",
+        "unit": "INR",
+        "evidence_text": "Average Annual Turnover\nINR 18,000,000",
+        "evidence_found": true,
+        "ambiguities_json": [],
+        "provenance": null
+      },
+      {
+        "id": 25,
+        "bidder_id": 2,
+        "requirement_id": "REQ003",
+        "document_id": "CURATED-2-31",
+        "page": 14,
+        "field": "PAN",
+        "value": "AAECO1234K",
+        "unit": null,
+        "evidence_text": "PAN\nAAECO1234K",
+        "evidence_found": true,
+        "ambiguities_json": [],
+        "provenance": null
+      },
+      {
+        "id": 26,
+        "bidder_id": 2,
+        "requirement_id": "REQ001",
+        "document_id": "CURATED-2-34",
+        "page": 17,
+        "field": "Udyam Number",
+        "value": "UDYAM-HR-05-0012345",
+        "unit": null,
+        "evidence_text": "Udyam Registration Number\nUDYAM-HR-05-0012345",
+        "evidence_found": true,
+        "ambiguities_json": [],
+        "provenance": null
+      },
+      {
+        "id": 27,
+        "bidder_id": 3,
+        "requirement_id": "REQ014",
+        "document_id": "CURATED-3-35",
+        "page": 1,
+        "field": "Average Annual Turnover",
+        "value": "INR 8,500,000",
+        "unit": "INR",
+        "evidence_text": "Average Annual Turnover\nINR 8,500,000",
+        "evidence_found": true,
+        "ambiguities_json": [],
+        "provenance": null
+      },
+      {
+        "id": 28,
+        "bidder_id": 3,
+        "requirement_id": "REQ012",
+        "document_id": "CURATED-3-36",
+        "page": 2,
+        "field": "BIS Licence Number",
+        "value": "BIS-SYN-2026-003",
+        "unit": null,
+        "evidence_text": "BIS Licence Number\nBIS-SYN-2026-003",
+        "evidence_found": true,
+        "ambiguities_json": [],
+        "provenance": null
+      },
+      {
+        "id": 29,
+        "bidder_id": 3,
+        "requirement_id": "REQ002",
+        "document_id": "CURATED-3-42",
+        "page": 8,
+        "field": "GSTIN",
+        "value": "29AAECS3456N1Z4",
+        "unit": null,
+        "evidence_text": "GSTIN\n29AAECS3456N1Z4",
+        "evidence_found": true,
+        "ambiguities_json": [],
+        "provenance": null
+      },
+      {
+        "id": 30,
+        "bidder_id": 3,
+        "requirement_id": "REQ004",
+        "document_id": "CURATED-3-44",
+        "page": 10,
+        "field": "LocalContentPercentage",
+        "value": "55%",
+        "unit": "PERCENT",
+        "evidence_text": "Percentage of Local Content\n55%",
+        "evidence_found": true,
+        "ambiguities_json": [],
+        "provenance": null
+      },
+      {
+        "id": 31,
+        "bidder_id": 3,
+        "requirement_id": "REQ005",
+        "document_id": "CURATED-3-44",
+        "page": 10,
+        "field": "LocalContentPercentage",
+        "value": "55%",
+        "unit": "PERCENT",
+        "evidence_text": "Percentage of Local Content\n55%",
+        "evidence_found": true,
+        "ambiguities_json": [],
+        "provenance": null
+      },
+      {
+        "id": 32,
+        "bidder_id": 3,
+        "requirement_id": "REQ009",
+        "document_id": "CURATED-3-46",
+        "page": 12,
+        "field": "Authorized Bidder",
+        "value": "SecureByte Technology Solutions Private Limited",
+        "unit": null,
+        "evidence_text": "Authorized Bidder\nSecureByte Technology Solutions Private Limited",
+        "evidence_found": true,
+        "ambiguities_json": [],
+        "provenance": null
+      },
+      {
+        "id": 33,
+        "bidder_id": 3,
+        "requirement_id": "REQ015",
+        "document_id": "CURATED-3-47",
+        "page": 13,
+        "field": "OEM Average Annual Turnover",
+        "value": "INR 18,000,000",
+        "unit": "INR",
+        "evidence_text": "Average Annual Turnover\nINR 18,000,000",
+        "evidence_found": true,
+        "ambiguities_json": [],
+        "provenance": null
+      },
+      {
+        "id": 34,
+        "bidder_id": 3,
+        "requirement_id": "REQ003",
+        "document_id": "CURATED-3-48",
+        "page": 14,
+        "field": "PAN",
+        "value": "AAECS3456N",
+        "unit": null,
+        "evidence_text": "PAN\nAAECS3456N",
+        "evidence_found": true,
+        "ambiguities_json": [],
+        "provenance": null
+      },
+      {
+        "id": 35,
+        "bidder_id": 3,
+        "requirement_id": "REQ001",
+        "document_id": "CURATED-3-50",
+        "page": 16,
+        "field": "Udyam Number",
+        "value": "UDYAM-KA-03-0076543",
+        "unit": null,
+        "evidence_text": "Udyam Registration Number\nUDYAM-KA-03-0076543",
+        "evidence_found": true,
+        "ambiguities_json": [],
+        "provenance": null
+      }
+    ],
+    "compliance_checks": [
+      {
+        "id": 1,
+        "bidder_id": 1,
+        "requirement_id": "REQ001",
+        "machine_status": "COMPLIANT",
+        "effective_status": "COMPLIANT",
+        "required": "MANDATORY",
+        "found": "Udyam Registration Number: UDYAM-DL-07-0067890; Enterprise Name: Bharat Compute Solutions Private Limited; Registration Status: ACTIVE",
+        "rule": "EXACT_IDENTIFIER_MATCH",
+        "reason": "Deterministic rule EXACT_IDENTIFIER_MATCH passed.",
+        "explanation": "Deterministic rule EXACT_IDENTIFIER_MATCH passed."
+      },
+      {
+        "id": 2,
+        "bidder_id": 1,
+        "requirement_id": "REQ002",
+        "machine_status": "COMPLIANT",
+        "effective_status": "COMPLIANT",
+        "required": "MANDATORY",
+        "found": "GSTIN: 07AAECB2345M1Z6; Legal Name: Bharat Compute Solutions Private Limited; Registration Status: ACTIVE",
+        "rule": "EXACT_IDENTIFIER_MATCH",
+        "reason": "Deterministic rule EXACT_IDENTIFIER_MATCH passed.",
+        "explanation": "Deterministic rule EXACT_IDENTIFIER_MATCH passed."
+      },
+      {
+        "id": 3,
+        "bidder_id": 1,
+        "requirement_id": "REQ003",
+        "machine_status": "COMPLIANT",
+        "effective_status": "COMPLIANT",
+        "required": "MANDATORY",
+        "found": "PAN: AAECB2345M",
+        "rule": "EXACT_IDENTIFIER_MATCH",
+        "reason": "Deterministic rule EXACT_IDENTIFIER_MATCH passed.",
+        "explanation": "Deterministic rule EXACT_IDENTIFIER_MATCH passed."
+      },
+      {
+        "id": 4,
+        "bidder_id": 1,
+        "requirement_id": "REQ004",
+        "machine_status": "NON_COMPLIANT",
+        "effective_status": "NON_COMPLIANT",
+        "required": "MANDATORY",
+        "found": "15%",
+        "rule": "LOCAL_CONTENT_CLASSIFICATION",
+        "reason": "Extracted local content is 15%, classified as Non-local; minimum qualifying threshold is 20%.",
+        "explanation": "Extracted local content is 15%, classified as Non-local; minimum qualifying threshold is 20%."
+      },
+      {
+        "id": 5,
+        "bidder_id": 1,
+        "requirement_id": "REQ005",
+        "machine_status": "COMPLIANT",
+        "effective_status": "COMPLIANT",
+        "required": "MANDATORY",
+        "found": "Percentage of Local Content: 15%",
+        "rule": "EXISTS",
+        "reason": "Deterministic rule EXISTS passed.",
+        "explanation": "Deterministic rule EXISTS passed."
+      },
+      {
+        "id": 6,
+        "bidder_id": 1,
+        "requirement_id": "REQ006",
+        "machine_status": "NOT_APPLICABLE",
+        "effective_status": "NOT_APPLICABLE",
+        "required": "OPTIONAL",
+        "found": null,
+        "rule": "MANUAL_REVIEW",
+        "reason": "The tender does not contain this requirement.",
+        "explanation": "The tender does not contain this requirement."
+      },
+      {
+        "id": 7,
+        "bidder_id": 1,
+        "requirement_id": "REQ007",
+        "machine_status": "NOT_APPLICABLE",
+        "effective_status": "NOT_APPLICABLE",
+        "required": "OPTIONAL",
+        "found": null,
+        "rule": "MANUAL_REVIEW",
+        "reason": "The tender does not contain this requirement.",
+        "explanation": "The tender does not contain this requirement."
+      },
+      {
+        "id": 8,
+        "bidder_id": 1,
+        "requirement_id": "REQ008",
+        "machine_status": "NOT_APPLICABLE",
+        "effective_status": "NOT_APPLICABLE",
+        "required": "OPTIONAL",
+        "found": null,
+        "rule": "MANUAL_REVIEW",
+        "reason": "The tender does not contain this requirement.",
+        "explanation": "The tender does not contain this requirement."
+      },
+      {
+        "id": 9,
+        "bidder_id": 1,
+        "requirement_id": "REQ009",
+        "machine_status": "COMPLIANT",
+        "effective_status": "COMPLIANT",
+        "required": "MANDATORY",
+        "found": "OEM Name: Bharat Compute Manufacturing Private Limited; Authorized Bidder: Bharat Compute Solutions Private Limited; Authorization Scope: Supply, installation and warranty support for offered desktop computers",
+        "rule": "BIDDER_NAME_MATCH",
+        "reason": "The authorization names the registered bidder.",
+        "explanation": "The authorization names the registered bidder."
+      },
+      {
+        "id": 10,
+        "bidder_id": 1,
+        "requirement_id": "REQ010",
+        "machine_status": "NOT_APPLICABLE",
+        "effective_status": "NOT_APPLICABLE",
+        "required": "OPTIONAL",
+        "found": null,
+        "rule": "MANUAL_REVIEW",
+        "reason": "The tender does not contain this requirement.",
+        "explanation": "The tender does not contain this requirement."
+      },
+      {
+        "id": 11,
+        "bidder_id": 1,
+        "requirement_id": "REQ011",
+        "machine_status": "NOT_APPLICABLE",
+        "effective_status": "NOT_APPLICABLE",
+        "required": "OPTIONAL",
+        "found": null,
+        "rule": "MANUAL_REVIEW",
+        "reason": "The tender does not contain this requirement.",
+        "explanation": "The tender does not contain this requirement."
+      },
+      {
+        "id": 12,
+        "bidder_id": 1,
+        "requirement_id": "REQ012",
+        "machine_status": "COMPLIANT",
+        "effective_status": "COMPLIANT",
+        "required": "MANDATORY",
+        "found": "BIS Licence Number: BIS-SYN-2026-002",
+        "rule": "EXACT_IDENTIFIER_MATCH",
+        "reason": "Deterministic rule EXACT_IDENTIFIER_MATCH passed.",
+        "explanation": "Deterministic rule EXACT_IDENTIFIER_MATCH passed."
+      },
+      {
+        "id": 13,
+        "bidder_id": 1,
+        "requirement_id": "REQ013",
+        "machine_status": "NOT_APPLICABLE",
+        "effective_status": "NOT_APPLICABLE",
+        "required": "OPTIONAL",
+        "found": null,
+        "rule": "MANUAL_REVIEW",
+        "reason": "The tender does not contain this requirement.",
+        "explanation": "The tender does not contain this requirement."
+      },
+      {
+        "id": 14,
+        "bidder_id": 1,
+        "requirement_id": "REQ014",
+        "machine_status": "NEEDS_REVIEW",
+        "effective_status": "NEEDS_REVIEW",
+        "required": "MANDATORY",
+        "found": "Average Annual Turnover: INR 8,500,000; Average Annual Turnover: INR 18,000,000",
+        "rule": "GREATER_THAN_OR_EQUAL",
+        "reason": "Evidence is ambiguous or conflicting.",
+        "explanation": "Evidence is ambiguous or conflicting."
+      },
+      {
+        "id": 15,
+        "bidder_id": 1,
+        "requirement_id": "REQ015",
+        "machine_status": "NEEDS_REVIEW",
+        "effective_status": "NEEDS_REVIEW",
+        "required": "MANDATORY",
+        "found": "Average Annual Turnover: INR 18,000,000; Average Annual Turnover: INR 8,500,000",
+        "rule": "GREATER_THAN_OR_EQUAL",
+        "reason": "Evidence is ambiguous or conflicting.",
+        "explanation": "Evidence is ambiguous or conflicting."
+      },
+      {
+        "id": 16,
+        "bidder_id": 1,
+        "requirement_id": "REQ016",
+        "machine_status": "NOT_APPLICABLE",
+        "effective_status": "NOT_APPLICABLE",
+        "required": "OPTIONAL",
+        "found": null,
+        "rule": "MANUAL_REVIEW",
+        "reason": "The tender does not contain this requirement.",
+        "explanation": "The tender does not contain this requirement."
+      }
+    ],
+    "registry_verifications": [
+      {
+        "id": 1,
+        "bidder_id": 1,
+        "source": "UDYAM",
+        "identifier": "UDYAM-DL-07-0067890",
+        "status": "VERIFIED",
+        "matched": 1,
+        "registry_record_json": {
+          "udyam_number": "UDYAM-DL-07-0067890",
+          "enterprise_name": "Bharat Compute Solutions Private Limited",
+          "enterprise_type": "Small Enterprise",
+          "status": "ACTIVE"
+        },
+        "discrepancies_json": []
+      },
+      {
+        "id": 2,
+        "bidder_id": 1,
+        "source": "GST",
+        "identifier": "07AAECB2345M1Z6",
+        "status": "VERIFIED",
+        "matched": 1,
+        "registry_record_json": {
+          "gstin": "07AAECB2345M1Z6",
+          "legal_name": "Bharat Compute Solutions Private Limited",
+          "status": "ACTIVE"
+        },
+        "discrepancies_json": []
+      },
+      {
+        "id": 3,
+        "bidder_id": 1,
+        "source": "PAN",
+        "identifier": "AAECB2345M",
+        "status": "VERIFIED",
+        "matched": 1,
+        "registry_record_json": {
+          "pan": "AAECB2345M",
+          "legal_name": "Bharat Compute Solutions Private Limited",
+          "status": "ACTIVE"
+        },
+        "discrepancies_json": []
+      },
+      {
+        "id": 4,
+        "bidder_id": 1,
+        "source": "BIS",
+        "identifier": "BIS-SYN-2026-002",
+        "status": "VERIFIED",
+        "matched": 1,
+        "registry_record_json": {
+          "license_number": "BIS-SYN-2026-002",
+          "legal_name": "Bharat Compute Solutions Private Limited",
+          "standard": "IS 13252 (Part 1):2010",
+          "status": "VALID"
+        },
+        "discrepancies_json": []
+      },
+      {
+        "id": 5,
+        "bidder_id": 1,
+        "source": "DEBARMENT",
+        "identifier": "Bharat Compute Solutions Pvt Ltd",
+        "status": "CLEAR",
+        "matched": 1,
+        "registry_record_json": {},
+        "discrepancies_json": []
+      }
+    ],
+    "officer_decisions": [],
+    "clarification_requests": [],
+    "audit_events": [
+      {
+        "id": 21,
+        "tender_id": 1,
+        "actor": "system",
+        "action": "TENDER_EXTRACTION_COMPLETED",
+        "entity_type": "Tender",
+        "entity_id": "1",
+        "details": {
+          "before": 25,
+          "after": 17,
+          "duplicates_removed": 8,
+          "mode": "OFFLINE",
+          "provider": "Ollama",
+          "model": "qwen2.5:3b",
+          "preprocessed": true
+        },
+        "timestamp": "2026-09-26 12:26:38.247838"
+      },
+      {
+        "id": 39,
+        "tender_id": 1,
+        "actor": "system",
+        "action": "TENDER_EXTRACTION_COMPLETED",
+        "entity_type": "Tender",
+        "entity_id": "1",
+        "details": {
+          "before": 20,
+          "after": 16,
+          "duplicates_removed": 4,
+          "mode": "OFFLINE",
+          "provider": "Ollama",
+          "model": "qwen2.5:3b",
+          "preprocessed": true
+        },
+        "timestamp": "2026-09-26 12:30:49.463085"
+      },
+      {
+        "id": 94,
+        "tender_id": 1,
+        "actor": "system",
+        "action": "BIDDER_PROCESSING_COMPLETED",
+        "entity_type": "Bidder",
+        "entity_id": "1",
+        "details": {
+          "documents": 17,
+          "evidence": 17,
+          "mode": "OFFLINE",
+          "provider": "Ollama",
+          "model": "qwen2.5:3b",
+          "preprocessed": true
+        },
+        "timestamp": "2026-09-26 12:36:30.697668"
+      },
+      {
+        "id": 154,
+        "tender_id": 1,
+        "actor": "system",
+        "action": "BIDDER_PROCESSING_COMPLETED",
+        "entity_type": "Bidder",
+        "entity_id": "1",
+        "details": {
+          "documents": 17,
+          "evidence": 17,
+          "mode": "OFFLINE",
+          "provider": "Ollama",
+          "model": "qwen2.5:3b",
+          "preprocessed": true
+        },
+        "timestamp": "2026-09-26 12:40:26.245275"
+      }
+    ]
+  }
+}

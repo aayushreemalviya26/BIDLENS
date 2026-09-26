@@ -136,12 +136,13 @@ def compliance_evidence(check_id: int, db: Session = Depends(get_db)):
     evidence_payload = []
     for item in evidence:
         document = documents.get(item.document_id)
-        source = next((entry for entry in uploaded if document and entry.id == document.uploaded_file_id), None)
+        source = next((entry for entry in uploaded if item.page and entry.page_start <= item.page <= entry.page_end), None)
         if source is None:
-            source = next((entry for entry in uploaded if item.page and entry.page_start <= item.page <= entry.page_end), None)
+            source = next((entry for entry in uploaded if document and entry.id == document.uploaded_file_id), None)
         page_start = document.page_start - source.page_start + 1 if document and source and document.page_start else None
         page_end = document.page_end - source.page_start + 1 if document and source and document.page_end else None
         evidence_payload.append({"document_id": item.document_id, "document_title": document.document_title if document else requirement.name, "document_category": document.category if document else requirement.required_document_type, "page": item.page, "page_start": page_start, "page_end": page_end, "source_page": (item.page - source.page_start + 1) if source and item.page else item.page, "source_filename": source.filename if source else (document.filename if document else None), "source_file_id": source.id if source else None, "source_url": f"/api/bidders/{bidder.id}/documents/{source.id}/file" if source else None, "field": item.field, "value": item.value, "unit": item.unit, "evidence_text": item.evidence_text, "confidence": document.confidence if document else None, "ambiguities": item.ambiguities_json})
+        evidence_payload[-1]["source_locator_url"] = f"/api/evidence/{item.id}/source"
     latest_decision = db.query(OfficerDecision).filter_by(compliance_check_id=check.id).order_by(OfficerDecision.timestamp.desc()).first()
     return {"compliance_id": check.id, "tender_id": bidder.tender_id, "tender_document_url": f"/api/tenders/{tender.id}/documents/original/file" if tender.document_path else None, "bidder": {"id": bidder.id, "bidder_id": bidder.bidder_id, "bidder_name": bidder.bidder_name, "identity_masking": "NOT_APPLIED"}, "requirement": requirement_payload(requirement), "machine_status": check.machine_status, "effective_status": check.effective_status, "reason": check.reason, "officer_decision": {"action": latest_decision.action, "reason": latest_decision.remarks, "verified_by": latest_decision.actor, "verified_at": latest_decision.timestamp} if latest_decision else None, **explanation, "evidence": evidence_payload}
 

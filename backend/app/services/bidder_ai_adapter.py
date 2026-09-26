@@ -2,11 +2,10 @@ import json
 import os
 from pathlib import Path
 import shutil
-import subprocess
-import sys
 import tempfile
 
 from .evidence_normalizer import EvidenceNormalizer
+from .pipeline_runner import run_stage
 
 
 class BidderAIAdapter:
@@ -27,6 +26,8 @@ class BidderAIAdapter:
             shutil.copytree(self.pipeline_dir, work, ignore=shutil.ignore_patterns("data", "__pycache__"))
             data = work / "data"
             data.mkdir()
+            shutil.copy2(Path(__file__).with_name("llm_provider.py"), work / "bidlens_llm.py")
+            shutil.copy2(Path(__file__).with_name("embedding_provider.py"), work / "bidlens_embeddings.py")
             shutil.copy2(pdf_path, data / "bidder.pdf")
             (data / "requirements.json").write_text(json.dumps(requirements, ensure_ascii=False, indent=2), encoding="utf-8")
             (data / "bidder_metadata.json").write_text(json.dumps({"bidder_id": bidder_id, "bidder_name": bidder_name}, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -34,9 +35,12 @@ class BidderAIAdapter:
                 **os.environ,
                 "OLLAMA_HOST": os.getenv("OLLAMA_BASE_URL", os.getenv("OLLAMA_HOST", "http://localhost:11434")),
                 "PYTHONIOENCODING": "utf-8",
+                "BIDLENS_AI_MODE": getattr(self, "mode", "OFFLINE"),
             }
             for stage in self.STAGES:
-                subprocess.run([sys.executable, stage], cwd=work, env=env, check=True)
+                if getattr(self, "mode", "OFFLINE") == "OFFLINE":
+                    env.update(HF_HUB_OFFLINE="1", TRANSFORMERS_OFFLINE="1")
+                run_stage(stage, work, env)
             documents = json.loads((data / "bidder_documents.json").read_text(encoding="utf-8"))
             evidence = json.loads((data / "bidder_evidence.json").read_text(encoding="utf-8"))
             return self.normalize_outputs(documents, evidence)

@@ -5,6 +5,8 @@ from sqlalchemy.orm import sessionmaker
 
 
 DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./bidlens.db")
+if os.getenv("APP_ENV") == "production" and DATABASE_URL.startswith("sqlite"):
+    raise RuntimeError("Hosted BidLens requires PostgreSQL DATABASE_URL; SQLite is local-only.")
 if DATABASE_URL.startswith("postgres://"):
     DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql+psycopg://", 1)
 elif DATABASE_URL.startswith("postgresql://"):

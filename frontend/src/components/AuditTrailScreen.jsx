@@ -49,6 +49,9 @@ function formatDetails(details = {}) {
       : `Page ${details.page_start}`)
     : null;
   return [
+    details.mode && `Mode: ${details.mode}`,
+    details.provider && `Provider: ${details.provider}`,
+    details.model && `Model: ${details.model}`,
     details.requirement && `Requirement: ${details.requirement}`,
     details.bidder && `Bidder: ${details.bidder}`,
     details.document && `Evidence: ${details.document}`,

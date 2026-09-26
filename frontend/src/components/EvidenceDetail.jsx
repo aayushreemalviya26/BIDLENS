@@ -39,7 +39,7 @@ function InfoBlock({ label, corner, children }) {
 function DocumentViewer({ doc }) {
     if (!doc) return null;
     const url = doc.url ? api.absoluteUrl(doc.url) : null;
-    return <PdfViewer url={url} initialPage={doc.page || 1} title={doc.heading} />;
+    return <PdfViewer url={url} initialPage={doc.page || 1} title={doc.heading} sourceLocator={doc.sourceLocator} evidenceText={doc.evidenceText} />;
 }
 
 /**
@@ -52,11 +52,15 @@ function OfficerDecisionPanel({ detail, currentStatus, onDecide }) {
     const [remarks, setRemarks] = useState("");
     const [lastAction, setLastAction] = useState(null);
     const [overrideStatus, setOverrideStatus] = useState("NON_COMPLIANT");
+    const [error, setError] = useState("");
+    const [saving, setSaving] = useState(false);
     const excluded = currentStatus === "NOT_APPLICABLE";
 
     const handleClick = async (action) => {
-        await onDecide(action, remarks.trim(), overrideStatus);
-        setLastAction(action);
+        setSaving(true); setError("");
+        try { await onDecide(action, remarks.trim(), overrideStatus); setLastAction(action); }
+        catch (reason) { setError(reason.message); }
+        finally { setSaving(false); }
     };
 
     return (
@@ -75,7 +79,7 @@ function OfficerDecisionPanel({ detail, currentStatus, onDecide }) {
                 <button
                     type="button"
                     onClick={() => handleClick("ACCEPT_EVIDENCE")}
-                    disabled={excluded}
+                    disabled={excluded || saving}
                     className="rounded-lg bg-emerald-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-emerald-700 disabled:cursor-not-allowed disabled:opacity-50"
                 >
                     Accept
@@ -83,7 +87,7 @@ function OfficerDecisionPanel({ detail, currentStatus, onDecide }) {
                 <button
                     type="button"
                     onClick={() => handleClick("REJECT_EVIDENCE")}
-                    disabled={excluded || !remarks.trim()}
+                    disabled={excluded || saving || !remarks.trim()}
                     className="rounded-lg bg-red-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-red-700 disabled:cursor-not-allowed disabled:opacity-50"
                 >
                     Override Status
@@ -92,13 +96,14 @@ function OfficerDecisionPanel({ detail, currentStatus, onDecide }) {
                 <button
                     type="button"
                     onClick={() => handleClick("REVIEW_EVIDENCE")}
-                    disabled={excluded || currentStatus === "NEEDS_REVIEW"}
+                    disabled={excluded || saving || currentStatus === "NEEDS_REVIEW"}
                     className="rounded-lg bg-amber-500 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-amber-600 disabled:cursor-not-allowed disabled:opacity-50"
                 >
                     Request Clarification
                 </button>
             </div>
 
+            {error && <p role="alert" className="mt-2 text-sm text-red-700">{error}</p>}
             {lastAction && (
                 <p className="mt-3 text-xs text-gray-500">
                     {DECISION_LABEL[lastAction]} · {detail.requirementName} for {detail.bidderName}, just now.
@@ -176,7 +181,7 @@ function EvidenceDetail({ detail, onBack, onDecision = () => {} }) {
                         corner={`Clause ${detail.clauseRef}, Page ${detail.clausePage}`}
                     >
                         <p className="text-sm text-gray-700">{detail.requirementText}</p>
-                        {detail.tenderClause.url&&<a href={api.absoluteUrl(`${detail.tenderClause.url}#page=${detail.tenderClause.page}`)} target="_blank" rel="noreferrer" className="mt-2 inline-block text-xs font-bold text-[#B3432E]">Open Tender Source</a>}
+                        {detail.tenderClause.url&&<button onClick={() => setActiveDocTab("clause")} className="mt-2 inline-block text-xs font-bold text-[#B3432E]">Open Tender Source</button>}
                     </InfoBlock>
 
                     <InfoBlock
@@ -185,7 +190,7 @@ function EvidenceDetail({ detail, onBack, onDecision = () => {} }) {
                     >
                         <p className="mb-1 text-xs text-gray-500">Original File: {detail.extractedSourceLabel}</p>
                         <p className="text-lg font-bold text-gray-900">{detail.extractedValue}</p>
-                        {detail.bidderDocument.url&&<a href={api.absoluteUrl(`${detail.bidderDocument.url}#page=${detail.bidderDocument.page}`)} target="_blank" rel="noreferrer" className="mt-2 inline-block text-xs font-bold text-[#B3432E]">Open Original Document</a>}
+                        {detail.bidderDocument.url&&<button onClick={() => setActiveDocTab("document")} className="mt-2 inline-block text-xs font-bold text-[#B3432E]">Open Original Evidence</button>}
                     </InfoBlock>
 
                     <InfoBlock label="Applied Rule">

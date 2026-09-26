@@ -73,3 +73,4 @@ backend/uploads/*
 !backend/uploads/.gitkeep
 frontend/node_modules/
 frontend/dist/
+frontend/dist-preview/
