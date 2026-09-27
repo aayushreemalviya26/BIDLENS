@@ -40,9 +40,19 @@ def require_session(request: Request, db: Session = Depends(get_db)):
     return session
 
 
-def require_processing(request: Request, session=Depends(require_session)):
+def require_processing(request: Request, db: Session = Depends(get_db)):
+    session = None
+    token = request.cookies.get(COOKIE, "")
+    if token:
+        session = db.get(PrototypeSession, hashlib.sha256(token.encode()).hexdigest())
+        if session and session.expires_at.replace(tzinfo=timezone.utc) <= datetime.now(timezone.utc):
+            session = None
+    public_judge = os.getenv("APP_ENV") == "production" and os.getenv("PUBLIC_JUDGE_DEMO", "false") == "true"
+    if session is None and not public_judge:
+        raise HTTPException(401, "Sign in to BidLens.")
+    mode = session.mode if session else "ONLINE"
     try:
-        provider = get_provider(session.mode)
+        provider = get_provider(mode)
         provider.health()
         request.state.ai = provider.metadata()
         return provider.metadata()
