@@ -21,6 +21,25 @@ def seed_judge_demo():
             db.execute(text("SELECT pg_advisory_xact_lock(7910945)"))
         existing = db.query(Tender).filter_by(external_bid_id=DEMO_ID).one_or_none()
         if existing:
+            # Keep the persistent hosted sample aligned with the current seed metadata.
+            # This is intentionally non-destructive: requirements, bidders, evidence and
+            # officer/audit records are left untouched.
+            seed_tender = payload["tables"]["tenders"][0]
+            changed = False
+            for field in ("title", "department"):
+                desired = seed_tender.get(field)
+                if desired and getattr(existing, field, None) != desired:
+                    setattr(existing, field, desired)
+                    changed = True
+            if changed:
+                db.add(AuditEvent(
+                    tender_id=existing.id,
+                    action="SAMPLE_METADATA_REFRESHED",
+                    entity_type="Tender",
+                    entity_id=str(existing.id),
+                    details={"description": "Sample tender display metadata refreshed from deployment seed."},
+                ))
+                db.commit()
             return existing.id
         # Absolute filesystem paths are generated on this server, never exposed
         # in the manifest or returned through public document endpoints.
