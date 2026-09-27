@@ -62,7 +62,7 @@ export default function Sidebar({
           className="w-full bg-[#B3432E] hover:bg-[#9E3824] text-white flex items-center justify-center space-x-2 py-2.5 px-4 rounded-xl font-semibold text-sm shadow-xs transition-colors"
         >
           <PlusCircle className="w-4 h-4" />
-          <span>New Tender Scan</span>
+          <span>Upload Tender PDF</span>
         </button>
 
         <nav className="space-y-1 pt-1">
@@ -107,7 +107,7 @@ export default function Sidebar({
       </div>
 
       <div className="p-4 border-t border-[#E5E0DA] bg-[#EFEBE4]/50 text-xs font-medium text-[#786F66]">
-        <span>BidLens Platform v4.2</span>
+        <span>BidLens</span>
       </div>
     </aside>
   );
