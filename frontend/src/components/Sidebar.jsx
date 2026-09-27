@@ -57,7 +57,7 @@ export default function Sidebar({
           <span className="sr-only">BidLens Enterprise procurement workspace</span>
         </div>
 
-        <button
+        <button data-demo-write
           onClick={onStartNewScan}
           className="w-full bg-[#B3432E] hover:bg-[#9E3824] text-white flex items-center justify-center space-x-2 py-2.5 px-4 rounded-xl font-semibold text-sm shadow-xs transition-colors"
         >

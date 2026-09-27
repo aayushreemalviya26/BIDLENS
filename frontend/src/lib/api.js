@@ -42,6 +42,7 @@ async function processingJob(kind, id) {
 }
 
 export const api = {
+  demoAccess: () => request("/api/demo/access"),
   demo: () => request("/api/demo/workspace"),
   login: (username, password) => request("/api/auth/login", { method: "POST", body: JSON.stringify({ username, password }) }),
   session: () => request("/api/auth/session"),

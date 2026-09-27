@@ -9,6 +9,7 @@ from fastapi.staticfiles import StaticFiles
 
 from app.api import audit, auth, bidders, demo, evaluation, jobs, sources, tenders
 from app.database.init_db import init_db
+from app.api.public_demo import enabled as public_demo_enabled, require_workspace_access
 
 
 @asynccontextmanager
@@ -53,7 +54,11 @@ async def check_origin(request: Request, call_next):
 
 app.include_router(auth.router, prefix="/api")
 for router in (tenders.router, bidders.router, evaluation.router, audit.router, demo.router, sources.router, jobs.router):
-    app.include_router(router, prefix="/api", dependencies=[Depends(auth.require_session)])
+    app.include_router(router, prefix="/api", dependencies=[Depends(require_workspace_access)])
+
+@app.get("/api/demo/access")
+def demo_access():
+    return {"public_read_only": public_demo_enabled()}
 
 @app.get("/health")
 @app.get("/api/health")

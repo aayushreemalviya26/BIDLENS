@@ -1,5 +1,11 @@
 # Zero-cost judge deployment
 
+Public SIH deployment: PUBLIC_JUDGE_DEMO=true (also defaults on for production
+SEED_JUDGE_DEMO) enables anonymous GET access only to the preprocessed workspace.
+All business mutations are disabled, even for an existing signed-in session.
+Auth/config/job endpoints remain protected; other tenders are not exposed.
+Local auth remains unchanged. Set PUBLIC_JUDGE_DEMO=false to require auth again.
+
 Frontend: Vercel Hobby. Backend: Render Free. Database: Render Free PostgreSQL.
 Online AI: Groq `openai/gpt-oss-120b`, with JSON output and pipeline validation.
 Offline AI: local-only Ollama Qwen + MiniLM, unchanged.

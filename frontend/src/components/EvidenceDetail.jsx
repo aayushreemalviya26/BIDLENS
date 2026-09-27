@@ -220,11 +220,11 @@ function EvidenceDetail({ detail, onBack, onDecision = () => {} }) {
                         <p className="text-sm text-gray-700">{detail.systemFinding}</p>
                     </InfoBlock>
 
-                    <OfficerDecisionPanel
+                    <div data-demo-write><OfficerDecisionPanel
                         detail={detail}
                         currentStatus={currentStatus}
                         onDecide={handleDecide}
-                    />
+                    /></div>
                 </div>
 
                 {/* RIGHT: DOCUMENT VIEWER */}

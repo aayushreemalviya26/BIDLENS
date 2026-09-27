@@ -32,6 +32,8 @@ services:
         value: lexical
       - key: SEED_JUDGE_DEMO
         value: "true"
+      - key: PUBLIC_JUDGE_DEMO
+        value: "true"
       - key: PYTHON_VERSION
         value: 3.11.11
 
