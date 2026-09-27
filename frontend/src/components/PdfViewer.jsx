@@ -4,7 +4,12 @@ import { api } from "@/lib/api";
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL("pdfjs-dist/build/pdf.worker.min.mjs", import.meta.url).toString();
 
-export default function PdfViewer({ url, initialPage = 1, title = "Original PDF", sourceLocator, evidenceText = "" }) {
+export default function PdfViewer(props) {
+  // Switching sources must not render a page against the previous destroyed worker.
+  return <PdfDocumentViewer key={`${props.url}:${props.initialPage || 1}`} {...props} />;
+}
+
+function PdfDocumentViewer({ url, initialPage = 1, title = "Original PDF", sourceLocator, evidenceText = "" }) {
   const canvasRef = useRef(null);
   const scrollRef = useRef(null);
   const [document, setDocument] = useState(null);
