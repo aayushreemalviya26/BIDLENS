@@ -40,8 +40,6 @@ def list_tenders(db: Session = Depends(get_db)):
     from .public_demo import enabled
     from app.services.judge_demo import DEMO_ID
     query = db.query(Tender)
-    if enabled():
-        query = query.filter_by(external_bid_id=DEMO_ID)
     return [_tender_payload(item) for item in query.order_by(Tender.created_at.desc()).all()]
 
 
