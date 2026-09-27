@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "label": "Preprocessed Demo",
+  "label": "Sample Tender",
   "origin": "Bharat: saved local Ollama live acceptance. Orange/SecureByte: curated literal PDF fields, not AI-generated. All findings are recomputed by the unchanged compliance engine at seed time.",
   "documents": {
     "demo_files/tender/GEM_2026_B_7910945.pdf": "e38d01dd6a6df18a7f02bfb8e288fc3848fd3a403bf32dfc59e84d3d2a54229a",
@@ -60,8 +60,8 @@
       {
         "id": 1,
         "external_bid_id": "GEM/2026/B/7910945",
-        "title": "Preprocessed Demo — GeM desktop procurement",
-        "department": "SIH judge demonstration / simulated registries",
+        "title": "Sample Tender: GeM desktop procurement",
+        "department": "Sample procurement workspace",
         "status": "EVALUATED",
         "document_path": "demo_files/tender/GEM_2026_B_7910945.pdf",
         "created_at": "2026-09-26 12:24:14.141626"
@@ -876,7 +876,7 @@
         "document_id": "DOC_001",
         "category": "BIS",
         "filename": "BIS_Technical_Compliance.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 1,
         "page_end": 1,
         "pages_json": [
@@ -892,7 +892,7 @@
         "document_id": "DOC_002",
         "category": "TURNOVER",
         "filename": "Bidder_Turnover_Certificate.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 2,
         "page_end": 2,
         "pages_json": [
@@ -908,7 +908,7 @@
         "document_id": "DOC_003",
         "category": "DECLARATION",
         "filename": "Blacklisting_Declaration.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 3,
         "page_end": 3,
         "pages_json": [
@@ -924,7 +924,7 @@
         "document_id": "DOC_004",
         "category": "TECHNICAL",
         "filename": "BoQ_Compliance.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 4,
         "page_end": 4,
         "pages_json": [
@@ -940,7 +940,7 @@
         "document_id": "DOC_005",
         "category": "CIN",
         "filename": "Company_Profile.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 5,
         "page_end": 5,
         "pages_json": [
@@ -956,7 +956,7 @@
         "document_id": "DOC_006",
         "category": "EXPERIENCE",
         "filename": "Experience_Credentials.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 6,
         "page_end": 6,
         "pages_json": [
@@ -972,7 +972,7 @@
         "document_id": "DOC_007",
         "category": "NET_WORTH",
         "filename": "Financial_Standing.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 7,
         "page_end": 7,
         "pages_json": [
@@ -988,7 +988,7 @@
         "document_id": "DOC_008",
         "category": "GST",
         "filename": "GST_Registration.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 8,
         "page_end": 8,
         "pages_json": [
@@ -1004,7 +1004,7 @@
         "document_id": "DOC_009",
         "category": "STATUTORY",
         "filename": "ISO_9001_Certificate.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 9,
         "page_end": 9,
         "pages_json": [
@@ -1020,7 +1020,7 @@
         "document_id": "DOC_010",
         "category": "MII_LOCAL_CONTENT",
         "filename": "Local_Content_Declaration.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 10,
         "page_end": 10,
         "pages_json": [
@@ -1052,7 +1052,7 @@
         "document_id": "DOC_012",
         "category": "OEM_AUTHORIZATION",
         "filename": "OEM_Authorization.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 12,
         "page_end": 12,
         "pages_json": [
@@ -1068,7 +1068,7 @@
         "document_id": "DOC_013",
         "category": "TURNOVER",
         "filename": "OEM_Turnover_Certificate.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 13,
         "page_end": 13,
         "pages_json": [
@@ -1084,7 +1084,7 @@
         "document_id": "DOC_014",
         "category": "PAN",
         "filename": "PAN_Card.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 14,
         "page_end": 14,
         "pages_json": [
@@ -1100,7 +1100,7 @@
         "document_id": "DOC_015",
         "category": "EXPERIENCE",
         "filename": "Past_Performance.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 15,
         "page_end": 15,
         "pages_json": [
@@ -1116,7 +1116,7 @@
         "document_id": "DOC_016",
         "category": "SUPPORTING_DOCUMENT",
         "filename": "Service_Centre_Details.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 16,
         "page_end": 16,
         "pages_json": [
@@ -1132,7 +1132,7 @@
         "document_id": "DOC_017",
         "category": "UDYAM",
         "filename": "Udyam_Certificate.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 17,
         "page_end": 17,
         "pages_json": [
@@ -1148,7 +1148,7 @@
         "document_id": "CURATED-2-18",
         "category": "TURNOVER",
         "filename": "Bidder_Turnover_Certificate.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 1,
         "page_end": 1,
         "pages_json": [
@@ -1164,7 +1164,7 @@
         "document_id": "CURATED-2-19",
         "category": "BIS",
         "filename": "BIS_Technical_Compliance.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 2,
         "page_end": 2,
         "pages_json": [
@@ -1180,7 +1180,7 @@
         "document_id": "CURATED-2-20",
         "category": "DECLARATION",
         "filename": "Blacklisting_Declaration.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 3,
         "page_end": 3,
         "pages_json": [
@@ -1196,7 +1196,7 @@
         "document_id": "CURATED-2-21",
         "category": "TECHNICAL",
         "filename": "BoQ_Compliance.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 4,
         "page_end": 4,
         "pages_json": [
@@ -1212,7 +1212,7 @@
         "document_id": "CURATED-2-22",
         "category": "CIN",
         "filename": "Company_Profile.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 5,
         "page_end": 5,
         "pages_json": [
@@ -1228,7 +1228,7 @@
         "document_id": "CURATED-2-23",
         "category": "EXPERIENCE",
         "filename": "Experience_Credentials.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 6,
         "page_end": 6,
         "pages_json": [
@@ -1244,7 +1244,7 @@
         "document_id": "CURATED-2-24",
         "category": "NET_WORTH",
         "filename": "Financial_Standing.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 7,
         "page_end": 7,
         "pages_json": [
@@ -1260,7 +1260,7 @@
         "document_id": "CURATED-2-25",
         "category": "GST",
         "filename": "GST_Registration.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 8,
         "page_end": 8,
         "pages_json": [
@@ -1276,7 +1276,7 @@
         "document_id": "CURATED-2-26",
         "category": "STATUTORY",
         "filename": "ISO_9001_Certificate.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 9,
         "page_end": 9,
         "pages_json": [
@@ -1292,7 +1292,7 @@
         "document_id": "CURATED-2-27",
         "category": "MII_LOCAL_CONTENT",
         "filename": "Local_Content_Declaration.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 10,
         "page_end": 10,
         "pages_json": [
@@ -1324,7 +1324,7 @@
         "document_id": "CURATED-2-29",
         "category": "OEM_AUTHORIZATION",
         "filename": "OEM_Authorization.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 12,
         "page_end": 12,
         "pages_json": [
@@ -1340,7 +1340,7 @@
         "document_id": "CURATED-2-30",
         "category": "TURNOVER",
         "filename": "OEM_Turnover_Certificate.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 13,
         "page_end": 13,
         "pages_json": [
@@ -1356,7 +1356,7 @@
         "document_id": "CURATED-2-31",
         "category": "PAN",
         "filename": "PAN_Card.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 14,
         "page_end": 14,
         "pages_json": [
@@ -1372,7 +1372,7 @@
         "document_id": "CURATED-2-32",
         "category": "EXPERIENCE",
         "filename": "Past_Performance.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 15,
         "page_end": 15,
         "pages_json": [
@@ -1388,7 +1388,7 @@
         "document_id": "CURATED-2-33",
         "category": "SUPPORTING_DOCUMENT",
         "filename": "Service_Centre_Details.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 16,
         "page_end": 16,
         "pages_json": [
@@ -1404,7 +1404,7 @@
         "document_id": "CURATED-2-34",
         "category": "UDYAM",
         "filename": "Udyam_Certificate.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 17,
         "page_end": 17,
         "pages_json": [
@@ -1420,7 +1420,7 @@
         "document_id": "CURATED-3-35",
         "category": "TURNOVER",
         "filename": "Bidder_Turnover_Certificate.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 1,
         "page_end": 1,
         "pages_json": [
@@ -1436,7 +1436,7 @@
         "document_id": "CURATED-3-36",
         "category": "BIS",
         "filename": "BIS_Technical_Compliance.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 2,
         "page_end": 2,
         "pages_json": [
@@ -1452,7 +1452,7 @@
         "document_id": "CURATED-3-37",
         "category": "DECLARATION",
         "filename": "Blacklisting_Declaration.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 3,
         "page_end": 3,
         "pages_json": [
@@ -1468,7 +1468,7 @@
         "document_id": "CURATED-3-38",
         "category": "TECHNICAL",
         "filename": "BoQ_Compliance.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 4,
         "page_end": 4,
         "pages_json": [
@@ -1484,7 +1484,7 @@
         "document_id": "CURATED-3-39",
         "category": "CIN",
         "filename": "Company_Profile.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 5,
         "page_end": 5,
         "pages_json": [
@@ -1500,7 +1500,7 @@
         "document_id": "CURATED-3-40",
         "category": "EXPERIENCE",
         "filename": "Experience_Credentials.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 6,
         "page_end": 6,
         "pages_json": [
@@ -1516,7 +1516,7 @@
         "document_id": "CURATED-3-41",
         "category": "NET_WORTH",
         "filename": "Financial_Standing.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 7,
         "page_end": 7,
         "pages_json": [
@@ -1532,7 +1532,7 @@
         "document_id": "CURATED-3-42",
         "category": "GST",
         "filename": "GST_Registration.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 8,
         "page_end": 8,
         "pages_json": [
@@ -1548,7 +1548,7 @@
         "document_id": "CURATED-3-43",
         "category": "STATUTORY",
         "filename": "ISO_9001_Certificate.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 9,
         "page_end": 9,
         "pages_json": [
@@ -1564,7 +1564,7 @@
         "document_id": "CURATED-3-44",
         "category": "MII_LOCAL_CONTENT",
         "filename": "Local_Content_Declaration.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 10,
         "page_end": 10,
         "pages_json": [
@@ -1596,7 +1596,7 @@
         "document_id": "CURATED-3-46",
         "category": "OEM_AUTHORIZATION",
         "filename": "OEM_Authorization.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 12,
         "page_end": 12,
         "pages_json": [
@@ -1612,7 +1612,7 @@
         "document_id": "CURATED-3-47",
         "category": "TURNOVER",
         "filename": "OEM_Turnover_Certificate.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 13,
         "page_end": 13,
         "pages_json": [
@@ -1628,7 +1628,7 @@
         "document_id": "CURATED-3-48",
         "category": "PAN",
         "filename": "PAN_Card.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 14,
         "page_end": 14,
         "pages_json": [
@@ -1644,7 +1644,7 @@
         "document_id": "CURATED-3-49",
         "category": "EXPERIENCE",
         "filename": "Past_Performance.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 15,
         "page_end": 15,
         "pages_json": [
@@ -1660,7 +1660,7 @@
         "document_id": "CURATED-3-50",
         "category": "UDYAM",
         "filename": "Udyam_Certificate.pdf",
-        "document_title": "SYNTHETIC DOCUMENT — FOR PROTOTYPE TESTING ONLY",
+        "document_title": "SYNTHETIC DOCUMENT: FOR PROTOTYPE TESTING ONLY",
         "page_start": 16,
         "page_end": 16,
         "pages_json": [
