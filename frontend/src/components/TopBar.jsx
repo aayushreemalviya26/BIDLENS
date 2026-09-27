@@ -2,7 +2,7 @@ import { useAuth } from "@/lib/authContext";
 
 export default function TopBar({ searchQuery, setSearchQuery }) {
   const { user, openProfile, changeMode } = useAuth();
-  if (user.readOnly) return <header className="border-b bg-white px-6 py-3 font-semibold">BidLens · Preprocessed Demo <span className="ml-3 text-sm font-normal text-gray-600">Public judge access · Read-only</span></header>;
+  if (user.readOnly) return <header className="sticky top-0 z-10 border-b bg-white px-6 py-3"><span className="font-bold text-gray-800">BidLens</span><span className="ml-3 text-sm text-gray-500">Bid Compliance Verification</span></header>;
   return <header className="sticky top-0 z-10 flex flex-wrap items-center justify-between gap-4 border-b bg-white px-6 py-3">
     <span className="font-bold text-gray-800">BidLens Workstation</span>
     <input aria-label="Search tenders" placeholder="Search tenders…" value={searchQuery} onChange={event => setSearchQuery(event.target.value)} className="min-w-0 flex-1 rounded border bg-gray-50 px-3 py-2 text-sm" />
