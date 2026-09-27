@@ -33,6 +33,21 @@ def locate_evidence(path, page_number, evidence_text, stored=None):
                         rectangles.extend(fitz.Rect(word[:4]) for _, word in tokens[start:start + len(target)])
                 method = "normalized_text"
             if not rectangles:
+                # Tender extraction may preserve a longer clause than PyMuPDF can match
+                # as one phrase. Locate a distinctive literal run from that clause.
+                source_words = [w for w in text.split() if len(re.sub(r"\\W+", "", w)) > 1]
+                for size in (12, 10, 8, 6, 4):
+                    if rectangles or len(source_words) < size:
+                        continue
+                    for start in range(0, len(source_words) - size + 1):
+                        fragment = " ".join(source_words[start:start + size])
+                        found = page.search_for(fragment)
+                        if found:
+                            rectangles = found
+                            result["matched_text"] = fragment
+                            method = "literal_fragment"
+                            break
+            if not rectangles:
                 # Only highlight a literal source paragraph fragment, never a fuzzy box.
                 fragments = [part.strip() for part in re.split(r"[\n;]|(?<=[.!?])\s+", evidence_text) if len(part.split()) >= 6]
                 for fragment in sorted(fragments, key=len, reverse=True):
@@ -46,7 +61,7 @@ def locate_evidence(path, page_number, evidence_text, stored=None):
                 rect = rect * page.rotation_matrix
                 result["bounding_boxes"].append({"x0": max(0, rect.x0 / width), "y0": max(0, rect.y0 / height), "x1": min(1, rect.x1 / width), "y1": min(1, rect.y1 / height)})
             if rectangles:
-                result.update(method=method, message="Source paragraph highlighted; exact full span unavailable" if method == "chunk" else "Exact evidence highlighted")
+                result.update(method=method, message="Source context highlighted" if method in ("chunk", "literal_fragment") else "Exact evidence highlighted")
     except (RuntimeError, ValueError):
         pass
     return result
