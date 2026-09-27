@@ -40,3 +40,8 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #B3432E;
 }
+
+
+/* BidLens procurement workspace */
+button, input, select, textarea { border-radius: 0.375rem; }
+.gov-section { background:#fff; border:1px solid #DDD6CE; }
