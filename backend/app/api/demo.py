@@ -17,7 +17,7 @@ router = APIRouter(tags=["demo"])
 def demo_workspace(db: Session = Depends(get_db)):
     from app.services.judge_demo import DEMO_ID
     tender = db.query(Tender).filter_by(external_bid_id=DEMO_ID).one_or_none()
-    return {"tender_id": tender.id if tender else None, "label": "Preprocessed Demo", "hosted": os.getenv("APP_ENV") == "production", "limitations": "Saved demonstration, not fresh AI. Registries are simulated. Fresh uploads are temporary on the free host."}
+    return {"tender_id": tender.id if tender else None, "label": "Sample Tender", "hosted": os.getenv("APP_ENV") == "production"}
 
 
 @router.post("/demo/reset")
