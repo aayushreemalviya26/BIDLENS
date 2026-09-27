@@ -70,7 +70,7 @@ function OfficerDecisionPanel({ detail, currentStatus, onDecide }) {
             <textarea
                 value={remarks}
                 onChange={(e) => setRemarks(e.target.value)}
-                placeholder="Add a reason or clarification message — included in the audit trail"
+                placeholder="Add a reason or clarification message: included in the audit trail"
                 rows={2}
                 className="mb-3 w-full rounded-lg border border-gray-200 bg-white p-2 text-sm text-gray-700 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-300"
             />
@@ -121,7 +121,7 @@ function EvidenceDetail({ detail, onBack, onDecision = () => {} }) {
     const handleDecide = async (action, remarks, overrideStatus) => {
         const nextStatus = action === "REJECT_EVIDENCE" ? overrideStatus : action === "ACCEPT_EVIDENCE" ? detail.machineStatus : DECISION_STATUS[action];
 
-        const remarkSuffix = remarks ? ` — remark: "${remarks}"` : "";
+        const remarkSuffix = remarks ? `: remark: "${remarks}"` : "";
         const description = `${DECISION_LABEL[action]} evidence for "${detail.requirementName}" (${detail.bidderName}) on tender ${detail.tenderId}${remarkSuffix}`;
 
         await onDecision(action, {
