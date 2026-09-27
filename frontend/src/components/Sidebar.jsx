@@ -51,7 +51,7 @@ export default function Sidebar({
         <div className="px-1 pt-1">
           <img
             src="/assets/bidlens-logo.png"
-            alt="BidLens — Clearer bids. Stronger procurement."
+            alt="BidLens: Clearer bids. Stronger procurement."
             className="mx-auto h-auto w-[88%] mix-blend-multiply"
           />
           <span className="sr-only">BidLens Enterprise procurement workspace</span>
