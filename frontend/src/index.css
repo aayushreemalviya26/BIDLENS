@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&display=swap");
 @import "tailwindcss";
 
 @layer base {
@@ -18,7 +19,7 @@ html {
 body {
   background-color: #FAF8F5;
   color: #2B2523;
-  font-family: 'Trebuchet MS', 'Segoe UI', system-ui, sans-serif;
+  font-family: 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   font-size: 0.9375rem; /* 15px base size for high readability */
@@ -47,5 +48,5 @@ button, input, select, textarea { border-radius: 0.375rem; }
 .gov-section { background:#fff; border:1px solid #DDD6CE; }
 
 /* Humanist UI typography */
-button, input, select, textarea { font-family: inherit; }
+button, input, select, textarea { font-family: 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif; }
 h1,h2,h3,h4 { letter-spacing: -0.025em; }
