@@ -10,7 +10,7 @@ from app.database.base import Base
 from app.database.session import SessionLocal
 from app.models import AuditEvent, Tender
 
-DEMO_ID = "PREPROCESSED:GEM/2026/B/7910945"
+DEMO_ID = "SAMPLE:GEM/2026/B/7910945"
 ROOT = Path(__file__).resolve().parents[3]
 
 
