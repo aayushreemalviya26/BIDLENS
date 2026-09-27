@@ -46,13 +46,13 @@ export default function Sidebar({
   ];
 
   return (
-    <aside className="w-64 bg-[#F5F1EB] border-r border-[#E5E0DA] flex flex-col justify-between h-screen sticky top-0 select-none z-20 shrink-0">
+    <aside className="w-64 bg-[#F7F4EF] border-r border-[#DDD6CE] flex flex-col justify-between h-screen sticky top-0 select-none z-20 shrink-0">
       <div className="p-4 space-y-6">
         <div className="px-1 pt-1">
           <img
             src="/assets/bidlens-logo.png"
             alt="BidLens — Clearer bids. Stronger procurement."
-            className="w-full h-auto"
+            className="mx-auto h-auto w-[88%] mix-blend-multiply"
           />
           <span className="sr-only">BidLens Enterprise procurement workspace</span>
         </div>
@@ -74,9 +74,9 @@ export default function Sidebar({
               <button
                 key={item.id}
                 onClick={() => setCurrentView(item.view)}
-                className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-semibold transition-colors ${
+                className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-md text-sm font-semibold transition-colors ${
                   isActive
-                    ? 'bg-[#B3432E] text-white shadow-xs'
+                    ? 'bg-[#B3432E] text-white'
                     : 'text-[#574E46] hover:bg-[#EAE4DC] hover:text-[#2B2523]'
                 }`}
               >
