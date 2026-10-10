@@ -1,7 +1,9 @@
 import { useEffect, useMemo, useState } from "react";
 import { api } from "@/lib/api";
+import { useAuth } from "@/lib/authContext";
 
 export default function BidderWorkspace({ tender, onOpenCompliance }) {
+  const { user } = useAuth();
   const [bidders,setBidders]=useState([]); const [form,setForm]=useState({bidder_id:"",bidder_name:""}); const [busy,setBusy]=useState(""); const [error,setError]=useState("");
   const sampleTender=String(tender.external_bid_id||"").includes("GEM/2026/B/7910945") || String(tender.title||"").toLowerCase().includes("sample tender") || String(tender.title||"").toLowerCase().includes("preprocessed demo");
   const [selected,setSelected]=useState([]);
@@ -11,6 +13,7 @@ export default function BidderWorkspace({ tender, onOpenCompliance }) {
   const run=async(label,fn)=>{setBusy(label);setError("");try{await fn();await refresh();}catch(e){setError(e.message);}finally{setBusy("");}};
   const toggle=id=>setSelected(items=>items.includes(id)?items.filter(x=>x!==id):[...items,id]);
   const processSamples=()=>{if(!selected.length)return;setBusy("sample-process");setError("");window.setTimeout(()=>{setRevealed(selected);setBusy("");},5000);};
+  if (user.readOnly) return <div className="mx-auto max-w-7xl space-y-5 p-7"><h1 className="text-2xl font-bold">Bidder Workspace</h1><p>Saved sample evidence for GEM/2026/B/7910945. Registry checks are simulated.</p>{error && <p role="alert">{error}</p>}<button onClick={onOpenCompliance} className="rounded border bg-white px-4 py-2">View Compliance Matrix</button>{bidders.map(b => <BidderCard key={b.id} bidder={b} busy="" run={run} sample />)}</div>;
   return <div className="mx-auto max-w-7xl space-y-5 p-7"><div className="flex items-start justify-between"><div><p className="text-sm text-[#786F66]">{tender.external_bid_id}</p><h1 className="text-2xl font-extrabold">Bidder Workspace</h1><p className="text-sm text-[#786F66]">{sampleTender?"Select one or more sample bidders, process their documents, then run compliance.":"Add bidders, upload their PDFs and process the submitted documents."}</p></div><button onClick={onOpenCompliance} disabled={sampleTender&&!revealed.length} className="rounded-lg bg-[#2B2523] px-4 py-2 font-bold text-white disabled:opacity-40">Compliance Matrix</button></div>
     {error&&<div className="rounded-lg bg-red-50 p-3 text-sm text-red-700">{error}</div>}
     {sampleTender ? <>

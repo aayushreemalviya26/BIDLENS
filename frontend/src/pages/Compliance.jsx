@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { EvidenceDetail } from "../components/EvidenceDetail.jsx";
 import { api } from "../lib/api.js";
+import { useAuth } from "../lib/authContext.js";
 
 const STATUS_META = {
   COMPLIANT: { label: "Compliant", dot: "bg-[#47705A]", text: "text-[#315240]", pill: "bg-transparent border border-[#BFCFC5]" },
@@ -53,6 +54,7 @@ function toDetail(payload) {
 }
 
 export default function Compliance({ selectedTenderId: initialTenderId = null }) {
+  const { user } = useAuth();
   const [tenders, setTenders] = useState([]);
   const [selectedTenderId, setSelectedTenderId] = useState(initialTenderId);
   const [matrix, setMatrix] = useState(null);
@@ -64,7 +66,7 @@ export default function Compliance({ selectedTenderId: initialTenderId = null })
   const [completeness, setCompleteness] = useState(null);
 
   useEffect(() => {
-    api.listTenders().then((items) => { setTenders(items); setSelectedTenderId((id) => id || initialTenderId || items[0]?.id || null); })
+    (user.publicJudge ? api.demo().then(async d => d.tender_id ? [await api.tender(d.tender_id)] : []) : api.listTenders()).then((items) => { setTenders(items); setSelectedTenderId((id) => id || initialTenderId || items[0]?.id || null); })
       .catch((err) => setError(err.message)).finally(() => setLoading(false));
   }, []);
 

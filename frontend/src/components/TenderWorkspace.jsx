@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { api } from "@/lib/api";
 import { PdfModal } from "@/components/PdfViewer";
+import { useAuth } from "@/lib/authContext";
 
 const EMPTY = { name:"", category:"", description:"", operator:"EXISTS", required_value:"", unit:"", mandatory:true, required_document_type:"", source_page:"", source_text:"", applicable:true };
 
@@ -21,10 +22,11 @@ function RequirementForm({ initial = EMPTY, onSave, onCancel }) {
 }
 
 export default function TenderWorkspace({ tender, onRefresh, onOpenBidders }) {
+  const { user } = useAuth();
   const [progress, setProgress] = useState("");
   const [requirements, setRequirements] = useState([]); const [sampleRevealed,setSampleRevealed]=useState(!String(tender.external_bid_id||"").startsWith("PREPROCESSED:")); const [busy,setBusy]=useState(""); const [error,setError]=useState(""); const [editing,setEditing]=useState(null); const [adding,setAdding]=useState(false); const [detail,setDetail]=useState(tender); const [sourcePage,setSourcePage]=useState(null); const [sourceRequirement,setSourceRequirement]=useState(null); const [approvedPopup,setApprovedPopup]=useState(false);
   const refresh = async () => { const [reqs, latest] = await Promise.all([api.requirements(tender.id), api.tender(tender.id)]); setRequirements(reqs); setDetail(latest); onRefresh?.(); };
-  useEffect(()=>{ setSampleRevealed(!String(tender.external_bid_id||"").startsWith("PREPROCESSED:")); refresh().catch(e=>setError(e.message)); },[tender.id]);
+  useEffect(()=>{ setSampleRevealed(user.readOnly || !String(tender.external_bid_id||"").startsWith("PREPROCESSED:")); refresh().catch(e=>setError(e.message)); },[tender.id, user.readOnly]);
   const sampleTender = String(detail.external_bid_id||"").startsWith("PREPROCESSED:");
   const extract = () => { if (!sampleTender) return action("extract",()=>api.extractTender(tender.id, setProgress)); setBusy("extract"); setError(""); window.setTimeout(()=>{ setSampleRevealed(true); setBusy(""); },5000); };
   const action = async (label, fn) => { setBusy(label); setError(""); try { await fn(); await refresh(); } catch(e){setError(e.message);} finally{setBusy("");} };
