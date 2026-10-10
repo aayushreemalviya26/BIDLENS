@@ -17,11 +17,14 @@ export default function AuthWorkspace({ children }) {
     const controller = new AbortController();
     waitForBackend(controller.signal).then(async () => {
       if (!controller.signal.aborted) {
-        const access = await api.demoAccess();
-        if (access.public_read_only) {
-          setUser({ name: "Judge", mode: "ONLINE", hosted: true, readOnly: false, publicJudge: true });
-        } else {
-          try { setUser(await api.session()); } catch { /* no session yet */ }
+        // Restore real sessions before considering anonymous sample access.
+        try { const session = await api.session(); if (!controller.signal.aborted) setUser(session); }
+        catch (reason) {
+          if (reason.status !== 401) throw reason;
+          const access = await api.demoAccess();
+          if (!controller.signal.aborted && access.public_read_only) {
+            setUser({ name: "Judge", mode: "ONLINE", hosted: true, readOnly: false, publicJudge: true });
+          }
         }
         setLoading(false);
       }

@@ -9,10 +9,10 @@ from sqlalchemy.orm import Mapped, Session, mapped_column
 
 from app.database.base import Base
 from app.database.session import SessionLocal, get_db
-from .auth import require_processing
+from .auth import require_processing, require_session
 from .common import get_bidder, get_tender
 
-router = APIRouter(tags=["processing jobs"])
+router = APIRouter(tags=["processing jobs"], dependencies=[Depends(require_session)])
 guard = threading.Lock()
 
 
